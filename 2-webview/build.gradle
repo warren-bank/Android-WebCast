@@ -1,0 +1,49 @@
+apply from: '../constants.gradle'
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion project.ext.compileSdkVersion
+    buildToolsVersion project.ext.buildToolsVersion
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        versionName project.ext.releaseVersion
+        versionCode project.ext.releaseVersionCode
+        minSdkVersion project.ext.minSdkVersion
+        targetSdkVersion project.ext.targetSdkVersion
+
+        applicationId "com.journaldev.webviewwithbookmarks"
+    }
+
+    buildTypes {
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles = [
+                "proguard-rules.txt",
+                getDefaultProguardFile('proguard-android.txt')
+            ]
+        }
+        debug {
+            jniDebuggable = true
+        }
+    }
+
+    lintOptions {
+        // The demo app does not have translations.
+        disable 'MissingTranslation'
+    }
+}
+
+dependencies {
+    implementation 'com.android.support:appcompat-v7:'                       + project.ext.supportLibraryVersion
+    implementation 'com.android.support:design:'                             + project.ext.supportLibraryVersion
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.google.code.gson:gson:2.7'
+}
+
+apply plugin: 'com.google.android.gms.strict-version-matcher-plugin'

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_bookmark"
+            android:icon="@drawable/ic_bookmark_black_24dp"
+            android:title="Bookmarks" />
+    </group>
+
+</menu>
