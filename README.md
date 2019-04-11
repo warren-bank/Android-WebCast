@@ -31,6 +31,8 @@ _references:_
 * https://github.com/classycodeoss/nfc-sockets/blob/master/android/NFCSockets/app/src/main/java/com/classycode/nfcsockets/okhttp/OkHttpWebViewClient.java#L135
   * nice! shows exactly how to use OkHttp with "WebView.shouldInterceptRequest"
   * special attention: "okHttpResponseToWebResourceResponse"
+* https://gist.github.com/kmerrell42/b4ff31733c562a3262ee9a42f5704a89
+  * another example using OkHttp with "WebView.shouldInterceptRequest"
 
 #### Legal:
 
