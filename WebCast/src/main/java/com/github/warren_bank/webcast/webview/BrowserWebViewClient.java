@@ -9,11 +9,14 @@ import android.webkit.CookieManager;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import okhttp3.ResponseBody;
+import okhttp3.MediaType;
 import okhttp3.HttpUrl;
 import okhttp3.Cookie;
 import okhttp3.CookieJar;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -89,30 +92,30 @@ public class BrowserWebViewClient extends WebViewClient {
         return false;
     }
 
-    /**
-     * source:  https://github.com/classycodeoss/nfc-sockets/blob/ed7886a769c86d5fae9e0e905955a6b4710431bb/android/NFCSockets/app/src/main/java/com/classycode/nfcsockets/okhttp/OkHttpWebViewClient.java#L135
-     * license: https://github.com/classycodeoss/nfc-sockets/blob/ed7886a769c86d5fae9e0e905955a6b4710431bb/LICENSE.txt
-     *          Apache 2.0
-     *
-     * Convert OkHttp {@link Response} into a {@link WebResourceResponse}
-     *
-     * @param resp The OkHttp {@link Response}
-     * @return The {@link WebResourceResponse}
-     */
-    private WebResourceResponse okHttpResponseToWebResourceResponse(Response resp) {
-        final String contentTypeValue = resp.header("Content-Type");
-        if (contentTypeValue != null) {
-            if (contentTypeValue.indexOf("charset=") > 0) {
-                final String[] contentTypeAndEncoding = contentTypeValue.split("; ");
-                final String contentType = contentTypeAndEncoding[0];
-                final String charset = contentTypeAndEncoding[1].split("=")[1];
-                return new WebResourceResponse(contentType, charset, resp.body().byteStream());
-            } else {
-                return new WebResourceResponse(contentTypeValue, null, resp.body().byteStream());
-            }
-        } else {
-            return new WebResourceResponse("application/octet-stream", null, resp.body().byteStream());
+    private WebResourceResponse okHttpResponseToWebResourceResponse(Response response) {
+        final ResponseBody body   = response.body();
+        final MediaType mediaType = body.contentType();
+
+        final Charset _charset    = mediaType.charset();
+        final String _ctype_major = mediaType.type();
+        final String _ctype_minor = mediaType.subtype();
+
+        final String charset      = (_charset == null) ? null : _charset.name();
+        String contentType;
+
+        if ((_ctype_major == null) || (_ctype_major.length() == 0)) {
+            contentType = "application/octet-stream";
         }
+        else {
+            if ((_ctype_minor == null) || (_ctype_minor.length() == 0)) {
+                contentType = _ctype_major;
+            }
+            else {
+                contentType = _ctype_major + "/" + _ctype_minor;
+            }
+        }
+
+        return new WebResourceResponse(contentType, charset, body.byteStream());
     }
 
     private WebResourceResponse shouldInterceptRequest(WebView view, String url, Map<String, String> reqHeaders) {
