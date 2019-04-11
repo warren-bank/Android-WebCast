@@ -9,7 +9,6 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
@@ -97,7 +96,7 @@ public class BrowserActivity extends AppCompatActivity {
 
     // Content: UI ---------------------------------------------------------------------------------
 
-    private CoordinatorLayout coordinatorLayout;
+    private View parentView;
     private Snackbar snackbar;
 
     // ---------------------------------------------------------------------------------------------
@@ -155,7 +154,7 @@ public class BrowserActivity extends AppCompatActivity {
 
         // Content: UI -----------------------------------------------------------------------------
 
-        coordinatorLayout = (CoordinatorLayout)findViewById(R.id.main_content);
+        parentView = (View)findViewById(R.id.main_content);
     }
 
     @Override
@@ -232,7 +231,7 @@ public class BrowserActivity extends AppCompatActivity {
             message = "Bookmark Removed";
         }
         if ((message != null) && (message.length() > 0)) {
-            snackbar = Snackbar.make(coordinatorLayout, message, Snackbar.LENGTH_SHORT);
+            snackbar = Snackbar.make(parentView, message, Snackbar.LENGTH_SHORT);
             snackbar.show();
             return;
         }
@@ -256,7 +255,7 @@ public class BrowserActivity extends AppCompatActivity {
         prefs_editor.apply();
 
         // show message
-        snackbar = Snackbar.make(coordinatorLayout, message, Snackbar.LENGTH_SHORT);
+        snackbar = Snackbar.make(parentView, message, Snackbar.LENGTH_SHORT);
         snackbar.show();
 
         // update 'bookmark' icon in top ActionBar
@@ -342,7 +341,7 @@ public class BrowserActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 DrawerListItem item = (DrawerListItem) parent.getItemAtPosition(position);
-                snackbar = Snackbar.make(coordinatorLayout, item.uri, Snackbar.LENGTH_INDEFINITE);
+                snackbar = Snackbar.make(parentView, item.uri, Snackbar.LENGTH_INDEFINITE);
 
                 snackbar.setAction("Open", new View.OnClickListener() {
                     @Override
@@ -375,7 +374,7 @@ public class BrowserActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 DrawerListItem item = (DrawerListItem) parent.getItemAtPosition(position);
-                snackbar = Snackbar.make(coordinatorLayout, item.uri, Snackbar.LENGTH_INDEFINITE);
+                snackbar = Snackbar.make(parentView, item.uri, Snackbar.LENGTH_INDEFINITE);
 
                 snackbar.setAction("Watch", new View.OnClickListener() {
                     @Override
