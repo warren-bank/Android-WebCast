@@ -321,7 +321,14 @@ public class BrowserActivity extends AppCompatActivity {
     }
 
     protected boolean isVideo(String mimeType) {
-        return MimeTypes.isVideo(mimeType);
+        switch (mimeType) {
+            case MimeTypes.APPLICATION_M3U8:
+            case MimeTypes.APPLICATION_MPD:
+            case MimeTypes.APPLICATION_SS:
+                return true;
+            default:
+                return MimeTypes.isVideo(mimeType);
+        }
     }
 
     // ---------------------------------------------------------------------------------------------
