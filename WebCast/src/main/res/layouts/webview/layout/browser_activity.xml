@@ -10,7 +10,7 @@
 
     <!-- on-screen content -->
     <include
-        layout="@layout/browser_content_1"
+        layout="@layout/browser_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
