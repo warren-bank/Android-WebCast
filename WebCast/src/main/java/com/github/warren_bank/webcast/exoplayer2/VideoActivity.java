@@ -1,0 +1,301 @@
+/*
+ * Copyright (C) 2017 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.github.warren_bank.webcast.exoplayer2;
+
+import com.github.warren_bank.webcast.R;
+
+import android.content.Context;
+import android.os.Bundle;
+import android.support.v4.graphics.ColorUtils;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.RecyclerView.ViewHolder;
+import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import com.google.android.exoplayer2.C;
+import com.google.android.exoplayer2.SimpleExoPlayer;
+import com.google.android.exoplayer2.ext.cast.CastPlayer;
+import com.google.android.exoplayer2.ui.PlayerControlView;
+import com.google.android.exoplayer2.ui.PlayerView;
+import com.google.android.gms.cast.framework.CastButtonFactory;
+import com.google.android.gms.cast.framework.CastContext;
+import com.google.android.gms.dynamite.DynamiteModule;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.util.ArrayList;
+
+/**
+ * An activity that plays video using {@link SimpleExoPlayer} and {@link CastPlayer}.
+ */
+public class VideoActivity extends AppCompatActivity implements PlayerManager.QueuePositionListener {
+
+  private PlayerView localPlayerView;
+  private PlayerControlView castControlView;
+  private PlayerManager playerManager;
+  private RecyclerView mediaQueueList;
+  private MediaQueueListAdapter mediaQueueListAdapter;
+  private CastContext castContext;
+
+  // Activity lifecycle methods.
+
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    // Getting the cast context later than onStart can cause device discovery not to take place.
+    try {
+      castContext = CastContext.getSharedInstance(this);
+    } catch (RuntimeException e) {
+      Throwable cause = e.getCause();
+      while (cause != null) {
+        if (cause instanceof DynamiteModule.LoadingException) {
+          setContentView(R.layout.cast_context_error_message_layout);
+          return;
+        }
+        cause = cause.getCause();
+      }
+      // Unknown error. We propagate it.
+      throw e;
+    }
+
+    setContentView(R.layout.video_activity);
+
+    Toolbar toolbar = findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
+    getSupportActionBar().setTitle("");
+    toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+    toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        onBackPressed();
+      }
+    });
+
+    localPlayerView = findViewById(R.id.local_player_view);
+    localPlayerView.requestFocus();
+
+    castControlView = findViewById(R.id.cast_control_view);
+
+    mediaQueueList = findViewById(R.id.sample_list);
+    ItemTouchHelper helper = new ItemTouchHelper(new RecyclerViewCallback());
+    helper.attachToRecyclerView(mediaQueueList);
+    mediaQueueList.setLayoutManager(new LinearLayoutManager(this));
+    mediaQueueList.setHasFixedSize(true);
+    mediaQueueListAdapter = new MediaQueueListAdapter();
+  }
+
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    getMenuInflater().inflate(R.menu.video, menu);
+    CastButtonFactory.setUpMediaRouteButton(this, menu, R.id.media_route_menu_item);
+    return true;
+  }
+
+  @Override
+  public void onResume() {
+    super.onResume();
+
+    if (castContext == null) {
+      // There is no Cast context to work with. Do nothing.
+      return;
+    }
+
+    FullScreenManager fullScreenManager =
+        FullScreenManager.createFullScreenManager(
+            /* videoActivity= */ this,
+            localPlayerView
+        );
+
+    playerManager =
+        PlayerManager.createPlayerManager(
+            /* queuePositionListener= */ this,
+            localPlayerView,
+            castControlView,
+            /* context= */ this,
+            castContext,
+            fullScreenManager
+        );
+
+    mediaQueueList.setAdapter(mediaQueueListAdapter);
+    addVideoSources();
+  }
+
+  @Override
+  public void onPause() {
+    super.onPause();
+    if (castContext == null) {
+      // Nothing to release.
+      return;
+    }
+    mediaQueueListAdapter.notifyItemRangeRemoved(0, mediaQueueListAdapter.getItemCount());
+    mediaQueueList.setAdapter(null);
+    playerManager.release();
+  }
+
+  // Activity input.
+
+  @Override
+  public boolean dispatchKeyEvent(KeyEvent event) {
+    // If the event was not handled then see if the player view can handle it.
+    return super.dispatchKeyEvent(event) || playerManager.dispatchKeyEvent(event);
+  }
+
+  // PlayerManager.QueuePositionListener implementation.
+
+  @Override
+  public void onQueuePositionChanged(int previousIndex, int newIndex) {
+    if (previousIndex != C.INDEX_UNSET) {
+      mediaQueueListAdapter.notifyItemChanged(previousIndex);
+    }
+    if (newIndex != C.INDEX_UNSET) {
+      mediaQueueListAdapter.notifyItemChanged(newIndex);
+    }
+  }
+
+  // Internal methods.
+
+  private void addVideoSource(String uri, String mimeType) {
+    VideoSource videoSource = VideoSource.createVideoSource(uri, mimeType);
+    playerManager.addItem(videoSource);
+    mediaQueueListAdapter.notifyItemInserted(playerManager.getMediaQueueSize() - 1);
+  }
+
+  private void addVideoSources() {
+    if (getIntent().getExtras() != null) {
+      String jsonSources = getIntent().getStringExtra("video_sources");
+
+      Gson gson = new Gson();
+      ArrayList<String> arrSources = gson.fromJson(jsonSources, new TypeToken<ArrayList<String>>() {
+      }.getType());
+
+      int maxIndex = (arrSources.size() % 2 == 0) ? arrSources.size() : (arrSources.size() - 1);
+
+      for (int i=0; i < maxIndex; i=i+2) {
+        addVideoSource(
+          arrSources.get(i),
+          arrSources.get(i+1)
+        );
+      }
+    }
+  }
+
+  // Internal classes.
+
+  private class QueueItemViewHolder extends RecyclerView.ViewHolder implements OnClickListener {
+
+    public final TextView textView;
+
+    public QueueItemViewHolder(TextView textView) {
+      super(textView);
+      this.textView = textView;
+      textView.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+      playerManager.selectQueueItem(getAdapterPosition());
+    }
+
+  }
+
+  private class MediaQueueListAdapter extends RecyclerView.Adapter<QueueItemViewHolder> {
+
+    @Override
+    public QueueItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+      TextView v = (TextView) LayoutInflater.from(parent.getContext())
+          .inflate(android.R.layout.simple_list_item_1, parent, false);
+      return new QueueItemViewHolder(v);
+    }
+
+    @Override
+    public void onBindViewHolder(QueueItemViewHolder holder, int position) {
+      TextView view = holder.textView;
+      view.setText(playerManager.getItem(position).toString());
+      // TODO: Solve coloring using the theme's ColorStateList.
+      view.setTextColor(ColorUtils.setAlphaComponent(view.getCurrentTextColor(),
+           position == playerManager.getCurrentItemIndex() ? 255 : 100));
+    }
+
+    @Override
+    public int getItemCount() {
+      return playerManager.getMediaQueueSize();
+    }
+
+  }
+
+  private class RecyclerViewCallback extends ItemTouchHelper.SimpleCallback {
+
+    private int draggingFromPosition;
+    private int draggingToPosition;
+
+    public RecyclerViewCallback() {
+      super(ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.START | ItemTouchHelper.END);
+      draggingFromPosition = C.INDEX_UNSET;
+      draggingToPosition = C.INDEX_UNSET;
+    }
+
+    @Override
+    public boolean onMove(RecyclerView list, RecyclerView.ViewHolder origin,
+        RecyclerView.ViewHolder target) {
+      int fromPosition = origin.getAdapterPosition();
+      int toPosition = target.getAdapterPosition();
+      if (draggingFromPosition == C.INDEX_UNSET) {
+        // A drag has started, but changes to the media queue will be reflected in clearView().
+        draggingFromPosition = fromPosition;
+      }
+      draggingToPosition = toPosition;
+      mediaQueueListAdapter.notifyItemMoved(fromPosition, toPosition);
+      return true;
+    }
+
+    @Override
+    public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+      int position = viewHolder.getAdapterPosition();
+      if (playerManager.removeItem(position)) {
+        mediaQueueListAdapter.notifyItemRemoved(position);
+      }
+    }
+
+    @Override
+    public void clearView(RecyclerView recyclerView, ViewHolder viewHolder) {
+      super.clearView(recyclerView, viewHolder);
+      if (draggingFromPosition != C.INDEX_UNSET) {
+        // A drag has ended. We reflect the media queue change in the player.
+        if (!playerManager.moveItem(draggingFromPosition, draggingToPosition)) {
+          // The move failed. The entire sequence of onMove calls since the drag started needs to be
+          // invalidated.
+          mediaQueueListAdapter.notifyDataSetChanged();
+        }
+      }
+      draggingFromPosition = C.INDEX_UNSET;
+      draggingToPosition = C.INDEX_UNSET;
+    }
+
+  }
+
+}
