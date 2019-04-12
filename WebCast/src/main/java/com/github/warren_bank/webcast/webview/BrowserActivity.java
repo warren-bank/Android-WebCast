@@ -569,6 +569,11 @@ public class BrowserActivity extends AppCompatActivity {
                 return true;
             }
 
+            case R.id.action_exit: {
+                finish();
+                return true;
+            }
+
             default: {
                 return super.onOptionsItemSelected(menuItem);
             }
