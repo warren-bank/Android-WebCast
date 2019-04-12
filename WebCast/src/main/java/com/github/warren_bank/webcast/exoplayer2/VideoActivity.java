@@ -143,7 +143,9 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
             );
 
         mediaQueueList.setAdapter(mediaQueueListAdapter);
-        addVideoSources();
+        if (mediaQueueListAdapter.getItemCount() == 0) {
+            addVideoSources();
+        }
     }
   }
 
@@ -156,6 +158,8 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
     }
 
     if (VideoUtils.isScreenOn(this) && !playerManager.isCasting()) {
+        mediaQueueList.setAdapter(null);
+
         playerManager.release();
         playerManager = null;
     }
