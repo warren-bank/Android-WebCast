@@ -315,8 +315,13 @@ public class BrowserActivity extends AppCompatActivity {
 
         drawer_right_videos_arrayList.add(item);
 
-        // notify the ListView adapter
-        drawer_right_videos_arrayAdapter.notifyDataSetChanged();
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                // notify the ListView adapter
+                drawer_right_videos_arrayAdapter.notifyDataSetChanged();
+            }
+        });
     }
 
     protected boolean isVideo(String mimeType) {
