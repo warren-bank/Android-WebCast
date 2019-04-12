@@ -247,6 +247,13 @@ import java.util.ArrayList;
   // Miscellaneous methods.
 
   /**
+   * Is cast player currently active?
+   */
+  public boolean isCasting() {
+    return (currentPlayer == castPlayer);
+  }
+
+  /**
    * Dispatches a given {@link KeyEvent} to the corresponding view of the current player.
    *
    * @param event The {@link KeyEvent}.
