@@ -125,24 +125,26 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
       return;
     }
 
-    FullScreenManager fullScreenManager =
-        FullScreenManager.createFullScreenManager(
-            /* videoActivity= */ this,
-            localPlayerView
-        );
+    if (playerManager == null) {
+        FullScreenManager fullScreenManager =
+            FullScreenManager.createFullScreenManager(
+                /* videoActivity= */ this,
+                localPlayerView
+            );
 
-    playerManager =
-        PlayerManager.createPlayerManager(
-            /* queuePositionListener= */ this,
-            localPlayerView,
-            castControlView,
-            /* context= */ this,
-            castContext,
-            fullScreenManager
-        );
+        playerManager =
+            PlayerManager.createPlayerManager(
+                /* queuePositionListener= */ this,
+                localPlayerView,
+                castControlView,
+                /* context= */ this,
+                castContext,
+                fullScreenManager
+            );
 
-    mediaQueueList.setAdapter(mediaQueueListAdapter);
-    addVideoSources();
+        mediaQueueList.setAdapter(mediaQueueListAdapter);
+        addVideoSources();
+    }
   }
 
   @Override
@@ -152,9 +154,11 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
       // Nothing to release.
       return;
     }
-    mediaQueueListAdapter.notifyItemRangeRemoved(0, mediaQueueListAdapter.getItemCount());
-    mediaQueueList.setAdapter(null);
-    playerManager.release();
+
+    if (!playerManager.isCasting()) {
+        playerManager.release();
+        playerManager = null;
+    }
   }
 
   // Activity input.
