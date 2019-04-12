@@ -155,7 +155,7 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
       return;
     }
 
-    if (!playerManager.isCasting()) {
+    if (VideoUtils.isScreenOn(this) && !playerManager.isCasting()) {
         playerManager.release();
         playerManager = null;
     }
