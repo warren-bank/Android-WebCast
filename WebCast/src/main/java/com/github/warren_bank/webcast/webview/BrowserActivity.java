@@ -498,6 +498,7 @@ public class BrowserActivity extends AppCompatActivity {
     private void updateCurrentPage(String uri, boolean loadUrl) {
         current_page_url = uri;
         search.setQueryHint(current_page_url);
+        search.setQuery(current_page_url, false);
 
         if (loadUrl) {
             webView.loadUrl(current_page_url);
