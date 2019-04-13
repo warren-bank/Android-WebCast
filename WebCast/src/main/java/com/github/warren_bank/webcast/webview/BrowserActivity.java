@@ -32,6 +32,8 @@ import com.google.gson.reflect.TypeToken;
 import com.google.android.exoplayer2.util.MimeTypes;
 
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.Set;
 
 public class BrowserActivity extends AppCompatActivity {
 
@@ -68,6 +70,20 @@ public class BrowserActivity extends AppCompatActivity {
 
         public boolean equal(String that_uri) {
             return (this.uri == that_uri);
+        }
+
+        public static ArrayList<DrawerListItem> fromMap(Map<String, String> bookmarks) {
+            ArrayList<DrawerListItem> arrayList = new ArrayList<DrawerListItem>();
+            Set<String> keys = bookmarks.keySet();
+            String uri;
+            DrawerListItem item;
+
+            for(String title: keys) {
+                uri = bookmarks.get(title);
+                item = new DrawerListItem(uri, title, /* mimeType= */ null);
+                arrayList.add(item);
+            }
+            return arrayList;
         }
     }
 
@@ -214,7 +230,14 @@ public class BrowserActivity extends AppCompatActivity {
             savedBookmarks = gson.fromJson(jsonBookmarks, new TypeToken<ArrayList<DrawerListItem>>(){}.getType());
         }
         else {
-            savedBookmarks = new ArrayList<DrawerListItem>();
+            savedBookmarks = DrawerListItem.fromMap(
+                (Map<String, String>)BrowserConfigs.getDefaultBookmarks()
+            );
+
+            // update SharedPreferences
+            SharedPreferences.Editor prefs_editor = sharedPreferences.edit();
+            prefs_editor.putString(PREF_BOOKMARKS, new Gson().toJson(savedBookmarks));
+            prefs_editor.apply();
         }
 
         return savedBookmarks;
