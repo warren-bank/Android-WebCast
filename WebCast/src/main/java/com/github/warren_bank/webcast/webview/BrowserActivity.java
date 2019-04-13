@@ -136,7 +136,6 @@ public class BrowserActivity extends AppCompatActivity {
 
         search.setIconifiedByDefault(false);
         search.setSubmitButtonEnabled(true);
-        search.setQueryHint(current_page_url);
 
         search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -155,6 +154,8 @@ public class BrowserActivity extends AppCompatActivity {
         // Content: UI -----------------------------------------------------------------------------
 
         parentView = (View)findViewById(R.id.main_content);
+
+        updateCurrentPage(current_page_url, true);
     }
 
     @Override
