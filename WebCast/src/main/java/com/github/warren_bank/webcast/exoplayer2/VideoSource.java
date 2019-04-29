@@ -4,23 +4,27 @@ final class VideoSource {
 
   public final String uri;
   public final String mimeType;
+  public final String referer;
 
   // static factory
 
   public static VideoSource createVideoSource(
     String uri,
-    String mimeType
+    String mimeType,
+    String referer
   ) {
-    VideoSource videoSource = new VideoSource(uri, mimeType);
+    VideoSource videoSource = new VideoSource(uri, mimeType, referer);
     return videoSource;
   }
 
   private VideoSource(
     String uri,
-    String mimeType
+    String mimeType,
+    String referer
   ) {
     this.uri      = uri;
     this.mimeType = mimeType.toLowerCase();
+    this.referer  = referer;
   }
 
   // Public methods.

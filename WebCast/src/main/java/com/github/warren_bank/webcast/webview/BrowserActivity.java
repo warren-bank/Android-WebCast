@@ -25,6 +25,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -356,6 +357,10 @@ public class BrowserActivity extends AppCompatActivity {
                 DrawerListItem item = (DrawerListItem) parent.getItemAtPosition(position);
                 snackbar = Snackbar.make(parentView, item.uri, Snackbar.LENGTH_INDEFINITE);
 
+                // allow URL to display using up to 5 lines of text
+                TextView textView = (TextView) snackbar.getView().findViewById(android.support.design.R.id.snackbar_text);
+                textView.setMaxLines(5);
+
                 snackbar.setAction("Open", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -389,13 +394,28 @@ public class BrowserActivity extends AppCompatActivity {
                 DrawerListItem item = (DrawerListItem) parent.getItemAtPosition(position);
                 snackbar = Snackbar.make(parentView, item.uri, Snackbar.LENGTH_INDEFINITE);
 
+                // allow URL to display using up to 5 lines of text
+                TextView textView = (TextView) snackbar.getView().findViewById(android.support.design.R.id.snackbar_text);
+                textView.setMaxLines(5);
+
+                if (drawer_left_bookmarks_arrayList.contains(item) == false) {
+                    snackbar.setAction("Bookmark", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            snackbar.dismiss();
+
+                            addSavedBookmark(item);
+                        }
+                    });
+                }
+
                 snackbar.setAction("Watch", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         snackbar.dismiss();
                         closeDrawerVideos();
 
-                        openVideo(item.uri, item.mimeType);
+                        openVideo(item);
                     }
                 });
 
@@ -530,10 +550,29 @@ public class BrowserActivity extends AppCompatActivity {
         startActivity(in);
     }
 
-    private void openVideo(String uri, String mimeType) {
-        ArrayList<String> arrSources = new ArrayList<String>(2);
-        arrSources.add(0, uri);
-        arrSources.add(1, mimeType);
+    private void openVideo(DrawerListItem item) {
+        if (item == null) return;
+
+        ArrayList<String> arrSources = new ArrayList<String>(3);
+        arrSources.add(item.uri);
+        arrSources.add(item.mimeType);
+        arrSources.add(item.referer);
+        openVideos(arrSources);
+    }
+
+    private void openAllVideos() {
+        int len = 3 * drawer_right_videos_arrayList.size();
+        if (len == 0) return;
+
+        ArrayList<String> arrSources = new ArrayList<String>(len);
+        int i;
+        DrawerListItem item;
+        for (i=0; i < drawer_right_videos_arrayList.size(); i++) {
+            item = drawer_right_videos_arrayList.get(i);
+            arrSources.add(item.uri);
+            arrSources.add(item.mimeType);
+            arrSources.add(item.referer);
+        }
         openVideos(arrSources);
     }
 

@@ -187,8 +187,8 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
 
   // Internal methods.
 
-  private void addVideoSource(String uri, String mimeType) {
-    VideoSource videoSource = VideoSource.createVideoSource(uri, mimeType);
+  private void addVideoSource(String uri, String mimeType, String referer) {
+    VideoSource videoSource = VideoSource.createVideoSource(uri, mimeType, referer);
     playerManager.addItem(videoSource);
     mediaQueueListAdapter.notifyItemInserted(playerManager.getMediaQueueSize() - 1);
   }
@@ -201,12 +201,15 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
       ArrayList<String> arrSources = gson.fromJson(jsonSources, new TypeToken<ArrayList<String>>() {
       }.getType());
 
-      int maxIndex = (arrSources.size() % 2 == 0) ? arrSources.size() : (arrSources.size() - 1);
+      int strings_per_video = 3;
+      int remainder = arrSources.size() % strings_per_video;
+      int maxIndex  = (remainder == 0) ? arrSources.size() : (arrSources.size() - remainder);
 
-      for (int i=0; i < maxIndex; i=i+2) {
+      for (int i=0; i < maxIndex; i = i + strings_per_video) {
         addVideoSource(
           arrSources.get(i),
-          arrSources.get(i+1)
+          arrSources.get(i+1),
+          arrSources.get(i+2)
         );
       }
     }
@@ -303,7 +306,5 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
       draggingFromPosition = C.INDEX_UNSET;
       draggingToPosition = C.INDEX_UNSET;
     }
-
   }
-
 }
