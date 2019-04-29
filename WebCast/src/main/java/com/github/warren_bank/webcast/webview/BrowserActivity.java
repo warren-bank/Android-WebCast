@@ -345,6 +345,8 @@ public class BrowserActivity extends AppCompatActivity {
     }
 
     protected void addSavedVideo(String uri, String mimeType, String referer) {
+        if (DrawerListItem.contains(drawer_right_videos_arrayList, uri)) return;
+
         DrawerListItem item = new DrawerListItem(
             uri,
             /* title= */ null,
