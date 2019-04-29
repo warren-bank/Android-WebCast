@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WebCast</string>
+
+    <string name="action_bookmark">Bookmark Webpage</string>
+    <string name="action_bookmarks">Bookmarks</string>
+    <string name="action_videos">Videos</string>
+    <string name="action_exit">Exit</string>
+
+    <string name="media_route_menu_title">Cast</string>
+    <string name="cast_context_error">Failed to get Cast context. Try updating Google Play Services and restart the app.</string>
+</resources>

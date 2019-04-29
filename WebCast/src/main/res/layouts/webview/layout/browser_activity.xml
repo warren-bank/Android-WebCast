@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <!-- on-screen content -->
+    <include
+        layout="@layout/browser_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- left drawer -->
+    <ListView
+        android:id="@+id/drawer_left_bookmarks"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:fitsSystemWindows="true"
+        android:background="#ffeeeeee"/>
+
+    <!-- right drawer -->
+    <ListView
+        android:id="@+id/drawer_right_videos"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:fitsSystemWindows="true"
+        android:background="#ffeeeeee"/>
+
+</android.support.v4.widget.DrawerLayout>
