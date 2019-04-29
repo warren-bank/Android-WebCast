@@ -389,6 +389,8 @@ public class BrowserActivity extends AppCompatActivity {
     }
 
     protected boolean isVideo(String mimeType) {
+        if (mimeType == null) return false;
+
         switch (mimeType) {
             case MimeTypes.APPLICATION_M3U8:
             case MimeTypes.APPLICATION_MPD:
@@ -411,10 +413,29 @@ public class BrowserActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 DrawerListItem item = (DrawerListItem) parent.getItemAtPosition(position);
 
-                alertDialog = new AlertDialog.Builder(BrowserActivity.this)
+                AlertDialog.Builder builder = new AlertDialog.Builder(BrowserActivity.this)
                     .setTitle("Bookmark URL")
                     .setMessage(item.uri)
-                    .setPositiveButton("Open", new DialogInterface.OnClickListener() {
+                    .setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                        }
+                    });
+
+                if (isVideo(item.mimeType)) {
+                    builder.setPositiveButton("Watch", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                            closeDrawerVideos();
+
+                            openVideo(item);
+                        }
+                    });
+                }
+                else {
+                    builder.setPositiveButton("Open", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             dialogInterface.dismiss();
@@ -422,14 +443,10 @@ public class BrowserActivity extends AppCompatActivity {
 
                             updateCurrentPage(item.uri, true);
                         }
-                    })
-                    .setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            dialogInterface.dismiss();
-                        }
-                    })
-                    .show();
+                    });
+                }
+
+                alertDialog = builder.show();
             }
         });
 

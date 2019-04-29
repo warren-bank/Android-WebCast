@@ -33,14 +33,14 @@ public class BrowserConfigs {
              + "  {"
              + "    \"title\":    \"ABC News\","
              + "    \"uri\":      \"https://abclive2-lh.akamaihd.net/i/abc_live11@423404/master.m3u8\","
-             + "    \"mimeType\": null,"
-             + "    \"referer\":  null"
+             + "    \"mimeType\": \"application/x-mpegURL\","
+             + "    \"referer\":  \"https://abcnews.go.com/Live\""
              + "  },"
              + "  {"
              + "    \"title\":    \"CBS News\","
              + "    \"uri\":      \"https://www.cbsnews.com/common/video/dai_prod.m3u8\","
-             + "    \"mimeType\": null,"
-             + "    \"referer\":  null"
+             + "    \"mimeType\": \"application/x-mpegURL\","
+             + "    \"referer\":  \"https://www.cbsnews.com/live/\""
              + "  }"
              + "]";
     }
