@@ -68,7 +68,8 @@ import java.util.ArrayList;
 
   }
 
-  private static final String USER_AGENT = "ExoFullScreenDemoPlayer";
+  private static final String USER_AGENT =
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36";
   private static final DefaultHttpDataSourceFactory DATA_SOURCE_FACTORY =
       new DefaultHttpDataSourceFactory(USER_AGENT);
 
@@ -414,8 +415,15 @@ import java.util.ArrayList;
     }
   }
 
+  private static void setHttpRequestHeader(String name, String value) {
+    DATA_SOURCE_FACTORY.getDefaultRequestProperties().set(name, value);
+  }
+
   private static MediaSource buildMediaSource(VideoSource sample) {
     Uri uri = Uri.parse(sample.uri);
+    if (sample.referer != null) {
+      setHttpRequestHeader("referer", sample.referer);
+    }
     switch (sample.mimeType) {
       case MimeTypes.APPLICATION_M3U8:
         return new HlsMediaSource.Factory(DATA_SOURCE_FACTORY).createMediaSource(uri);
