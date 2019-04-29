@@ -110,6 +110,7 @@ public class BrowserActivity extends AppCompatActivity {
 
     private View parentView;
     private Snackbar snackbar;
+    private AlertDialog alertDialog;
 
     // ---------------------------------------------------------------------------------------------
     // Lifecycle Events:
@@ -190,6 +191,11 @@ public class BrowserActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        if ((alertDialog instanceof AlertDialog) && alertDialog.isShowing()) {
+            alertDialog.dismiss();
+            return;
+        }
+
         if ((snackbar instanceof Snackbar) && snackbar.isShown()) {
             snackbar.dismiss();
             return;
@@ -289,14 +295,15 @@ public class BrowserActivity extends AppCompatActivity {
     }
 
     private void confirm_removeSavedBookmark(DrawerListItem item) {
-        new AlertDialog.Builder(this)
+        alertDialog = new AlertDialog.Builder(BrowserActivity.this)
             .setTitle("DELETE")
             .setMessage("Confirm that you want to delete this bookmark?")
             .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-                    removeSavedBookmark(item);
                     dialogInterface.dismiss();
+
+                    removeSavedBookmark(item);
                 }
             })
             .setNegativeButton("NO", new DialogInterface.OnClickListener() {
@@ -333,6 +340,34 @@ public class BrowserActivity extends AppCompatActivity {
         drawer_right_videos_arrayAdapter.notifyDataSetChanged();
     }
 
+    private void removeSavedVideo(DrawerListItem item) {
+        if (drawer_right_videos_arrayList.remove(item)) {
+            // notify the ListView adapter
+            drawer_right_videos_arrayAdapter.notifyDataSetChanged();
+        }
+    }
+
+    private void confirm_removeSavedVideo(DrawerListItem item) {
+        alertDialog = new AlertDialog.Builder(BrowserActivity.this)
+            .setTitle("DELETE")
+            .setMessage("Confirm that you want to delete this video?")
+            .setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
+
+                    removeSavedVideo(item);
+                }
+            })
+            .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
+                }
+            })
+            .show();
+    }
+
     protected boolean isVideo(String mimeType) {
         switch (mimeType) {
             case MimeTypes.APPLICATION_M3U8:
@@ -355,23 +390,26 @@ public class BrowserActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 DrawerListItem item = (DrawerListItem) parent.getItemAtPosition(position);
-                snackbar = Snackbar.make(parentView, item.uri, Snackbar.LENGTH_INDEFINITE);
 
-                // allow URL to display using up to 5 lines of text
-                TextView textView = (TextView) snackbar.getView().findViewById(android.support.design.R.id.snackbar_text);
-                textView.setMaxLines(5);
+                alertDialog = new AlertDialog.Builder(BrowserActivity.this)
+                    .setTitle("Bookmark URL")
+                    .setMessage(item.uri)
+                    .setPositiveButton("Open", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                            closeDrawerBookmarks();
 
-                snackbar.setAction("Open", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        snackbar.dismiss();
-                        closeDrawerBookmarks();
-
-                        updateCurrentPage(item.uri, true);
-                    }
-                });
-
-                snackbar.show();
+                            updateCurrentPage(item.uri, true);
+                        }
+                    })
+                    .setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                        }
+                    })
+                    .show();
             }
         });
 
@@ -392,34 +430,50 @@ public class BrowserActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 DrawerListItem item = (DrawerListItem) parent.getItemAtPosition(position);
-                snackbar = Snackbar.make(parentView, item.uri, Snackbar.LENGTH_INDEFINITE);
 
-                // allow URL to display using up to 5 lines of text
-                TextView textView = (TextView) snackbar.getView().findViewById(android.support.design.R.id.snackbar_text);
-                textView.setMaxLines(5);
+                AlertDialog.Builder builder = new AlertDialog.Builder(BrowserActivity.this)
+                    .setTitle("Video URL")
+                    .setMessage(item.uri)
+                    // button #1 of 3
+                    .setPositiveButton("Watch", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                            closeDrawerVideos();
+
+                            openVideo(item);
+                        }
+                    })
+                    // button #3 of 3
+                    .setNeutralButton("Dismiss", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                        }
+                    });
 
                 if (drawer_left_bookmarks_arrayList.contains(item) == false) {
-                    snackbar.setAction("Bookmark", new View.OnClickListener() {
+                    // button #2 of 3
+                    builder.setNegativeButton("Bookmark", new DialogInterface.OnClickListener() {
                         @Override
-                        public void onClick(View view) {
-                            snackbar.dismiss();
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
 
                             addSavedBookmark(item);
                         }
                     });
                 }
 
-                snackbar.setAction("Watch", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        snackbar.dismiss();
-                        closeDrawerVideos();
+                alertDialog = builder.show();
+            }
+        });
 
-                        openVideo(item);
-                    }
-                });
-
-                snackbar.show();
+        drawer_right_videos_listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                DrawerListItem item = (DrawerListItem) parent.getItemAtPosition(position);
+                confirm_removeSavedVideo(item);
+                return true;
             }
         });
     }
@@ -429,11 +483,11 @@ public class BrowserActivity extends AppCompatActivity {
 
         drawer_left_bookmarks_listView     = (ListView)findViewById(R.id.drawer_left_bookmarks);
         drawer_left_bookmarks_arrayList    = getSavedBookmarks();
-        drawer_left_bookmarks_arrayAdapter = new ArrayAdapter<DrawerListItem>(this, R.layout.singleline_listitem, drawer_left_bookmarks_arrayList);
+        drawer_left_bookmarks_arrayAdapter = new ArrayAdapter<DrawerListItem>(BrowserActivity.this, R.layout.singleline_listitem, drawer_left_bookmarks_arrayList);
 
         drawer_right_videos_listView       = (ListView)findViewById(R.id.drawer_right_videos);
         drawer_right_videos_arrayList      = new ArrayList<DrawerListItem>();
-        drawer_right_videos_arrayAdapter   = new ArrayAdapter<DrawerListItem>(this, R.layout.singleline_listitem, drawer_right_videos_arrayList);
+        drawer_right_videos_arrayAdapter   = new ArrayAdapter<DrawerListItem>(BrowserActivity.this, R.layout.singleline_listitem, drawer_right_videos_arrayList);
 
         initDrawerBookmarks();
         initDrawerVideos();
@@ -490,7 +544,7 @@ public class BrowserActivity extends AppCompatActivity {
     // ---------------------------------------------------------------------------------------------
 
     private void initWebView() {
-        webViewClient = new BrowserWebViewClient(this) {
+        webViewClient = new BrowserWebViewClient(BrowserActivity.this) {
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 super.onPageStarted(view, url, favicon);
