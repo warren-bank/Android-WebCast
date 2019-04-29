@@ -32,8 +32,6 @@ import com.google.gson.reflect.TypeToken;
 import com.google.android.exoplayer2.util.MimeTypes;
 
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.Set;
 
 public class BrowserActivity extends AppCompatActivity {
 
@@ -52,11 +50,13 @@ public class BrowserActivity extends AppCompatActivity {
         public final String uri;
         public final String title;
         public final String mimeType;
+        public final String referer;
 
-        public DrawerListItem(String uri, String title, String mimeType) {
+        public DrawerListItem(String uri, String title, String mimeType, String referer) {
             this.uri      = uri;
             this.title    = title;
             this.mimeType = mimeType;
+            this.referer  = referer;
         }
 
         @Override
@@ -72,17 +72,10 @@ public class BrowserActivity extends AppCompatActivity {
             return (this.uri == that_uri);
         }
 
-        public static ArrayList<DrawerListItem> fromMap(Map<String, String> bookmarks) {
-            ArrayList<DrawerListItem> arrayList = new ArrayList<DrawerListItem>();
-            Set<String> keys = bookmarks.keySet();
-            String uri;
-            DrawerListItem item;
-
-            for(String title: keys) {
-                uri = bookmarks.get(title);
-                item = new DrawerListItem(uri, title, /* mimeType= */ null);
-                arrayList.add(item);
-            }
+        public static ArrayList<DrawerListItem> fromJson(String jsonBookmarks) {
+            ArrayList<DrawerListItem> arrayList;
+            Gson gson = new Gson();
+            arrayList = gson.fromJson(jsonBookmarks, new TypeToken<ArrayList<DrawerListItem>>(){}.getType());
             return arrayList;
         }
     }
@@ -222,26 +215,19 @@ public class BrowserActivity extends AppCompatActivity {
     // ---------------------------------------------------------------------------------------------
 
     private ArrayList<DrawerListItem> getSavedBookmarks() {
-        ArrayList<DrawerListItem> savedBookmarks;
-
         SharedPreferences sharedPreferences = getSharedPreferences(PREFS_FILENAME, Context.MODE_PRIVATE);
         String jsonBookmarks = sharedPreferences.getString(PREF_BOOKMARKS, null);
 
-        if (jsonBookmarks != null) {
-            Gson gson = new Gson();
-            savedBookmarks = gson.fromJson(jsonBookmarks, new TypeToken<ArrayList<DrawerListItem>>(){}.getType());
-        }
-        else {
-            savedBookmarks = DrawerListItem.fromMap(
-                (Map<String, String>)BrowserConfigs.getDefaultBookmarks()
-            );
+        if (jsonBookmarks == null) {
+            jsonBookmarks = BrowserConfigs.getDefaultBookmarks();
 
             // update SharedPreferences
             SharedPreferences.Editor prefs_editor = sharedPreferences.edit();
-            prefs_editor.putString(PREF_BOOKMARKS, new Gson().toJson(savedBookmarks));
+            prefs_editor.putString(PREF_BOOKMARKS, jsonBookmarks);
             prefs_editor.apply();
         }
 
+        ArrayList<DrawerListItem> savedBookmarks = DrawerListItem.fromJson(jsonBookmarks);
         return savedBookmarks;
     }
 
@@ -332,22 +318,18 @@ public class BrowserActivity extends AppCompatActivity {
         drawer_right_videos_arrayAdapter.notifyDataSetChanged();
     }
 
-    protected void addSavedVideo(String uri, String mimeType) {
+    protected void addSavedVideo(String uri, String mimeType, String referer) {
         DrawerListItem item = new DrawerListItem(
             uri,
             /* title= */ null,
-            mimeType
+            mimeType,
+            referer
         );
 
         drawer_right_videos_arrayList.add(item);
 
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                // notify the ListView adapter
-                drawer_right_videos_arrayAdapter.notifyDataSetChanged();
-            }
-        });
+        // notify the ListView adapter
+        drawer_right_videos_arrayAdapter.notifyDataSetChanged();
     }
 
     protected boolean isVideo(String mimeType) {
@@ -585,7 +567,8 @@ public class BrowserActivity extends AppCompatActivity {
                 DrawerListItem item = new DrawerListItem(
                     /* uri=      */ current_page_url,
                     /* title=    */ webView.getTitle().trim(),
-                    /* mimeType= */ null
+                    /* mimeType= */ null,
+                    /* referer=  */ webView.getUrl()
                 );
                 toggleSavedBookmark(item);
                 return true;

@@ -11,7 +11,6 @@ public class BrowserDownloadListener implements DownloadListener {
     }
 
     public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimetype, long contentLength) {
-        this.client.process_URL(url);
+        client.process_URL(url);
     }
-
 }
