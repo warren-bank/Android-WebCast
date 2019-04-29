@@ -66,11 +66,11 @@ public class BrowserActivity extends AppCompatActivity {
         }
 
         public boolean equal(DrawerListItem that) {
-            return (this.uri == that.uri);
+            return (this.uri.equals(that.uri));
         }
 
         public boolean equal(String that_uri) {
-            return (this.uri == that_uri);
+            return (this.uri.equals(that_uri));
         }
 
         public static ArrayList<DrawerListItem> fromJson(String jsonBookmarks) {
@@ -78,6 +78,24 @@ public class BrowserActivity extends AppCompatActivity {
             Gson gson = new Gson();
             arrayList = gson.fromJson(jsonBookmarks, new TypeToken<ArrayList<DrawerListItem>>(){}.getType());
             return arrayList;
+        }
+
+        // helpers
+
+        public static boolean contains(ArrayList<DrawerListItem> items, DrawerListItem item) {
+            for (int i=0; i < items.size(); i++) {
+                DrawerListItem nextItem = items.get(i);
+                if (nextItem.equal(item)) return true;
+            }
+            return false;
+        }
+
+        public static boolean contains(ArrayList<DrawerListItem> items, String uri) {
+            for (int i=0; i < items.size(); i++) {
+                DrawerListItem nextItem = items.get(i);
+                if (nextItem.equal(uri)) return true;
+            }
+            return false;
         }
     }
 
@@ -239,7 +257,7 @@ public class BrowserActivity extends AppCompatActivity {
     }
 
     private void updateSavedBookmark(DrawerListItem item, boolean is_add) {
-        boolean is_saved = drawer_left_bookmarks_arrayList.contains(item);
+        boolean is_saved = DrawerListItem.contains(drawer_left_bookmarks_arrayList, item);
         String message = null;
 
         // sanity checks
@@ -282,7 +300,7 @@ public class BrowserActivity extends AppCompatActivity {
     }
 
     private void toggleSavedBookmark(DrawerListItem item) {
-        boolean is_add = (drawer_left_bookmarks_arrayList.contains(item) == false);
+        boolean is_add = (DrawerListItem.contains(drawer_left_bookmarks_arrayList, item) == false);
         updateSavedBookmark(item, is_add);
     }
 
@@ -452,7 +470,7 @@ public class BrowserActivity extends AppCompatActivity {
                         }
                     });
 
-                if (drawer_left_bookmarks_arrayList.contains(item) == false) {
+                if (DrawerListItem.contains(drawer_left_bookmarks_arrayList, item) == false) {
                     // button #2 of 3
                     builder.setNegativeButton("Bookmark", new DialogInterface.OnClickListener() {
                         @Override
@@ -639,7 +657,7 @@ public class BrowserActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.browser, menu);
 
         if (drawer_left_bookmarks_arrayList.size() > 0) {
-            if (drawer_left_bookmarks_arrayList.contains(current_page_url)) {
+            if (DrawerListItem.contains(drawer_left_bookmarks_arrayList, current_page_url)) {
                 menu.getItem(0).setIcon(R.drawable.ic_bookmark_saved);
             } else {
                 menu.getItem(0).setIcon(R.drawable.ic_bookmark_unsaved);

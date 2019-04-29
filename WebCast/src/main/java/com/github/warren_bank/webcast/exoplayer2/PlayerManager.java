@@ -202,7 +202,7 @@ import java.util.ArrayList;
       }
     }
     mediaQueue.remove(itemIndex);
-    if (itemIndex == currentItemIndex && itemIndex == mediaQueue.size()) {
+    if ((itemIndex == currentItemIndex) && (itemIndex == mediaQueue.size())) {
       maybeSetCurrentItemAndNotify(C.INDEX_UNSET);
     } else if (itemIndex < currentItemIndex) {
       maybeSetCurrentItemAndNotify(currentItemIndex - 1);
@@ -220,7 +220,7 @@ import java.util.ArrayList;
   public boolean moveItem(int fromIndex, int toIndex) {
     // Player update.
     concatenatingMediaSource.moveMediaSource(fromIndex, toIndex);
-    if (currentPlayer == castPlayer && castPlayer.getPlaybackState() != Player.STATE_IDLE) {
+    if ((currentPlayer == castPlayer) && (castPlayer.getPlaybackState() != Player.STATE_IDLE)) {
       Timeline castTimeline = castPlayer.getCurrentTimeline();
       int periodCount = castTimeline.getPeriodCount();
       if (periodCount <= fromIndex || periodCount <= toIndex) {
