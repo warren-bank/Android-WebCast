@@ -23,7 +23,7 @@ final class VideoSource {
     String referer
   ) {
     this.uri      = uri;
-    this.mimeType = mimeType.toLowerCase();
+    this.mimeType = mimeType;
     this.referer  = referer;
   }
 
