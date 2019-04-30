@@ -24,6 +24,9 @@ const headers_update = {
 
 const updateNetworkRequestInfo = networkRequestInfo => {
   if (networkRequestInfo) {
+    // prevent CORS preflight requests
+    networkRequestInfo.withCredentials = false
+
     if (!networkRequestInfo.headers) {
       networkRequestInfo.headers = {}
     }
