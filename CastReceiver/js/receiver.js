@@ -3,6 +3,7 @@
 const context        = cast.framework.CastReceiverContext.getInstance()
 const playerManager  = context.getPlayerManager()
 const playbackConfig = new cast.framework.PlaybackConfig()
+const castOptions    = new cast.framework.CastReceiverOptions()
 
 var refererHeader
 
@@ -33,7 +34,6 @@ const updateNetworkRequestInfo = networkRequestInfo => {
       networkRequestInfo.headers['referer'] = refererHeader
     }
   }
-  return networkRequestInfo
 }
 
 playerManager.setMessageInterceptor(
@@ -43,5 +43,8 @@ playerManager.setMessageInterceptor(
 
 playbackConfig.manifestRequestHandler = updateNetworkRequestInfo
 playbackConfig.segmentRequestHandler  = updateNetworkRequestInfo
+playbackConfig.licenseRequestHandler  = updateNetworkRequestInfo
 
-context.start({playbackConfig})
+castOptions.playbackConfig = playbackConfig
+
+context.start(castOptions)
