@@ -23,10 +23,15 @@ const headers_update = {
 }
 
 const updateNetworkRequestInfo = networkRequestInfo => {
-  if (networkRequestInfo && networkRequestInfo.headers) {
-    headers_remove.forEach(name => {
-      delete networkRequestInfo.headers[name]
-    })
+  if (networkRequestInfo) {
+    if (!networkRequestInfo.headers) {
+      networkRequestInfo.headers = {}
+    }
+    else {
+      headers_remove.forEach(name => {
+        delete networkRequestInfo.headers[name]
+      })
+    }
 
     Object.assign(networkRequestInfo.headers, headers_update)
 
