@@ -70,6 +70,9 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
     // Getting the cast context later than onStart can cause device discovery not to take place.
     try {
       castContext = CastContext.getSharedInstance(this);
+
+      String receiverApplicationId = getResources().getString(R.string.cast_receiver_id);
+      castContext.setReceiverApplicationId(receiverApplicationId);
     } catch (RuntimeException e) {
       Throwable cause = e.getCause();
       while (cause != null) {
