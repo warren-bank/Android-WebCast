@@ -1,0 +1,35 @@
+--------------------------------------------------------------------------------
+
+https://androidcommunity.com/cheapcast-app-arrives-to-make-any-android-device-a-chromecast-20130812/
+
+standard sizes:
+===============
+
+https://i0.wp.com/androidcommunity.com/wp-content/uploads/2013/08/cheapcast_logo.png?w=512&ssl=1
+  512 x 512 (png w/ transparent background)
+https://i0.wp.com/androidcommunity.com/wp-content/uploads/2013/08/cheapcast_logo.png?w=256&ssl=1
+  256 x 256
+https://i0.wp.com/androidcommunity.com/wp-content/uploads/2013/08/cheapcast_logo.png?w=128&ssl=1
+  128 x 128
+https://i0.wp.com/androidcommunity.com/wp-content/uploads/2013/08/cheapcast_logo.png?w=96&ssl=1
+  96 x 96
+https://i0.wp.com/androidcommunity.com/wp-content/uploads/2013/08/cheapcast_logo.png?w=64&ssl=1
+  64 x 64
+https://i0.wp.com/androidcommunity.com/wp-content/uploads/2013/08/cheapcast_logo.png?w=32&ssl=1
+  32 x 32
+
+Android launcher sizes:
+=======================
+
+https://i0.wp.com/androidcommunity.com/wp-content/uploads/2013/08/cheapcast_logo.png?w=192&ssl=1
+  192 x 192 (mipmap-xxxhdpi)
+https://i0.wp.com/androidcommunity.com/wp-content/uploads/2013/08/cheapcast_logo.png?w=144&ssl=1
+  144 x 144 (mipmap-xxhdpi)
+https://i0.wp.com/androidcommunity.com/wp-content/uploads/2013/08/cheapcast_logo.png?w=96&ssl=1
+  96 x 96   (mipmap-xhdpi)
+https://i0.wp.com/androidcommunity.com/wp-content/uploads/2013/08/cheapcast_logo.png?w=72&ssl=1
+  72 x 72   (mipmap-hdpi)
+https://i0.wp.com/androidcommunity.com/wp-content/uploads/2013/08/cheapcast_logo.png?w=48&ssl=1
+  48 x 48   (mipmap-mdpi)
+
+--------------------------------------------------------------------------------

@@ -1,0 +1,62 @@
+--------------------------------------------------------------------------------
+
+https://github.com/googlecast/Cast-Player-Sample
+  receiver app: reference implementation
+  api: cast.player.api.*
+  status:
+    * (404) deleted
+
+https://developers.google.com/cast/docs/custom_receiver
+  receiver app: docs
+  api: cast.player.api.*
+
+https://developers.google.com/cast/docs/reference/player/index-all
+
+https://developers.google.com/cast/docs/reference/player/cast.player.api.Host#updateManifestRequestInfo
+https://developers.google.com/cast/docs/reference/player/cast.player.api.Host#updateSegmentRequestInfo
+
+https://developers.google.com/cast/docs/reference/player/cast.player.api.RequestInfo.html#headers
+
+--------------------------------------------------------------------------------
+
+https://github.com/googlecast/CastReceiver
+  receiver app: reference implementation
+  api: cast.framework.*
+  summary:
+    * serves as an example for how to access and call api methods
+    * the customizations are largely non-functional
+    * this framework makes it possible to write a minimal app in only a few lines of code
+
+https://developers.google.com/cast/docs/caf_receiver/
+https://developers.google.com/cast/docs/caf_receiver/basic#create-a-basic-receiver-app
+https://developers.google.com/cast/docs/caf_receiver/advanced#creating-a-customized-receiver-app
+  receiver app: docs
+  api: cast.framework.*
+
+https://developers.google.com/cast/docs/reference/caf_receiver/index-all
+
+https://developers.google.com/cast/docs/reference/caf_receiver/cast.framework.PlaybackConfig#manifestRequestHandler
+https://developers.google.com/cast/docs/reference/caf_receiver/cast.framework.PlaybackConfig#segmentRequestHandler
+
+https://developers.google.com/cast/docs/reference/caf_receiver/cast.framework.NetworkRequestInfo#headers
+
+https://developers.google.com/cast/docs/reference/caf_receiver/cast.framework.PlayerManager.html#setMessageInterceptor
+https://developers.google.com/cast/docs/reference/caf_receiver/cast.framework.messages.html#.MessageType
+https://developers.google.com/cast/docs/reference/caf_receiver/cast.framework.messages.RequestData.html
+https://developers.google.com/cast/docs/reference/caf_receiver/cast.framework.messages.LoadRequestData.html
+https://developers.google.com/cast/docs/reference/caf_receiver/cast.framework.messages.LoadRequestData#customData
+https://developers.google.com/cast/docs/reference/caf_receiver/cast.framework.messages.LoadRequestData#media
+https://developers.google.com/cast/docs/reference/caf_receiver/cast.framework.messages.MediaInformation#customData
+
+https://developers.google.com/cast/docs/reference/caf_receiver/cast.framework.ui
+https://developers.google.com/cast/docs/caf_receiver/customize_ui
+  the reference app is customizing the UI in ways that I dislike..
+
+--------------------------------------------------------------------------------
+
+https://developers.google.com/cast/docs/developers
+https://developers.google.com/cast/docs/registration
+
+https://cast.google.com/publish
+
+--------------------------------------------------------------------------------
