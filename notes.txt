@@ -60,3 +60,44 @@ https://developers.google.com/cast/docs/registration
 https://cast.google.com/publish
 
 --------------------------------------------------------------------------------
+
+New Custom Receiver
+===================
+
+Name                     = WebCast
+Type                     = Custom Receiver
+Receiver Application URL = https://warren-bank.github.io/Android-WebCast/CastReceiver/receiver.html
+Guest Mode               = False
+Google Cast for Audio    = False
+Sender Details > Android:
+  Package Name           = com.github.warren_bank.webcast
+  Intent to Join URI     = [none]
+List App Details         = No
+Category                 = TV & Movies
+Countries                = All
+Title                    = WebCast
+Description              = Cast web videos to Google Chromecast from Android.
+Icon (512 x 512)         = https://github.com/warren-bank/Android-WebCast/raw/gh-pages/CastReceiver/img/logo_512x512.png
+Translations             = [auto]
+Application ID           = 6BFED418
+
+docs:
+=====
+
+https://developers.google.com/cast/docs/guest_mode
+https://developers.google.com/cast/docs/audio/
+https://developers.google.com/cast/docs/android_sender/intent_to_join
+
+management:
+===========
+
+https://cast.google.com/publish/#/applications/publish/6BFED418
+https://cast.google.com/publish/#/applications/edit/6BFED418
+https://cast.google.com/publish/#/applications/statistics/6BFED418
+
+lookup published app by ID:
+===========================
+
+https://clients3.google.com/cast/chromecast/device/app?a=6BFED418
+
+--------------------------------------------------------------------------------
