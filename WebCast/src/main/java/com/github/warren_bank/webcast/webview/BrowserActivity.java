@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -201,6 +202,14 @@ public class BrowserActivity extends AppCompatActivity {
         super.onPause();
 
         webView.loadUrl(default_page_url);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        webView.clearCache(true);
+        webView.clearHistory();
     }
 
     // ---------------------------------------------------------------------------------------------
@@ -611,12 +620,23 @@ public class BrowserActivity extends AppCompatActivity {
         webView.setWebViewClient(webViewClient);
         webView.setDownloadListener(downloadListener);
 
-        webView.getSettings().setLoadWithOverviewMode(true);
-        webView.getSettings().setUseWideViewPort(true);
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setLoadWithOverviewMode(true);
+        webSettings.setUseWideViewPort(true);
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setUserAgentString(
+            getResources().getString(R.string.user_agent)
+        );
+        if (Build.VERSION.SDK_INT >= 17) {
+            webSettings.setMediaPlaybackRequiresUserGesture(false);
+        }
+        if (Build.VERSION.SDK_INT >= 21) {
+            webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        }
+
+        webView.setHorizontalScrollBarEnabled(true);
         webView.clearCache(true);
         webView.clearHistory();
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.setHorizontalScrollBarEnabled(true);
     }
 
     private void updateCurrentPage(String uri, boolean loadUrl) {

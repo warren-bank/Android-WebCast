@@ -15,6 +15,8 @@
  */
 package com.github.warren_bank.webcast.exoplayer2;
 
+import com.github.warren_bank.webcast.R;
+
 import android.content.Context;
 import android.net.Uri;
 import android.support.annotation.Nullable;
@@ -68,24 +70,19 @@ import java.util.ArrayList;
 
   }
 
-  private static final String USER_AGENT =
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36";
-  private static final DefaultHttpDataSourceFactory DATA_SOURCE_FACTORY =
-      new DefaultHttpDataSourceFactory(USER_AGENT);
-
+  private final QueuePositionListener queuePositionListener;
   private final PlayerView localPlayerView;
   private final PlayerControlView castControlView;
+  private final FullScreenManager fullScreenManager;
+  private final ArrayList<VideoSource> mediaQueue;
+  private final ConcatenatingMediaSource concatenatingMediaSource;
   private final SimpleExoPlayer exoPlayer;
   private final CastPlayer castPlayer;
-  private final ArrayList<VideoSource> mediaQueue;
-  private final QueuePositionListener queuePositionListener;
-  private final ConcatenatingMediaSource concatenatingMediaSource;
+  private final DefaultHttpDataSourceFactory dataSourceFactory;
 
-  private boolean castMediaQueueCreationPending;
   private int currentItemIndex;
+  private boolean castMediaQueueCreationPending;
   private Player currentPlayer;
-
-  private FullScreenManager fullScreenManager;
 
   /**
    * @param queuePositionListener A {@link QueuePositionListener} for queue position changes.
@@ -102,9 +99,9 @@ import java.util.ArrayList;
       CastContext castContext,
       FullScreenManager fullScreenManager
     ) {
-    PlayerManager playerManager =
-        new PlayerManager(
-            queuePositionListener, localPlayerView, castControlView, context, castContext, fullScreenManager);
+    PlayerManager playerManager = new PlayerManager(
+        queuePositionListener, localPlayerView, castControlView, context, castContext, fullScreenManager
+    );
     playerManager.init();
     return playerManager;
   }
@@ -121,20 +118,24 @@ import java.util.ArrayList;
     this.localPlayerView = localPlayerView;
     this.castControlView = castControlView;
     this.fullScreenManager = fullScreenManager;
-    mediaQueue = new ArrayList<>();
-    currentItemIndex = C.INDEX_UNSET;
-    concatenatingMediaSource = new ConcatenatingMediaSource();
+    this.mediaQueue = new ArrayList<>();
+    this.concatenatingMediaSource = new ConcatenatingMediaSource();
 
     DefaultTrackSelector trackSelector = new DefaultTrackSelector();
     RenderersFactory renderersFactory = new DefaultRenderersFactory(context);
-    exoPlayer = ExoPlayerFactory.newSimpleInstance(context, renderersFactory, trackSelector);
-    exoPlayer.addListener(this);
-    localPlayerView.setPlayer(exoPlayer);
+    this.exoPlayer = ExoPlayerFactory.newSimpleInstance(context, renderersFactory, trackSelector);
+    this.exoPlayer.addListener(this);
+    this.localPlayerView.setPlayer(this.exoPlayer);
 
-    castPlayer = new CastPlayer(castContext);
-    castPlayer.addListener(this);
-    castPlayer.setSessionAvailabilityListener(this);
-    castControlView.setPlayer(castPlayer);
+    this.castPlayer = new CastPlayer(castContext);
+    this.castPlayer.addListener(this);
+    this.castPlayer.setSessionAvailabilityListener(this);
+    this.castControlView.setPlayer(this.castPlayer);
+
+    String userAgent = context.getResources().getString(R.string.user_agent);
+    this.dataSourceFactory = new DefaultHttpDataSourceFactory(userAgent);
+
+    this.currentItemIndex = C.INDEX_UNSET;
   }
 
   // Queue manipulation methods.
@@ -415,28 +416,28 @@ import java.util.ArrayList;
     }
   }
 
-  private static void setHttpRequestHeader(String name, String value) {
-    DATA_SOURCE_FACTORY.getDefaultRequestProperties().set(name, value);
+  private void setHttpRequestHeader(String name, String value) {
+    dataSourceFactory.getDefaultRequestProperties().set(name, value);
   }
 
-  private static MediaSource buildMediaSource(VideoSource sample) {
+  private MediaSource buildMediaSource(VideoSource sample) {
     Uri uri = Uri.parse(sample.uri);
     if (sample.referer != null) {
       setHttpRequestHeader("referer", sample.referer);
     }
     switch (sample.mimeType) {
       case MimeTypes.APPLICATION_M3U8:
-        return new HlsMediaSource.Factory(DATA_SOURCE_FACTORY).createMediaSource(uri);
+        return new HlsMediaSource.Factory(dataSourceFactory).createMediaSource(uri);
       case MimeTypes.APPLICATION_MPD:
-        return new DashMediaSource.Factory(DATA_SOURCE_FACTORY).createMediaSource(uri);
+        return new DashMediaSource.Factory(dataSourceFactory).createMediaSource(uri);
       case MimeTypes.APPLICATION_SS:
-        return new SsMediaSource.Factory(DATA_SOURCE_FACTORY).createMediaSource(uri);
+        return new SsMediaSource.Factory(dataSourceFactory).createMediaSource(uri);
       default:
-        return new ExtractorMediaSource.Factory(DATA_SOURCE_FACTORY).createMediaSource(uri);
+        return new ExtractorMediaSource.Factory(dataSourceFactory).createMediaSource(uri);
     }
   }
 
-  private static MediaQueueItem buildMediaQueueItem(VideoSource sample) {
+  private MediaQueueItem buildMediaQueueItem(VideoSource sample) {
     MediaMetadata movieMetadata = new MediaMetadata(MediaMetadata.MEDIA_TYPE_MOVIE);
   //movieMetadata.putString(MediaMetadata.KEY_TITLE, sample.uri);
 
