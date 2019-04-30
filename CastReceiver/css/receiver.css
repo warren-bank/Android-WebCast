@@ -4,6 +4,7 @@ body {
 }
 
 cast-media-player {
+  --splash-background: center no-repeat;
   --splash-image: url('img/logo_512x512.png');
-  --splash-size: cover;
+  --splash-size: contain;
 }
