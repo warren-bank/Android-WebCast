@@ -114,3 +114,13 @@ window.location.reload(true)
 cast.framework.CastReceiverContext.getInstance().setLoggerLevel(cast.framework.LoggerLevel.DEBUG)
 
 --------------------------------------------------------------------------------
+
+issue (as identified by errors in console log):
+===============================================
+
+Refused to set unsafe header "user-agent"
+Refused to set unsafe header "referer"
+   @ media_player.js:49
+  => https://www.gstatic.com/cast/sdk/libs/mediaplayer/1.0.0/media_player.js
+
+--------------------------------------------------------------------------------
