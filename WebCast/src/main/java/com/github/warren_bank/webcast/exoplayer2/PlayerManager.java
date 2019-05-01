@@ -127,6 +127,9 @@ import java.util.ArrayList;
     this.exoPlayer.addListener(this);
     this.localPlayerView.setPlayer(this.exoPlayer);
 
+    ExoPlayerEventLogger exoLogger = new ExoPlayerEventLogger(trackSelector);
+    this.exoPlayer.addListener(exoLogger);
+
     this.castPlayer = new CastPlayer(castContext);
     this.castPlayer.addListener(this);
     this.castPlayer.setSessionAvailabilityListener(this);
