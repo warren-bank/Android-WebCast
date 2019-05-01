@@ -423,6 +423,10 @@ import java.util.ArrayList;
   private MediaSource buildMediaSource(VideoSource sample) {
     Uri uri = Uri.parse(sample.uri);
     if (sample.referer != null) {
+      Uri referer   = Uri.parse(sample.referer);
+      String origin = referer.getScheme() + "://" + referer.getAuthority();
+
+      setHttpRequestHeader("origin",  origin);
       setHttpRequestHeader("referer", sample.referer);
     }
     switch (sample.mimeType) {
