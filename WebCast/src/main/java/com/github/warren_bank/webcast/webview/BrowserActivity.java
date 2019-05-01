@@ -437,7 +437,7 @@ public class BrowserActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             dialogInterface.dismiss();
-                            closeDrawerVideos();
+                            closeDrawerBookmarks();
 
                             openVideo(item);
                         }
