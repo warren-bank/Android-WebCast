@@ -1,0 +1,10 @@
+body {
+  background-color: #666;
+  --playback-logo-image: url('img/logo_096x096.png');
+}
+
+cast-media-player {
+  --splash-background: center no-repeat;
+  --splash-image: url('img/logo_512x512.png');
+  --splash-size: contain;
+}
