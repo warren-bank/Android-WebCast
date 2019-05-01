@@ -101,3 +101,16 @@ lookup published app by ID:
 https://clients3.google.com/cast/chromecast/device/app?a=6BFED418
 
 --------------------------------------------------------------------------------
+
+https://developers.google.com/cast/docs/debugging
+
+open Chrome Inspector:
+======================
+chrome://inspect
+
+run in console:
+===============
+window.location.reload(true)
+cast.framework.CastReceiverContext.getInstance().setLoggerLevel(cast.framework.LoggerLevel.DEBUG)
+
+--------------------------------------------------------------------------------
