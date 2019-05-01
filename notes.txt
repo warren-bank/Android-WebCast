@@ -123,4 +123,10 @@ Refused to set unsafe header "referer"
    @ media_player.js:49
   => https://www.gstatic.com/cast/sdk/libs/mediaplayer/1.0.0/media_player.js
 
+problem is a result of the spec for XHR/fetch:
+==============================================
+
+https://xhr.spec.whatwg.org/#dom-xmlhttprequest-setrequestheader
+https://fetch.spec.whatwg.org/#forbidden-header-name
+
 --------------------------------------------------------------------------------
