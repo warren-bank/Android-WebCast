@@ -54,9 +54,6 @@ import com.google.android.gms.cast.framework.CastContext;
 
 import java.util.ArrayList;
 
-import org.json.JSONObject;
-import org.json.JSONException;
-
 /** Manages players and an internal media queue for the ExoPlayer/Full Screen demo app. */
 /* package */ final class PlayerManager
     implements EventListener, CastPlayer.SessionAvailabilityListener {
@@ -441,33 +438,16 @@ import org.json.JSONException;
   }
 
   private MediaQueueItem buildMediaQueueItem(VideoSource sample) {
-    MediaMetadata movieMetadata;
-    MediaInfo.Builder builder_MI;
-    MediaInfo mediaInfo;
-    MediaQueueItem mediaQueueItem;
-
-    movieMetadata = new MediaMetadata(MediaMetadata.MEDIA_TYPE_MOVIE);
+    MediaMetadata movieMetadata = new MediaMetadata(MediaMetadata.MEDIA_TYPE_MOVIE);
   //movieMetadata.putString(MediaMetadata.KEY_TITLE, sample.uri);
 
-    builder_MI = new MediaInfo.Builder(sample.uri)
+    MediaInfo mediaInfo = new MediaInfo.Builder(sample.uri)
         .setStreamType(MediaInfo.STREAM_TYPE_BUFFERED)
         .setContentType(sample.mimeType)
-        .setMetadata(movieMetadata);
+        .setMetadata(movieMetadata)
+        .build();
 
-    if (sample.referer != null) {
-        try {
-            JSONObject customData = new JSONObject();
-            customData.put("referer", sample.referer);
-
-            builder_MI.setCustomData(customData);
-        }
-        catch(JSONException e) {}
-    }
-
-    mediaInfo      = builder_MI.build();
-    mediaQueueItem = new MediaQueueItem.Builder(mediaInfo).build();
-
-    return mediaQueueItem;
+    return new MediaQueueItem.Builder(mediaInfo).build();
   }
 
 }
