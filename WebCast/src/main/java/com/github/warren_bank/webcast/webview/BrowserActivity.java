@@ -172,7 +172,9 @@ public class BrowserActivity extends AppCompatActivity {
         search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                updateCurrentPage(query, true);
+                String url = query.contains(":") ? query : ("http://" + query);
+
+                updateCurrentPage(url, true);
                 return true;
             }
 
@@ -622,7 +624,10 @@ public class BrowserActivity extends AppCompatActivity {
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setLoadWithOverviewMode(true);
-        webSettings.setUseWideViewPort(true);
+        webSettings.setSupportZoom(true);
+        webSettings.setBuiltInZoomControls(true);
+        webSettings.setDisplayZoomControls(true);
+        webSettings.setUseWideViewPort(false);
         webSettings.setJavaScriptEnabled(true);
         webSettings.setUserAgentString(
             getResources().getString(R.string.user_agent)
@@ -634,7 +639,9 @@ public class BrowserActivity extends AppCompatActivity {
             webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
         }
 
-        webView.setHorizontalScrollBarEnabled(true);
+        webView.setInitialScale(0);
+        webView.setHorizontalScrollBarEnabled(false);
+        webView.setVerticalScrollBarEnabled(false);
         webView.clearCache(true);
         webView.clearHistory();
     }

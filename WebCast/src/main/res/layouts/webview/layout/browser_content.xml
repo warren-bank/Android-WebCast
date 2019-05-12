@@ -30,19 +30,11 @@
         android:iconifiedByDefault="false"
         android:inputType="textUri" />
 
-    <!-- WebView w/ scrollbars -->
-    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <!-- WebView -->
+    <WebView
+        android:id="@+id/webView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fadeScrollbars="false"
-        android:scrollbarFadeDuration="0">
-
-        <WebView
-            android:id="@+id/webView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </android.support.v4.widget.NestedScrollView>
+        android:layout_height="wrap_content" />
 
     <!-- progress bar -->
     <ProgressBar
