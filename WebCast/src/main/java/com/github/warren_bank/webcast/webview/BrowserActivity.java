@@ -84,20 +84,30 @@ public class BrowserActivity extends AppCompatActivity {
 
         // helpers
 
-        public static boolean contains(ArrayList<DrawerListItem> items, DrawerListItem item) {
+        public static DrawerListItem find(ArrayList<DrawerListItem> items, DrawerListItem item) {
             for (int i=0; i < items.size(); i++) {
                 DrawerListItem nextItem = items.get(i);
-                if (nextItem.equal(item)) return true;
+                if (nextItem.equal(item)) return nextItem;
             }
-            return false;
+            return null;
+        }
+
+        public static DrawerListItem find(ArrayList<DrawerListItem> items, String uri) {
+            for (int i=0; i < items.size(); i++) {
+                DrawerListItem nextItem = items.get(i);
+                if (nextItem.equal(uri)) return nextItem;
+            }
+            return null;
+        }
+
+        public static boolean contains(ArrayList<DrawerListItem> items, DrawerListItem item) {
+            DrawerListItem matchingItem = find(items, item);
+            return (matchingItem != null);
         }
 
         public static boolean contains(ArrayList<DrawerListItem> items, String uri) {
-            for (int i=0; i < items.size(); i++) {
-                DrawerListItem nextItem = items.get(i);
-                if (nextItem.equal(uri)) return true;
-            }
-            return false;
+            DrawerListItem matchingItem = find(items, uri);
+            return (matchingItem != null);
         }
     }
 
@@ -295,7 +305,12 @@ public class BrowserActivity extends AppCompatActivity {
             message = "Bookmarked";
         }
         else {
-            drawer_left_bookmarks_arrayList.remove(item);
+            // up until this point, equality has been tested by value.
+            // now, equality will be tested by object reference.
+            //  => need to obtain reference to object in array.
+            DrawerListItem matchingItem = DrawerListItem.find(drawer_left_bookmarks_arrayList, item);
+
+            drawer_left_bookmarks_arrayList.remove(matchingItem);
             message = "Bookmark Removed";
         }
 
