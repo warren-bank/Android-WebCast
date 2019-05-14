@@ -175,6 +175,7 @@ public class BrowserActivity extends AppCompatActivity {
                 String url = query.contains(":") ? query : ("http://" + query);
 
                 updateCurrentPage(url, true);
+                BrowserUtils.hideKeyboard(BrowserActivity.this);
                 return true;
             }
 
@@ -190,6 +191,7 @@ public class BrowserActivity extends AppCompatActivity {
         parentView = (View)findViewById(R.id.main_content);
 
         updateCurrentPage(current_page_url, true);
+        toggleDrawerBookmarks();  // open
     }
 
     @Override
@@ -539,6 +541,13 @@ public class BrowserActivity extends AppCompatActivity {
 
         initDrawerBookmarks();
         initDrawerVideos();
+
+        drawer_layout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
+            @Override
+            public void onDrawerOpened (View drawerView) {
+                BrowserUtils.hideKeyboard(BrowserActivity.this);
+            }
+        });
     }
 
     private void toggleDrawer(View drawer, boolean animate) {

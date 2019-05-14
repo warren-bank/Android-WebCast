@@ -28,13 +28,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:iconifiedByDefault="false"
+        android:focusedByDefault="false"
         android:inputType="textUri" />
-
-    <!-- WebView -->
-    <WebView
-        android:id="@+id/webView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
     <!-- progress bar -->
     <ProgressBar
@@ -45,5 +40,14 @@
         android:layout_marginTop="-7dp"
         android:indeterminate="true"
         android:visibility="gone" />
+
+    <!-- WebView -->
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <requestFocus/>
+    </WebView>
 
 </LinearLayout>
