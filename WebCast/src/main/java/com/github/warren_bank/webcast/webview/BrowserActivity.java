@@ -18,6 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
@@ -104,13 +105,16 @@ public class BrowserActivity extends AppCompatActivity {
 
     private DrawerLayout                 drawer_layout;
 
+    private ViewGroup                    drawer_left_bookmarks_viewGroup;
     private ListView                     drawer_left_bookmarks_listView;
     private ArrayList<DrawerListItem>    drawer_left_bookmarks_arrayList;
     private ArrayAdapter<DrawerListItem> drawer_left_bookmarks_arrayAdapter;
 
+    private ViewGroup                    drawer_right_videos_viewGroup;
     private ListView                     drawer_right_videos_listView;
     private ArrayList<DrawerListItem>    drawer_right_videos_arrayList;
     private ArrayAdapter<DrawerListItem> drawer_right_videos_arrayAdapter;
+    private View                         drawer_right_videos_icon_watch_all;
 
     // Content: WebView ----------------------------------------------------------------------------
 
@@ -127,7 +131,7 @@ public class BrowserActivity extends AppCompatActivity {
 
     // Content: UI ---------------------------------------------------------------------------------
 
-    private View parentView;
+    private ViewGroup parentView;
     private Snackbar snackbar;
     private AlertDialog alertDialog;
 
@@ -188,7 +192,7 @@ public class BrowserActivity extends AppCompatActivity {
 
         // Content: UI -----------------------------------------------------------------------------
 
-        parentView = (View)findViewById(R.id.main_content);
+        parentView = (ViewGroup)findViewById(R.id.viewgroup_content);
 
         updateCurrentPage(current_page_url, true);
         toggleDrawerBookmarks();  // open
@@ -355,6 +359,9 @@ public class BrowserActivity extends AppCompatActivity {
 
         // notify the ListView adapter
         drawer_right_videos_arrayAdapter.notifyDataSetChanged();
+
+        // hide icon
+        drawer_right_videos_icon_watch_all.setVisibility(View.GONE);
     }
 
     protected void addSavedVideo(String uri, String mimeType, String referer) {
@@ -371,12 +378,22 @@ public class BrowserActivity extends AppCompatActivity {
 
         // notify the ListView adapter
         drawer_right_videos_arrayAdapter.notifyDataSetChanged();
+
+        // conditionally show icon
+        if (drawer_right_videos_arrayList.size() > 1) {
+            drawer_right_videos_icon_watch_all.setVisibility(View.VISIBLE);
+        }
     }
 
     private void removeSavedVideo(DrawerListItem item) {
         if (drawer_right_videos_arrayList.remove(item)) {
             // notify the ListView adapter
             drawer_right_videos_arrayAdapter.notifyDataSetChanged();
+
+            // conditionally hide icon
+            if (drawer_right_videos_arrayList.size() <= 1) {
+                drawer_right_videos_icon_watch_all.setVisibility(View.GONE);
+            }
         }
     }
 
@@ -526,18 +543,24 @@ public class BrowserActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        // hide icon
+        drawer_right_videos_icon_watch_all.setVisibility(View.GONE);
     }
 
     private void initDrawers() {
         drawer_layout                      = (DrawerLayout)findViewById(R.id.drawer_layout);
 
+        drawer_left_bookmarks_viewGroup    = (ViewGroup)findViewById(R.id.viewgroup_drawer_left_bookmarks);
         drawer_left_bookmarks_listView     = (ListView)findViewById(R.id.drawer_left_bookmarks);
         drawer_left_bookmarks_arrayList    = getSavedBookmarks();
         drawer_left_bookmarks_arrayAdapter = new ArrayAdapter<DrawerListItem>(BrowserActivity.this, R.layout.singleline_listitem, drawer_left_bookmarks_arrayList);
 
+        drawer_right_videos_viewGroup      = (ViewGroup)findViewById(R.id.viewgroup_drawer_right_videos);
         drawer_right_videos_listView       = (ListView)findViewById(R.id.drawer_right_videos);
         drawer_right_videos_arrayList      = new ArrayList<DrawerListItem>();
         drawer_right_videos_arrayAdapter   = new ArrayAdapter<DrawerListItem>(BrowserActivity.this, R.layout.singleline_listitem, drawer_right_videos_arrayList);
+        drawer_right_videos_icon_watch_all = (View)findViewById(R.id.action_watch_all_videos);
 
         initDrawerBookmarks();
         initDrawerVideos();
@@ -548,6 +571,18 @@ public class BrowserActivity extends AppCompatActivity {
                 BrowserUtils.hideKeyboard(BrowserActivity.this);
             }
         });
+
+        // resize each drawer to 85% of total screen width
+        BrowserUtils.resizeDrawerWidthByPercentOfScreen(
+            BrowserActivity.this,
+            getDrawerBookmarks(),
+            85.0f
+        );
+        BrowserUtils.resizeDrawerWidthByPercentOfScreen(
+            BrowserActivity.this,
+            getDrawerVideos(),
+            85.0f
+        );
     }
 
     private void toggleDrawer(View drawer, boolean animate) {
@@ -564,12 +599,12 @@ public class BrowserActivity extends AppCompatActivity {
     }
 
     private void toggleDrawerBookmarks() {
-        View drawer = (View)drawer_left_bookmarks_listView;
+        View drawer = getDrawerBookmarks();
         toggleDrawer(drawer);
     }
 
     private void toggleDrawerVideos() {
-        View drawer = (View)drawer_right_videos_listView;
+        View drawer = getDrawerVideos();
         toggleDrawer(drawer);
     }
 
@@ -587,13 +622,28 @@ public class BrowserActivity extends AppCompatActivity {
     }
 
     private boolean closeDrawerBookmarks() {
-        View drawer = (View)drawer_left_bookmarks_listView;
+        View drawer = getDrawerBookmarks();
         return closeDrawer(drawer);
     }
 
     private boolean closeDrawerVideos() {
-        View drawer = (View)drawer_right_videos_listView;
+        View drawer = getDrawerVideos();
         return closeDrawer(drawer);
+    }
+
+    private View getDrawerBookmarks() {
+        return (View)drawer_left_bookmarks_viewGroup;
+    }
+
+    private View getDrawerVideos() {
+        return (View)drawer_right_videos_viewGroup;
+    }
+
+    // drawer_right_videos_icon_watch_all
+    public void onClick_action_watch_all_videos(View view) {
+        closeDrawerVideos();
+
+        openAllVideos();
     }
 
     // ---------------------------------------------------------------------------------------------

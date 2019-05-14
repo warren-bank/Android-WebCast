@@ -22,6 +22,7 @@ import android.os.Bundle;
 import android.support.v4.graphics.ColorUtils;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
@@ -110,6 +111,11 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
     mediaQueueList.setLayoutManager(new LinearLayoutManager(this));
     mediaQueueList.setHasFixedSize(true);
     mediaQueueListAdapter = new MediaQueueListAdapter();
+
+    // add divider between list items
+    mediaQueueList.addItemDecoration(
+        new DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+    );
   }
 
   @Override

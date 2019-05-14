@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/viewgroup_drawer_right_videos"
+    android:layout_gravity="right"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerVertical="true"
+        android:padding="4dp"
+        android:theme="@style/AppTheme.DrawerMenu">
+
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="@string/action_videos" />
+
+        <ImageView
+            android:id="@+id/action_watch_all_videos"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:paddingLeft="8dp"
+            android:src="@drawable/ic_play_circle_outline"
+            android:onClick="onClick_action_watch_all_videos" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/drawer_right_videos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@style/AppTheme.DrawerList" />
+
+</LinearLayout>

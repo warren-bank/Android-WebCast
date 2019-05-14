@@ -6,6 +6,7 @@
     android:lines="1"
     android:maxLines="1"
     android:ellipsize="marquee"
+    android:textColor="@color/drawerListTextColor"
     android:textAppearance="?android:attr/textAppearanceListItem"
     android:gravity="center_vertical"
     android:paddingStart="?android:attr/listPreferredItemPaddingStart"

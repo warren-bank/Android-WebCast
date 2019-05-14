@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="windowBackground">#FAFAFA</color>
+    <color name="windowTextColor">#222222</color>
+
+    <color name="appBarBackground">#3F51B5</color>
+    <color name="appBarTextColor">#FFFFFF</color>
+
+    <color name="actionMenuBackground">#ECEFF1</color>
+    <color name="actionMenuTextColor">#222222</color>
+
+    <color name="drawerMenuBackground">#222222</color>
+    <color name="drawerMenuTextColor">#FFFFFF</color>
+
+    <color name="drawerListBackground">@color/windowBackground</color>
+    <color name="drawerListTextColor">@color/windowTextColor</color>
 </resources>

@@ -1,10 +1,10 @@
 package com.github.warren_bank.webcast.webview;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.view.inputmethod.InputMethodManager;
 import android.view.View;
+import android.view.ViewGroup;
 
 public class BrowserUtils {
 
@@ -20,11 +20,17 @@ public class BrowserUtils {
         hideKeyboard(context, view);
     }
 
-    public static void hideKeyboard(Fragment fragment) {
-        Context context = fragment.getContext();
-        View view       = fragment.getView().getRootView();
+    public static void resizeDrawerWidthByPercentOfScreen(Context context, View view, float percent) {
+        int width_px;
+        ViewGroup.LayoutParams params;
 
-        hideKeyboard(context, view);
+        width_px     = context.getResources().getDisplayMetrics().widthPixels;
+        width_px     = (int)(width_px * (percent/100));
+
+        params       = (ViewGroup.LayoutParams) view.getLayoutParams();
+        params.width = width_px;
+
+        view.setLayoutParams(params);
     }
 
 }
