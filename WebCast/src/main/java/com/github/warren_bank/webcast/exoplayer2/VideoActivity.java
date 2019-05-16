@@ -5,12 +5,10 @@ import com.github.warren_bank.webcast.WebCastApplication;
 
 import android.os.Bundle;
 import androidx.core.graphics.ColorUtils;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import android.view.KeyEvent;
@@ -21,8 +19,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.google.android.exoplayer2.C;
-import com.google.android.exoplayer2.SimpleExoPlayer;
-import com.google.android.exoplayer2.ext.cast.CastPlayer;
 import com.google.android.exoplayer2.ui.PlayerControlView;
 import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.android.gms.cast.framework.CastButtonFactory;
@@ -34,9 +30,6 @@ import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 
-/**
- * An activity that plays video using {@link SimpleExoPlayer} and {@link CastPlayer}.
- */
 public class VideoActivity extends AppCompatActivity implements PlayerManager.QueuePositionListener {
 
   private PlayerView localPlayerView;
@@ -306,7 +299,7 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
     }
 
     @Override
-    public void clearView(RecyclerView recyclerView, ViewHolder viewHolder) {
+    public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
       super.clearView(recyclerView, viewHolder);
       if (draggingFromPosition != C.INDEX_UNSET) {
         // A drag has ended. We reflect the media queue change in the player.
