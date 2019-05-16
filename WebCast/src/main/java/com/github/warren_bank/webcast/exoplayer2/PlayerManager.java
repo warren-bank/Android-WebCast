@@ -21,6 +21,7 @@ import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.Timeline;
 import com.google.android.exoplayer2.Timeline.Period;
 import com.google.android.exoplayer2.ext.cast.CastPlayer;
+import com.google.android.exoplayer2.ext.cast.SessionAvailabilityListener;
 import com.google.android.exoplayer2.source.ConcatenatingMediaSource;
 import com.google.android.exoplayer2.source.ExtractorMediaSource;
 import com.google.android.exoplayer2.source.MediaSource;
@@ -42,7 +43,7 @@ import java.util.ArrayList;
 
 /** Manages players and an internal media queue */
 public final class PlayerManager
-    implements EventListener, CastPlayer.SessionAvailabilityListener {
+    implements EventListener, SessionAvailabilityListener {
 
   /**
    * Listener for changes in the media queue playback position.
@@ -387,7 +388,7 @@ public final class PlayerManager
     }
   }
 
-  // CastPlayer.SessionAvailabilityListener implementation.
+  // SessionAvailabilityListener implementation.
 
   @Override
   public void onCastSessionAvailable() {
