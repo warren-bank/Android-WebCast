@@ -3,7 +3,6 @@ package com.github.warren_bank.webcast.exoplayer2;
 import com.github.warren_bank.webcast.R;
 import com.github.warren_bank.webcast.WebCastApplication;
 
-import android.content.Context;
 import android.os.Bundle;
 import androidx.core.graphics.ColorUtils;
 import androidx.appcompat.app.AlertDialog;
@@ -20,8 +19,6 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.SimpleExoPlayer;
