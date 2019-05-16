@@ -4,7 +4,7 @@ import com.github.warren_bank.webcast.R;
 
 import android.content.Context;
 import android.net.Uri;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.KeyEvent;
 import android.view.View;
 

@@ -2,7 +2,7 @@ package com.github.warren_bank.webcast.exoplayer2;
 
 import com.github.warren_bank.webcast.R;
 
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 import android.app.Dialog;
 import android.view.View;
 import android.view.ViewGroup;

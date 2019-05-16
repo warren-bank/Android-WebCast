@@ -28,4 +28,4 @@
 
 -keep class com.google.android.exoplayer.** { *; }
 -keep class com.google.android.gms.** { *; }
--keep class android.support.v7.app.MediaRouteActionProvider { *; }
+-keep class androidx.mediarouter.app.MediaRouteActionProvider { *; }

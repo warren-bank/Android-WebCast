@@ -3,7 +3,7 @@ package com.github.warren_bank.webcast;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ExitActivity extends AppCompatActivity {
     @Override
