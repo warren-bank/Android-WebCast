@@ -1,6 +1,8 @@
 package com.github.warren_bank.webcast.webview;
 
 import com.github.warren_bank.webcast.R;
+import com.github.warren_bank.webcast.ExitActivity;
+import com.github.warren_bank.webcast.WebCastApplication;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -211,6 +213,7 @@ public class BrowserActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
+        WebCastApplication.activityResumed();
 
         webView.loadUrl(current_page_url);
     }
@@ -218,6 +221,7 @@ public class BrowserActivity extends AppCompatActivity {
     @Override
     public void onPause() {
         super.onPause();
+        WebCastApplication.activityPaused();
 
         webView.loadUrl(default_page_url);
     }
@@ -816,7 +820,7 @@ public class BrowserActivity extends AppCompatActivity {
             }
 
             case R.id.action_exit: {
-                finish();
+                ExitActivity.exit(BrowserActivity.this);
                 return true;
             }
 

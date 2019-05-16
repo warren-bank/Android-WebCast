@@ -1,18 +1,3 @@
-/*
- * Copyright (C) 2017 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.github.warren_bank.webcast.exoplayer2;
 
 import com.github.warren_bank.webcast.R;
@@ -25,6 +10,7 @@ import android.view.View;
 
 import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.DefaultRenderersFactory;
+import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.Player.DiscontinuityReason;
@@ -54,8 +40,8 @@ import com.google.android.gms.cast.framework.CastContext;
 
 import java.util.ArrayList;
 
-/** Manages players and an internal media queue for the ExoPlayer/Full Screen demo app. */
-/* package */ final class PlayerManager
+/** Manages players and an internal media queue */
+public final class PlayerManager
     implements EventListener, CastPlayer.SessionAvailabilityListener {
 
   /**
@@ -70,19 +56,23 @@ import java.util.ArrayList;
 
   }
 
-  private final QueuePositionListener queuePositionListener;
-  private final PlayerView localPlayerView;
-  private final PlayerControlView castControlView;
-  private final FullScreenManager fullScreenManager;
-  private final ArrayList<VideoSource> mediaQueue;
-  private final ConcatenatingMediaSource concatenatingMediaSource;
-  private final SimpleExoPlayer exoPlayer;
-  private final CastPlayer castPlayer;
-  private final DefaultHttpDataSourceFactory dataSourceFactory;
+  private QueuePositionListener queuePositionListener;
+  private PlayerView localPlayerView;
+  private PlayerControlView castControlView;
+  private FullScreenManager fullScreenManager;
+  private ArrayList<VideoSource> mediaQueue;
+  private ConcatenatingMediaSource concatenatingMediaSource;
+  private SimpleExoPlayer exoPlayer;
+  private CastPlayer castPlayer;
+  private DefaultHttpDataSourceFactory dataSourceFactory;
 
   private int currentItemIndex;
   private boolean castMediaQueueCreationPending;
   private Player currentPlayer;
+
+  public static enum PlaybackMode { NORMAL, CAST_ONLY, RELEASED }
+
+  private PlaybackMode playbackMode;
 
   /**
    * @param queuePositionListener A {@link QueuePositionListener} for queue position changes.
@@ -139,6 +129,7 @@ import java.util.ArrayList;
     this.dataSourceFactory = new DefaultHttpDataSourceFactory(userAgent);
 
     this.currentItemIndex = C.INDEX_UNSET;
+    this.playbackMode = PlaybackMode.NORMAL;
   }
 
   // Queue manipulation methods.
@@ -258,6 +249,33 @@ import java.util.ArrayList;
     return (currentPlayer == castPlayer);
   }
 
+  public PlaybackMode getPlaybackMode() {
+    return playbackMode;
+  }
+
+  public void setPlaybackMode(PlaybackMode playbackMode) {
+    switch (playbackMode) {
+      case NORMAL:
+        break;
+      case CAST_ONLY:
+        if (isCasting()) {
+          release_exoPlayer();
+        }
+        else {
+          release();
+          playbackMode = PlaybackMode.RELEASED;
+        }
+        break;
+      case RELEASED:
+        release();
+        break;
+      default:
+        return;
+    }
+
+    this.playbackMode = playbackMode;
+  }
+
   /**
    * Dispatches a given {@link KeyEvent} to the corresponding view of the current player.
    *
@@ -275,15 +293,58 @@ import java.util.ArrayList;
   /**
    * Releases the manager and the players that it holds.
    */
-  public void release() {
-    currentItemIndex = C.INDEX_UNSET;
-    mediaQueue.clear();
-    concatenatingMediaSource.clear();
-    castPlayer.setSessionAvailabilityListener(null);
-    castPlayer.release();
-    fullScreenManager.release();
-    localPlayerView.setPlayer(null);
-    exoPlayer.release();
+  private void release() {
+    if (playbackMode == PlaybackMode.RELEASED) return;
+
+    try {
+      release_exoPlayer();
+      release_castPlayer();
+
+      mediaQueue.clear();
+      concatenatingMediaSource.clear();
+
+      queuePositionListener = null;
+      mediaQueue = null;
+      concatenatingMediaSource = null;
+      dataSourceFactory = null;
+      currentItemIndex = C.INDEX_UNSET;
+      currentPlayer = null;
+    }
+    catch (Exception e){}
+
+    playbackMode = PlaybackMode.RELEASED;
+  }
+
+  private void release_exoPlayer() {
+    if (exoPlayer == null) return;
+
+    try {
+      localPlayerView.setPlayer(null);
+      fullScreenManager.release();
+      exoPlayer.removeListener(this);
+      exoPlayer.release();
+
+      localPlayerView = null;
+      fullScreenManager = null;
+      exoPlayer = null;
+    }
+    catch (Exception e){}
+  }
+
+  private void release_castPlayer() {
+    if (castPlayer == null) return;
+
+    try {
+      castControlView.setPlayer(null);
+      castPlayer.removeListener(this);
+      castPlayer.setSessionAvailabilityListener(null);
+      castPlayer.release();
+
+      castControlView = null;
+      castPlayer = null;
+      castMediaQueueCreationPending = false;
+    }
+    catch (Exception e){}
   }
 
   // Player.EventListener implementation.
@@ -291,6 +352,17 @@ import java.util.ArrayList;
   @Override
   public void onPlayerStateChanged(boolean playWhenReady, int playbackState) {
     updateCurrentItemIndex();
+
+    if (playbackMode == PlaybackMode.CAST_ONLY) {
+      switch(playbackState) {
+        case Player.STATE_ENDED:
+        case Player.STATE_IDLE:
+          setPlaybackMode(PlaybackMode.RELEASED);
+          break;
+        default:
+          break;
+      }
+    }
   }
 
   @Override
@@ -300,10 +372,18 @@ import java.util.ArrayList;
 
   @Override
   public void onTimelineChanged(
-      Timeline timeline, @Nullable Object manifest, @TimelineChangeReason int reason) {
+      Timeline timeline, @Nullable Object manifest, @TimelineChangeReason int reason
+  ){
     updateCurrentItemIndex();
     if (timeline.isEmpty()) {
       castMediaQueueCreationPending = true;
+    }
+  }
+
+  @Override
+  public void onPlayerError(ExoPlaybackException error) {
+    if (playbackMode == PlaybackMode.CAST_ONLY) {
+      setPlaybackMode(PlaybackMode.RELEASED);
     }
   }
 
@@ -311,12 +391,21 @@ import java.util.ArrayList;
 
   @Override
   public void onCastSessionAvailable() {
+    if (castPlayer == null) return;
+
     setCurrentPlayer(castPlayer);
   }
 
   @Override
   public void onCastSessionUnavailable() {
-    setCurrentPlayer(exoPlayer);
+    if (castPlayer == null) return;
+
+    if (playbackMode == PlaybackMode.CAST_ONLY) {
+      setPlaybackMode(PlaybackMode.RELEASED);
+    }
+    else {
+      setCurrentPlayer(exoPlayer);
+    }
   }
 
   // Internal methods.
@@ -333,6 +422,8 @@ import java.util.ArrayList;
   }
 
   private void updateCurrentItemIndex() {
+    if (currentPlayer == null) return;
+
     int playbackState = currentPlayer.getPlaybackState();
     maybeSetCurrentItemAndNotify(
         playbackState != Player.STATE_IDLE && playbackState != Player.STATE_ENDED

@@ -1,21 +1,7 @@
-/*
- * Copyright (C) 2017 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.github.warren_bank.webcast.exoplayer2;
 
 import com.github.warren_bank.webcast.R;
+import com.github.warren_bank.webcast.WebCastApplication;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -134,7 +120,12 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
       return;
     }
 
-    if (playerManager == null) {
+    if ((playerManager != null) && (playerManager.getPlaybackMode() == PlayerManager.PlaybackMode.CAST_ONLY)) {
+        playerManager.setPlaybackMode(PlayerManager.PlaybackMode.RELEASED);
+        playerManager = null;
+    }
+
+    if ((playerManager == null) || (playerManager.getPlaybackMode() == PlayerManager.PlaybackMode.RELEASED)) {
         FullScreenManager fullScreenManager =
             FullScreenManager.createFullScreenManager(
                 /* videoActivity= */ this,
@@ -156,21 +147,37 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
             addVideoSources();
         }
     }
+
+    WebCastApplication.activityResumed(playerManager);
   }
 
   @Override
   public void onPause() {
     super.onPause();
+
     if (castContext == null) {
       // Nothing to release.
       return;
     }
 
-    if (VideoUtils.isScreenOn(this) && !playerManager.isCasting()) {
+    boolean isScreenOn = VideoUtils.isScreenOn(this);
+    if (!isScreenOn) return;
+
+    boolean isCasting = playerManager.isCasting();
+    if (isCasting) {
+        // if casting is interrupted, do NOT resume playback in ExoPlayer in the background
+        playerManager.setPlaybackMode(PlayerManager.PlaybackMode.CAST_ONLY);
+
+        WebCastApplication.activityPaused();
+    }
+    else {
+        // cleanup all resources
         mediaQueueList.setAdapter(null);
 
-        playerManager.release();
+        playerManager.setPlaybackMode(PlayerManager.PlaybackMode.RELEASED);
         playerManager = null;
+
+        WebCastApplication.activityPaused(playerManager);
     }
   }
 
