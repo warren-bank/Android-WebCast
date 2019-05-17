@@ -71,7 +71,7 @@ public final class PlayerManager
   private boolean castMediaQueueCreationPending;
   private Player currentPlayer;
 
-  public static enum PlaybackMode { NORMAL, CAST_ONLY, RELEASED }
+  public static enum PlaybackMode { NORMAL, CAST_ONLY, RELEASED_ALL_BUT_CAST_SESSION, RELEASED }
 
   private PlaybackMode playbackMode;
 
@@ -263,12 +263,18 @@ public final class PlayerManager
           release_exoPlayer();
         }
         else {
-          release();
+          release(false);
           playbackMode = PlaybackMode.RELEASED;
         }
         break;
+      case RELEASED_ALL_BUT_CAST_SESSION:
+        release(
+          isCasting()
+        );
+        playbackMode = PlaybackMode.RELEASED;
+        break;
       case RELEASED:
-        release();
+        release(false);
         break;
       default:
         return;
@@ -295,11 +301,15 @@ public final class PlayerManager
    * Releases the manager and the players that it holds.
    */
   private void release() {
+    release(false);
+  }
+
+  private void release(boolean retain_CastSession) {
     if (playbackMode == PlaybackMode.RELEASED) return;
 
     try {
       release_exoPlayer();
-      release_castPlayer();
+      release_castPlayer(retain_CastSession);
 
       mediaQueue.clear();
       concatenatingMediaSource.clear();
@@ -332,14 +342,17 @@ public final class PlayerManager
     catch (Exception e){}
   }
 
-  private void release_castPlayer() {
+  private void release_castPlayer(boolean retain_CastSession) {
     if (castPlayer == null) return;
 
     try {
       castControlView.setPlayer(null);
       castPlayer.removeListener(this);
       castPlayer.setSessionAvailabilityListener(null);
-      castPlayer.release();
+
+      if (!retain_CastSession) {
+        castPlayer.release();
+      }
 
       castControlView = null;
       castPlayer = null;

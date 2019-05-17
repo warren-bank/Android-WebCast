@@ -31,10 +31,10 @@ import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 
 public class VideoActivity extends AppCompatActivity implements PlayerManager.QueuePositionListener {
+  private static PlayerManager playerManager = null;
 
   private PlayerView localPlayerView;
   private PlayerControlView castControlView;
-  private PlayerManager playerManager;
   private RecyclerView mediaQueueList;
   private MediaQueueListAdapter mediaQueueListAdapter;
   private CastContext castContext;
@@ -111,7 +111,7 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
     }
 
     if ((playerManager != null) && (playerManager.getPlaybackMode() == PlayerManager.PlaybackMode.CAST_ONLY)) {
-        playerManager.setPlaybackMode(PlayerManager.PlaybackMode.RELEASED);
+        playerManager.setPlaybackMode(PlayerManager.PlaybackMode.RELEASED_ALL_BUT_CAST_SESSION);
         playerManager = null;
     }
 
