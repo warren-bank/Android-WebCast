@@ -415,7 +415,7 @@ public final class PlayerManager
     if (castPlayer == null) return;
 
     if (playbackMode == PlaybackMode.CAST_ONLY) {
-      setPlaybackMode(PlaybackMode.RELEASED);
+      setPlaybackMode(PlaybackMode.RELEASED_ALL_BUT_CAST_SESSION);
     }
     else {
       setCurrentPlayer(exoPlayer);
