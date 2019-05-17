@@ -65,7 +65,9 @@ dependencies {
     implementation 'com.google.android.exoplayer:exoplayer-hls:'             + project.ext.exoPlayerVersion          // ( 98 KB) https://mvnrepository.com/artifact/com.google.android.exoplayer/exoplayer-hls?repo=jcenter
     implementation 'com.google.android.exoplayer:exoplayer-smoothstreaming:' + project.ext.exoPlayerVersion          // ( 44 KB) https://mvnrepository.com/artifact/com.google.android.exoplayer/exoplayer-smoothstreaming?repo=jcenter
     implementation 'com.google.android.exoplayer:exoplayer-ui:'              + project.ext.exoPlayerVersion          // (238 KB) https://mvnrepository.com/artifact/com.google.android.exoplayer/exoplayer-ui?repo=jcenter
-    implementation 'com.google.android.exoplayer:extension-cast:'            + project.ext.exoPlayerVersion          // ( 40 KB) https://mvnrepository.com/artifact/com.google.android.exoplayer/extension-cast?repo=jcenter
+
+//  implementation 'com.google.android.exoplayer:extension-cast:'            + project.ext.exoPlayerVersion          // ( 40 KB) https://mvnrepository.com/artifact/com.google.android.exoplayer/extension-cast?repo=jcenter
+    implementation project(':exoplayer-extension-cast')                                                              //          https://github.com/google/ExoPlayer/tree/r2.10.0/extensions/cast/src/main/java/com/google/android/exoplayer2/ext/cast
 
     implementation 'com.google.code.gson:gson:'                              + '2.8.5'                               // (235 KB) https://mvnrepository.com/artifact/com.google.code.gson/gson
 }

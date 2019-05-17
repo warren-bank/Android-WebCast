@@ -1,0 +1,13 @@
+# https://github.com/google/ExoPlayer/tree/r2.10.0/extensions/cast/src/main/java/com/google/android/exoplayer2/ext/cast
+
+# command to download files:
+#     wget --secure-protocol=TLSv1_2 --no-check-certificate --input-file "./.git-source-urls.txt" -P "./cast"
+
+https://github.com/google/ExoPlayer/raw/r2.10.0/extensions/cast/src/main/java/com/google/android/exoplayer2/ext/cast/CastPlayer.java
+https://github.com/google/ExoPlayer/raw/r2.10.0/extensions/cast/src/main/java/com/google/android/exoplayer2/ext/cast/CastTimeline.java
+https://github.com/google/ExoPlayer/raw/r2.10.0/extensions/cast/src/main/java/com/google/android/exoplayer2/ext/cast/CastTimelineTracker.java
+https://github.com/google/ExoPlayer/raw/r2.10.0/extensions/cast/src/main/java/com/google/android/exoplayer2/ext/cast/CastUtils.java
+https://github.com/google/ExoPlayer/raw/r2.10.0/extensions/cast/src/main/java/com/google/android/exoplayer2/ext/cast/DefaultCastOptionsProvider.java
+https://github.com/google/ExoPlayer/raw/r2.10.0/extensions/cast/src/main/java/com/google/android/exoplayer2/ext/cast/MediaItem.java
+https://github.com/google/ExoPlayer/raw/r2.10.0/extensions/cast/src/main/java/com/google/android/exoplayer2/ext/cast/MediaItemQueue.java
+https://github.com/google/ExoPlayer/raw/r2.10.0/extensions/cast/src/main/java/com/google/android/exoplayer2/ext/cast/SessionAvailabilityListener.java

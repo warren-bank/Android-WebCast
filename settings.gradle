@@ -1,1 +1,2 @@
+include ':exoplayer-extension-cast'
 include ':WebCast'
