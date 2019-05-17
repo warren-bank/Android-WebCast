@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.github.warren_bank.webcast">
-
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -16,7 +16,13 @@
 
         <meta-data
             android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
-            android:value="com.google.android.exoplayer2.ext.cast.DefaultCastOptionsProvider" />
+            android:value="com.github.warren_bank.webcast.exoplayer2.CastOptionsProvider" />
+
+        <receiver
+            android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver"
+            android:enabled="true"
+            android:exported="true"
+            tools:replace="android:exported" />
 
         <activity
             android:name=".webview.BrowserActivity"
