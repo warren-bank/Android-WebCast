@@ -6,7 +6,6 @@ import androidx.core.content.ContextCompat;
 import android.app.Dialog;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.google.android.exoplayer2.ui.PlaybackControlView;
 import com.google.android.exoplayer2.ui.PlayerView;
@@ -19,7 +18,7 @@ final class FullScreenManager {
   private PlayerView localPlayerView;
   private Dialog mFullScreenDialog;
   private ImageView mFullScreenIcon;
-  private FrameLayout mFullScreenButton;
+  private ViewGroup mFullScreenButton;
 
   // static factory
 
@@ -82,7 +81,7 @@ final class FullScreenManager {
   }
 
   private void openFullscreenDialog() {
-    ((ViewGroup) localPlayerView.getParent()).removeView(localPlayerView);
+    ((ViewGroup) localPlayerView.getParent()).removeView(localPlayerView);                     // FrameLayout
     mFullScreenDialog.addContentView(localPlayerView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
     mFullScreenIcon.setImageDrawable(ContextCompat.getDrawable(videoActivity, R.drawable.ic_fullscreen_close));
     isFullScreen = true;
@@ -90,17 +89,18 @@ final class FullScreenManager {
   }
 
   private void closeFullscreenDialog() {
-    ((ViewGroup) localPlayerView.getParent()).removeView(localPlayerView);
-    ((FrameLayout) videoActivity.findViewById(R.id.main_media_frame)).addView(localPlayerView);
+    ((ViewGroup) localPlayerView.getParent()).removeView(localPlayerView);                     // Dialog
+    ((ViewGroup) videoActivity.findViewById(R.id.main_media_frame)).addView(localPlayerView);  // FrameLayout
     isFullScreen = false;
     mFullScreenDialog.dismiss();
     mFullScreenIcon.setImageDrawable(ContextCompat.getDrawable(videoActivity, R.drawable.ic_fullscreen_open));
   }
 
   private void initFullscreenButton() {
-    PlaybackControlView controlView = localPlayerView.findViewById(R.id.exo_controller);
-    mFullScreenIcon = controlView.findViewById(R.id.exo_fullscreen_icon);
-    mFullScreenButton = controlView.findViewById(R.id.exo_fullscreen_button);
+    PlaybackControlView controlView;
+    controlView       = (PlaybackControlView) localPlayerView.findViewById(R.id.exo_controller);
+    mFullScreenIcon   = (ImageView) controlView.findViewById(R.id.exo_fullscreen_icon);
+    mFullScreenButton = (ViewGroup) controlView.findViewById(R.id.exo_fullscreen_button);      // FrameLayout
     mFullScreenButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {

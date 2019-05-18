@@ -7,6 +7,7 @@ import android.net.Uri;
 import androidx.annotation.Nullable;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.DefaultRenderersFactory;
@@ -452,11 +453,11 @@ public final class PlayerManager
     // View management.
     if (currentPlayer == exoPlayer) {
       fullScreenManager.enable();
-      localPlayerView.setVisibility(View.VISIBLE);
+      ((ViewGroup) localPlayerView.getParent()).setVisibility(View.VISIBLE);  // FrameLayout
       castControlView.hide();
     } else /* currentPlayer == castPlayer */ {
       fullScreenManager.disable();
-      localPlayerView.setVisibility(View.GONE);
+      ((ViewGroup) localPlayerView.getParent()).setVisibility(View.GONE);     // FrameLayout
       castControlView.show();
     }
 

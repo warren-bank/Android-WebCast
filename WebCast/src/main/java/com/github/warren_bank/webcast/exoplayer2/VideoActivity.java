@@ -65,7 +65,7 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
 
     setContentView(R.layout.video_activity);
 
-    Toolbar toolbar = findViewById(R.id.toolbar);
+    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
     getSupportActionBar().setTitle("");
     toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
@@ -76,12 +76,12 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
       }
     });
 
-    localPlayerView = findViewById(R.id.local_player_view);
+    localPlayerView = (PlayerView) findViewById(R.id.local_player_view);
     localPlayerView.requestFocus();
 
-    castControlView = findViewById(R.id.cast_control_view);
+    castControlView = (PlayerControlView) findViewById(R.id.cast_control_view);
 
-    mediaQueueList = findViewById(R.id.sample_list);
+    mediaQueueList = (RecyclerView) findViewById(R.id.sample_list);
     ItemTouchHelper helper = new ItemTouchHelper(new RecyclerViewCallback());
     helper.attachToRecyclerView(mediaQueueList);
     mediaQueueList.setLayoutManager(new LinearLayoutManager(this));
