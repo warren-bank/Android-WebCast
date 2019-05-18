@@ -27,8 +27,10 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -52,7 +54,7 @@ public class BrowserActivity extends AppCompatActivity {
 
     private static final class DrawerListItem {
         public final String uri;
-        public final String title;
+        public       String title;
         public final String mimeType;
         public final String referer;
 
@@ -76,14 +78,14 @@ public class BrowserActivity extends AppCompatActivity {
             return (this.uri.equals(that_uri));
         }
 
+        // helpers
+
         public static ArrayList<DrawerListItem> fromJson(String jsonBookmarks) {
             ArrayList<DrawerListItem> arrayList;
             Gson gson = new Gson();
             arrayList = gson.fromJson(jsonBookmarks, new TypeToken<ArrayList<DrawerListItem>>(){}.getType());
             return arrayList;
         }
-
-        // helpers
 
         public static DrawerListItem find(ArrayList<DrawerListItem> items, DrawerListItem item) {
             for (int i=0; i < items.size(); i++) {
@@ -269,6 +271,24 @@ public class BrowserActivity extends AppCompatActivity {
     // Bookmarks:
     // ---------------------------------------------------------------------------------------------
 
+    private void setSavedBookmarks() {
+        String jsonBookmarks = new Gson().toJson(drawer_left_bookmarks_arrayList);
+
+        setSavedBookmarks(jsonBookmarks);
+    }
+
+    private void setSavedBookmarks(String jsonBookmarks) {
+        SharedPreferences sharedPreferences = getSharedPreferences(PREFS_FILENAME, Context.MODE_PRIVATE);
+
+        setSavedBookmarks(sharedPreferences, jsonBookmarks);
+    }
+
+    private void setSavedBookmarks(SharedPreferences sharedPreferences, String jsonBookmarks) {
+        SharedPreferences.Editor prefs_editor = sharedPreferences.edit();
+        prefs_editor.putString(PREF_BOOKMARKS, jsonBookmarks);
+        prefs_editor.apply();
+    }
+
     private ArrayList<DrawerListItem> getSavedBookmarks() {
         SharedPreferences sharedPreferences = getSharedPreferences(PREFS_FILENAME, Context.MODE_PRIVATE);
         String jsonBookmarks = sharedPreferences.getString(PREF_BOOKMARKS, null);
@@ -277,9 +297,7 @@ public class BrowserActivity extends AppCompatActivity {
             jsonBookmarks = BrowserConfigs.getDefaultBookmarks();
 
             // update SharedPreferences
-            SharedPreferences.Editor prefs_editor = sharedPreferences.edit();
-            prefs_editor.putString(PREF_BOOKMARKS, jsonBookmarks);
-            prefs_editor.apply();
+            setSavedBookmarks(sharedPreferences, jsonBookmarks);
         }
 
         ArrayList<DrawerListItem> savedBookmarks = DrawerListItem.fromJson(jsonBookmarks);
@@ -321,10 +339,7 @@ public class BrowserActivity extends AppCompatActivity {
         drawer_left_bookmarks_arrayAdapter.notifyDataSetChanged();
 
         // update SharedPreferences
-        SharedPreferences sharedPreferences   = getSharedPreferences(PREFS_FILENAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor prefs_editor = sharedPreferences.edit();
-        prefs_editor.putString(PREF_BOOKMARKS, new Gson().toJson(drawer_left_bookmarks_arrayList));
-        prefs_editor.apply();
+        setSavedBookmarks();
 
         // show message
         snackbar = Snackbar.make(parentView, message, Snackbar.LENGTH_SHORT);
@@ -347,22 +362,89 @@ public class BrowserActivity extends AppCompatActivity {
         updateSavedBookmark(item, false);
     }
 
-    private void confirm_removeSavedBookmark(DrawerListItem item) {
+    private void showDialog_options_modifySavedBookmark(DrawerListItem item) {
+        alertDialog = new AlertDialog.Builder(BrowserActivity.this)
+            .setTitle("Edit Bookmark")
+            .setMessage(item.uri)
+            // button #1 of 3
+            .setNeutralButton("Dismiss", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
+                }
+            })
+            // button #2 of 3
+            .setNegativeButton("DELETE", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
+
+                    showDialog_confirm_removeSavedBookmark(item);
+                }
+            })
+            // button #3 of 3
+            .setPositiveButton("RENAME", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
+
+                    showDialog_edit_renameSavedBookmark(item);
+                }
+            })
+            .show();
+    }
+
+    private void showDialog_edit_renameSavedBookmark(DrawerListItem item) {
+        final EditText editText = new EditText(BrowserActivity.this);
+
+        editText.setText(item.title, TextView.BufferType.EDITABLE);
+
+        alertDialog = new AlertDialog.Builder(BrowserActivity.this)
+            .setTitle("Rename Bookmark")
+            .setMessage(item.uri)
+            .setView(editText)
+            .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    BrowserUtils.hideKeyboard(BrowserActivity.this, editText);
+                    dialogInterface.dismiss();
+                }
+            })
+            .setPositiveButton("SAVE", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    BrowserUtils.hideKeyboard(BrowserActivity.this, editText);
+                    dialogInterface.dismiss();
+
+                    // update DrawerListItem
+                    item.title = String.valueOf(editText.getText());
+
+                    // notify the ListView adapter
+                    drawer_left_bookmarks_arrayAdapter.notifyDataSetChanged();
+
+                    // update SharedPreferences
+                    setSavedBookmarks();
+                }
+            })
+            .show();
+    }
+
+    private void showDialog_confirm_removeSavedBookmark(DrawerListItem item) {
         alertDialog = new AlertDialog.Builder(BrowserActivity.this)
             .setTitle("DELETE")
             .setMessage("Confirm that you want to delete this bookmark?")
+            .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
+                }
+            })
             .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     dialogInterface.dismiss();
 
                     removeSavedBookmark(item);
-                }
-            })
-            .setNegativeButton("NO", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    dialogInterface.dismiss();
                 }
             })
             .show();
@@ -415,27 +497,6 @@ public class BrowserActivity extends AppCompatActivity {
         }
     }
 
-    private void confirm_removeSavedVideo(DrawerListItem item) {
-        alertDialog = new AlertDialog.Builder(BrowserActivity.this)
-            .setTitle("DELETE")
-            .setMessage("Confirm that you want to delete this video?")
-            .setPositiveButton("YES", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    dialogInterface.dismiss();
-
-                    removeSavedVideo(item);
-                }
-            })
-            .setNegativeButton("NO", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    dialogInterface.dismiss();
-                }
-            })
-            .show();
-    }
-
     protected boolean isVideo(String mimeType) {
         if (mimeType == null) return false;
 
@@ -447,6 +508,27 @@ public class BrowserActivity extends AppCompatActivity {
             default:
                 return MimeTypes.isVideo(mimeType);
         }
+    }
+
+    private void showDialog_confirm_removeSavedVideo(DrawerListItem item) {
+        alertDialog = new AlertDialog.Builder(BrowserActivity.this)
+            .setTitle("DELETE")
+            .setMessage("Confirm that you want to delete this video?")
+            .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
+                }
+            })
+            .setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
+
+                    removeSavedVideo(item);
+                }
+            })
+            .show();
     }
 
     // ---------------------------------------------------------------------------------------------
@@ -502,7 +584,7 @@ public class BrowserActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 DrawerListItem item = (DrawerListItem) parent.getItemAtPosition(position);
-                confirm_removeSavedBookmark(item);
+                showDialog_options_modifySavedBookmark(item);
                 return true;
             }
         });
@@ -557,7 +639,7 @@ public class BrowserActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 DrawerListItem item = (DrawerListItem) parent.getItemAtPosition(position);
-                confirm_removeSavedVideo(item);
+                showDialog_confirm_removeSavedVideo(item);
                 return true;
             }
         });

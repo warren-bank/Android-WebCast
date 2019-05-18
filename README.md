@@ -12,13 +12,16 @@ App consists of 2 Activities:
      * click to:
        * open website URLs in WebView
        * watch video URLs in next Activity
-     * long click to delete
+     * long click to:
+       * rename
+       * delete
    * right drawer contains _videos_
      * data is transient and only valid for the current website
      * click to:
        * add to _bookmarks_
        * watch video URL in next Activity
-     * long click to delete
+     * long click to:
+       * delete
    * menu icons:
      * _bookmarks_ toggle: add/remove current website URL
 2. ExoPlayer to watch video(s)
