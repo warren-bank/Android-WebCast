@@ -131,8 +131,9 @@ public class BrowserActivity extends AppCompatActivity {
 
     // Content: WebView ----------------------------------------------------------------------------
 
-    private String default_page_url = "about:blank";
-    private String current_page_url = default_page_url;
+    private static final String default_page_url = "about:blank";
+
+    private String current_page_url;
     private WebView webView;
     private BrowserWebViewClient webViewClient;
     private BrowserDownloadListener downloadListener;
@@ -171,8 +172,11 @@ public class BrowserActivity extends AppCompatActivity {
 
         // Content: WebView ------------------------------------------------------------------------
 
-        if (getIntent().getExtras() != null) {
-            current_page_url = getIntent().getStringExtra("url");
+        current_page_url = default_page_url;
+
+        Intent intent = getIntent();
+        if (intent.hasExtra("url")) {
+            current_page_url = intent.getStringExtra("url");
         }
 
         webView     = (WebView)findViewById(R.id.webView);
@@ -206,9 +210,17 @@ public class BrowserActivity extends AppCompatActivity {
         // Content: UI -----------------------------------------------------------------------------
 
         parentView = (ViewGroup)findViewById(R.id.viewgroup_content);
+    }
 
-        updateCurrentPage(current_page_url, true);
-        toggleDrawerBookmarks();  // open
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        updateCurrentPage(current_page_url, false);
+
+        if (current_page_url.equals(default_page_url)) {
+            openDrawerBookmarks();
+        }
     }
 
     @Override
@@ -708,6 +720,29 @@ public class BrowserActivity extends AppCompatActivity {
         toggleDrawer(drawer);
     }
 
+    private boolean openDrawer(View drawer, boolean animate) {
+        boolean was_closed = (drawer_layout.isDrawerOpen(drawer) == false);
+
+        if (was_closed) {
+            drawer_layout.openDrawer(drawer, animate);
+        }
+        return was_closed;
+    }
+
+    private boolean openDrawer(View drawer) {
+        return openDrawer(drawer, true);
+    }
+
+    private boolean openDrawerBookmarks() {
+        View drawer = getDrawerBookmarks();
+        return openDrawer(drawer);
+    }
+
+    private boolean openDrawerVideos() {
+        View drawer = getDrawerVideos();
+        return openDrawer(drawer);
+    }
+
     private boolean closeDrawer(View drawer, boolean animate) {
         boolean was_open = drawer_layout.isDrawerOpen(drawer);
 
@@ -806,6 +841,11 @@ public class BrowserActivity extends AppCompatActivity {
     }
 
     private void updateCurrentPage(String uri, boolean loadUrl) {
+        if (uri == null) return;
+
+        uri = uri.trim();
+        if (uri.isEmpty()) return;
+
         current_page_url = uri;
         search.setQueryHint(current_page_url);
         search.setQuery(current_page_url, false);
