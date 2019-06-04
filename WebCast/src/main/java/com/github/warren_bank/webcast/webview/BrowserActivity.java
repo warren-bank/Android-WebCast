@@ -11,19 +11,15 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.CookieManager;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
+import android.webkit.WebStorage;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -31,6 +27,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import com.google.android.material.snackbar.Snackbar;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -245,6 +247,16 @@ public class BrowserActivity extends AppCompatActivity {
 
         webView.clearCache(true);
         webView.clearHistory();
+        webView.clearFormData();
+        webView.clearSslPreferences();
+        WebStorage.getInstance().deleteAllData();
+        if (Build.VERSION.SDK_INT >= 21) {
+            CookieManager.getInstance().removeAllCookies(null);
+            CookieManager.getInstance().flush();
+        }
+        else {
+            CookieManager.getInstance().removeAllCookie();
+        }
     }
 
     // ---------------------------------------------------------------------------------------------
@@ -825,6 +837,7 @@ public class BrowserActivity extends AppCompatActivity {
         webSettings.setDisplayZoomControls(true);
         webSettings.setUseWideViewPort(false);
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setDomStorageEnabled(true);
         webSettings.setUserAgentString(
             getResources().getString(R.string.user_agent)
         );
