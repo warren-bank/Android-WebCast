@@ -786,6 +786,8 @@ public class BrowserActivity extends AppCompatActivity {
     // ---------------------------------------------------------------------------------------------
 
     private void initWebView() {
+        BrowserDebugUtils.configWebView(BrowserActivity.this);
+
         webViewClient = new BrowserWebViewClient(BrowserActivity.this) {
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
