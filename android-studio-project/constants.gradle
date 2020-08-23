@@ -7,5 +7,5 @@ project.ext {
     buildToolsVersion  = '28.0.3'
     javaVersion        = JavaVersion.VERSION_1_8
     jetpackVersion     = '1.0.0'
-    exoPlayerVersion   = '2.10.0'
+    exoPlayerVersion   = '2.11.7'
 }
