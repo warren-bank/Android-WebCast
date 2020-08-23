@@ -180,6 +180,13 @@ public class BrowserActivity extends AppCompatActivity {
         if (intent.hasExtra("url")) {
             current_page_url = intent.getStringExtra("url");
         }
+        else {
+            String action = intent.getAction();
+
+            if (Intent.ACTION_VIEW.equals(action)) {
+                current_page_url = intent.getDataString();
+            }
+        }
 
         webView     = (WebView)findViewById(R.id.webView);
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
