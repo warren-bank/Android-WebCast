@@ -179,7 +179,9 @@ public final class PlayerManager
    * @return The item at the given index in the media queue.
    */
   public VideoSource getItem(int position) {
-    return mediaQueue.get(position);
+    return ((position >= 0) && (getMediaQueueSize() > position))
+      ? mediaQueue.get(position)
+      : null;
   }
 
   /**
@@ -522,6 +524,23 @@ public final class PlayerManager
       int oldIndex = this.currentItemIndex;
       this.currentItemIndex = currentItemIndex;
       queuePositionListener.onQueuePositionChanged(oldIndex, currentItemIndex);
+
+      if (currentItemIndex != C.INDEX_UNSET) {
+        setHttpRequestHeaders(currentItemIndex);
+      }
+    }
+  }
+
+  private void setHttpRequestHeaders(int currentItemIndex) {
+    VideoSource sample = getItem(currentItemIndex);
+    if (sample == null) return;
+
+    if (sample.referer != null) {
+      Uri referer   = Uri.parse(sample.referer);
+      String origin = referer.getScheme() + "://" + referer.getAuthority();
+
+      setHttpRequestHeader("origin",  origin);
+      setHttpRequestHeader("referer", sample.referer);
     }
   }
 
@@ -531,13 +550,7 @@ public final class PlayerManager
 
   private MediaSource buildMediaSource(VideoSource sample) {
     Uri uri = Uri.parse(sample.uri);
-    if (sample.referer != null) {
-      Uri referer   = Uri.parse(sample.referer);
-      String origin = referer.getScheme() + "://" + referer.getAuthority();
 
-      setHttpRequestHeader("origin",  origin);
-      setHttpRequestHeader("referer", sample.referer);
-    }
     switch (sample.mimeType) {
       case MimeTypes.APPLICATION_M3U8:
         return new HlsMediaSource.Factory(dataSourceFactory).createMediaSource(uri);
