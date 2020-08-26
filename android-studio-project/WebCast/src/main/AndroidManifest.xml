@@ -4,6 +4,7 @@
     package="com.github.warren_bank.webcast">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:name=".WebCastApplication"

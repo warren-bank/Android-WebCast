@@ -139,6 +139,9 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
     }
 
     WebCastApplication.activityResumed(playerManager);
+
+    WakeLockMgr.acquire(this);
+    WifiLockMgr.acquire(this);
   }
 
   @Override
@@ -169,6 +172,9 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
 
         WebCastApplication.activityPaused(playerManager);
     }
+
+    WakeLockMgr.release();
+    WifiLockMgr.release();
   }
 
   // Activity input.
