@@ -16,8 +16,7 @@ import android.webkit.WebResourceRequest;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ExoAirPlayerSenderActivity extends AppCompatActivity {
-    private static final String AIRPLAY_SENDER = "http://webcast-reloaded.surge.sh/airplay_sender.html";
-
+    private String  AIRPLAY_SENDER;
     private String  page_domain;
     private String  page_path;
     private String  page_url;
@@ -60,6 +59,12 @@ public class ExoAirPlayerSenderActivity extends AppCompatActivity {
     // ---------------------------------------------------------------------------------------------
 
     private void getPageUrl() {
+        // 'Android System WebView' can be updated in Android 5.0+
+        AIRPLAY_SENDER = (Build.VERSION.SDK_INT >= 21)
+            ? getString(R.string.url_airplay_sender_es6)
+            : getString(R.string.url_airplay_sender_es5)
+        ;
+
         Uri page       = Uri.parse(AIRPLAY_SENDER);
         Intent intent  = getIntent();
         String video   = intent.getStringExtra("video");
