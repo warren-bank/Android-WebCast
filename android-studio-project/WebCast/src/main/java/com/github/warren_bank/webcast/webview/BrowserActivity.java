@@ -226,7 +226,6 @@ public class BrowserActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        shouldClearWebView = true;
 
         updateCurrentPage(current_page_url, false);
 
@@ -241,6 +240,7 @@ public class BrowserActivity extends AppCompatActivity {
         WebCastApplication.activityResumed();
 
         webView.loadUrl(current_page_url);
+        shouldClearWebView = true;
     }
 
     @Override
