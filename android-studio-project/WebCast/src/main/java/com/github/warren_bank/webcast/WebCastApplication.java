@@ -3,8 +3,11 @@ package com.github.warren_bank.webcast;
 import com.github.warren_bank.webcast.exoplayer2.PlayerManager;
 
 import android.app.Application;
+import android.os.Build;
 import android.os.Process;
 import android.util.Log;
+
+import javax.net.ssl.HttpsURLConnection;
 
 public class WebCastApplication extends Application {
     // ---------------------------------------------------------------------------------------------
@@ -40,6 +43,18 @@ public class WebCastApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        if (
+            (Build.VERSION.SDK_INT >= 16) &&
+            (Build.VERSION.SDK_INT <  20)
+        ) {
+            try {
+                TLSSocketFactory socketFactory = new TLSSocketFactory();
+
+                HttpsURLConnection.setDefaultSSLSocketFactory(socketFactory);
+            }
+            catch(Exception e) {}
+        }
 
         visibleActivityCounter = 0;
         playerManager = null;
