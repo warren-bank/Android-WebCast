@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -137,6 +138,7 @@ public class BrowserActivity extends AppCompatActivity {
 
     private String current_page_url;
     private WebView webView;
+    private boolean shouldClearWebView;
     private BrowserWebViewClient webViewClient;
     private BrowserDownloadListener downloadListener;
     private ProgressBar progressBar;
@@ -224,6 +226,7 @@ public class BrowserActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
+        shouldClearWebView = true;
 
         updateCurrentPage(current_page_url, false);
 
@@ -249,21 +252,11 @@ public class BrowserActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
+    public void onStop() {
+        super.onStop();
 
-        webView.clearCache(true);
-        webView.clearHistory();
-        webView.clearFormData();
-        webView.clearSslPreferences();
-        WebStorage.getInstance().deleteAllData();
-        if (Build.VERSION.SDK_INT >= 21) {
-            CookieManager.getInstance().removeAllCookies(null);
-            CookieManager.getInstance().flush();
-        }
-        else {
-            CookieManager.getInstance().removeAllCookie();
-        }
+        if (shouldClearWebView)
+            clearWebView();
     }
 
     // ---------------------------------------------------------------------------------------------
@@ -511,7 +504,7 @@ public class BrowserActivity extends AppCompatActivity {
         drawer_right_videos_arrayAdapter.notifyDataSetChanged();
 
         // conditionally show icon
-        if (drawer_right_videos_arrayList.size() > 1) {
+        if ((drawer_right_videos_arrayList.size() > 1) && (BrowserUtils.getVideoPlayerPreferenceIndex(BrowserActivity.this) == 0)) {
             drawer_right_videos_icon_watch_all.setVisibility(View.VISIBLE);
         }
     }
@@ -877,6 +870,21 @@ public class BrowserActivity extends AppCompatActivity {
         }
     }
 
+    private void clearWebView() {
+        webView.clearCache(true);
+        webView.clearHistory();
+        webView.clearFormData();
+        webView.clearSslPreferences();
+        WebStorage.getInstance().deleteAllData();
+        if (Build.VERSION.SDK_INT >= 21) {
+            CookieManager.getInstance().removeAllCookies(null);
+            CookieManager.getInstance().flush();
+        }
+        else {
+            CookieManager.getInstance().removeAllCookie();
+        }
+    }
+
     // ---------------------------------------------------------------------------------------------
     // Intent:
     // ---------------------------------------------------------------------------------------------
@@ -892,11 +900,50 @@ public class BrowserActivity extends AppCompatActivity {
     private void openVideo(DrawerListItem item) {
         if (item == null) return;
 
-        ArrayList<String> arrSources = new ArrayList<String>(3);
-        arrSources.add(item.uri);
-        arrSources.add(item.mimeType);
-        arrSources.add(item.referer);
-        openVideos(arrSources);
+        int videoPlayerPreferenceIndex = BrowserUtils.getVideoPlayerPreferenceIndex(BrowserActivity.this);
+
+        switch(videoPlayerPreferenceIndex) {
+
+            case 2: {
+                // ExoAirPlayer sender
+                Intent in = new Intent(BrowserActivity.this, ExoAirPlayerSenderActivity.class);
+                in.putExtra("video",   item.uri);
+                in.putExtra("referer", item.referer);
+                startActivity(in);
+                shouldClearWebView = false;
+                return;
+            }
+
+            case 1: {
+                // external video player
+                Intent in   = new Intent();
+                Uri    data = Uri.parse(item.uri);
+                String type = Intent.normalizeMimeType(item.mimeType);
+
+                in.setAction(Intent.ACTION_VIEW);
+                in.setDataAndType(data, type);
+
+                if (in.resolveActivity(getPackageManager()) != null) {
+                    // add title to chooser dialog
+                    in = Intent.createChooser(in, getString(R.string.title_intent_chooser));
+
+                    startActivity(in);
+                    return;
+                }
+                // else: fall through to default case
+            }
+
+            case 0:
+            default: {
+                // internal video player w/ Chromecast sender
+                ArrayList<String> arrSources = new ArrayList<String>(3);
+                arrSources.add(item.uri);
+                arrSources.add(item.mimeType);
+                arrSources.add(item.referer);
+                openVideos(arrSources);
+                return;
+            }
+        }
     }
 
     private void openAllVideos() {
@@ -959,6 +1006,12 @@ public class BrowserActivity extends AppCompatActivity {
 
             case R.id.action_videos: {
                 toggleDrawerVideos();
+                return true;
+            }
+
+            case R.id.action_settings: {
+                Intent in = new Intent(BrowserActivity.this, SettingsActivity.class);
+                startActivity(in);
                 return true;
             }
 

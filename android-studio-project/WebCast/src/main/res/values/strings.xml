@@ -1,14 +1,55 @@
 <resources>
+
+    <!-- common -->
     <string name="app_name">WebCast</string>
 
+    <string name="user_agent">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36</string>
+
+    <!-- BrowserActivity -->
     <string name="action_bookmark">Bookmark Webpage</string>
     <string name="action_bookmarks">Bookmarks</string>
     <string name="action_videos">Videos</string>
+    <string name="action_settings">Settings</string>
     <string name="action_exit">Exit</string>
+
+    <string name="title_intent_chooser">Watch video in:</string>
+
+    <!-- SettingsActivity -->
+    <string name="pref_settings_key">settings_key</string>
+    <string name="pref_settings_title">WebCast Settings</string>
+
+    <string name="pref_videoplayer_array_names_1">internal w/ Chromecast sender</string>
+    <string name="pref_videoplayer_array_names_2">external</string>
+    <string name="pref_videoplayer_array_names_3">ExoAirPlayer sender</string>
+
+    <string name="pref_videoplayer_array_values_1">internal</string>
+    <string name="pref_videoplayer_array_values_2">external</string>
+    <string name="pref_videoplayer_array_values_3">exoairplayer</string>
+
+    <string-array name="pref_videoplayer_array_names">
+        <item>@string/pref_videoplayer_array_names_1</item>
+        <item>@string/pref_videoplayer_array_names_2</item>
+        <item>@string/pref_videoplayer_array_names_3</item>
+    </string-array>
+
+    <string-array name="pref_videoplayer_array_values">
+        <item>@string/pref_videoplayer_array_values_1</item>
+        <item>@string/pref_videoplayer_array_values_2</item>
+        <item>@string/pref_videoplayer_array_values_3</item>
+    </string-array>
+
+    <string name="pref_videoplayer_key">pref_videoplayer</string>
+    <string name="pref_videoplayer_title">Video Player</string>
+    <string name="pref_videoplayer_summary">watch videos using..</string>
+    <string name="pref_videoplayer_default">@string/pref_videoplayer_array_values_1</string>
+
+    <!-- ExoAirPlayerSenderActivity -->
+    <string name="pref_persistentcookies_key">pref_persistentcookies</string>
+
+    <!-- VideoActivity -->
+    <string name="cast_receiver_id">6BFED418</string>
 
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">Failed to get Cast context. Try updating Google Play Services and restart the app.</string>
 
-    <string name="user_agent">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36</string>
-    <string name="cast_receiver_id">6BFED418</string>
 </resources>
