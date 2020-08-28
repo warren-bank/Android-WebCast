@@ -923,6 +923,9 @@ public class BrowserActivity extends AppCompatActivity {
                 in.setAction(Intent.ACTION_VIEW);
                 in.setDataAndType(data, type);
 
+                // when a local instance of ExoAirPlayer is started by implicit Intent, pass the 'referer' URL
+                in.putExtra("referUrl", item.referer);
+
                 if (in.resolveActivity(getPackageManager()) != null) {
                     // add title to chooser dialog
                     in = Intent.createChooser(in, getString(R.string.title_intent_chooser));
