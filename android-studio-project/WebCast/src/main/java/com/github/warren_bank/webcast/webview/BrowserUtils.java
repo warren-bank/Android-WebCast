@@ -68,7 +68,7 @@ public class BrowserUtils {
     public static String base64_encode(String input) {
         try {
             byte[] bytes  = input.getBytes("UTF-8");
-            int flags     = Base64.NO_WRAP | Base64.URL_SAFE;
+            int flags     = Base64.NO_WRAP;
             String output = Base64.encodeToString(bytes, flags);
             return output;
         }
