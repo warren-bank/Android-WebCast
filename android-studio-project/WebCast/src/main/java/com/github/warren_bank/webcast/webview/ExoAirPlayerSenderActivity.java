@@ -1,6 +1,7 @@
 package com.github.warren_bank.webcast.webview;
 
 import com.github.warren_bank.webcast.R;
+import com.github.warren_bank.webcast.WebCastApplication;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -48,6 +49,18 @@ public class ExoAirPlayerSenderActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        WebCastApplication.activityResumed();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        WebCastApplication.activityPaused();
+    }
+
+    @Override
     public void onStop() {
         super.onStop();
 
@@ -67,8 +80,9 @@ public class ExoAirPlayerSenderActivity extends AppCompatActivity {
 
         Uri page       = Uri.parse(AIRPLAY_SENDER);
         Intent intent  = getIntent();
-        String video   = intent.getStringExtra("video");
-        String referer = intent.getStringExtra("referer");
+        String video   = intent.getDataString();
+        String caption = intent.getStringExtra("textUrl");
+        String referer = intent.getStringExtra("referUrl");
 
         page_domain    = page.getHost();
         page_path      = page.getPath();
@@ -78,6 +92,13 @@ public class ExoAirPlayerSenderActivity extends AppCompatActivity {
                 AIRPLAY_SENDER                               +
                 "#/watch/"                                   +
                 BrowserUtils.base64_encode(video)            +
+                ((caption == null)
+                    ? ""
+                    : (
+                        "/subtitle/"                         +
+                        BrowserUtils.base64_encode(caption)
+                      )
+                )                                            +
                 ((referer == null)
                     ? ""
                     : (
@@ -127,7 +148,7 @@ public class ExoAirPlayerSenderActivity extends AppCompatActivity {
     }
 
     private void restoreCookies() {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String pref_key         = getString(R.string.pref_persistentcookies_key);
         String cookies          = prefs.getString(pref_key, null);
 
@@ -147,7 +168,7 @@ public class ExoAirPlayerSenderActivity extends AppCompatActivity {
         String cookies = CookieManager.getInstance().getCookie(AIRPLAY_SENDER);
 
         if (cookies != null) {
-            SharedPreferences prefs         = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences prefs         = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             SharedPreferences.Editor editor = prefs.edit();
             String pref_key                 = getString(R.string.pref_persistentcookies_key);
 

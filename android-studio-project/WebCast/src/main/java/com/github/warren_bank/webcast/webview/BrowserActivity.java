@@ -906,9 +906,16 @@ public class BrowserActivity extends AppCompatActivity {
 
             case 2: {
                 // ExoAirPlayer sender
-                Intent in = new Intent(BrowserActivity.this, ExoAirPlayerSenderActivity.class);
-                in.putExtra("video",   item.uri);
-                in.putExtra("referer", item.referer);
+                Intent in   = new Intent(BrowserActivity.this, ExoAirPlayerSenderActivity.class);
+                Uri    data = Uri.parse(item.uri);
+                String type = Intent.normalizeMimeType(item.mimeType);
+
+                in.setAction(Intent.ACTION_VIEW);
+                in.setDataAndType(data, type);
+
+                // reuse names of ExoAirPlayer extras
+                in.putExtra("referUrl", item.referer);
+
                 startActivity(in);
                 shouldClearWebView = false;
                 return;

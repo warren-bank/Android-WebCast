@@ -3,6 +3,9 @@
     <!-- common -->
     <string name="app_name">WebCast</string>
 
+    <string name="activity_name_browser">@string/app_name</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer sender</string>
+
     <string translatable="false" name="user_agent">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36</string>
 
     <!-- BrowserActivity -->
@@ -20,7 +23,7 @@
 
     <string name="pref_videoplayer_array_names_1">internal w/ Chromecast sender</string>
     <string name="pref_videoplayer_array_names_2">external</string>
-    <string name="pref_videoplayer_array_names_3">ExoAirPlayer sender</string>
+    <string name="pref_videoplayer_array_names_3">@string/activity_name_exoairplayersender</string>
 
     <string translatable="false" name="pref_videoplayer_array_values_1">internal</string>
     <string translatable="false" name="pref_videoplayer_array_values_2">external</string>
