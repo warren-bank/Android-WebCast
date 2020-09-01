@@ -46,6 +46,15 @@ public class BrowserUtils {
         return prefs.getString(pref_key, pref_default);
     }
 
+    public static boolean getEnableRemoteDebuggerPreference(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        String pref_key         = context.getString(R.string.pref_enableremotedebugger_key);
+        String pref_default     = context.getString(R.string.pref_enableremotedebugger_default);
+        boolean val_default     = "true".equals(pref_default);
+
+        return prefs.getBoolean(pref_key, val_default);
+    }
+
     public static int getIndexOfArray(Object needle, Object[] haystack) {
         for (int i=0; i < haystack.length; i++) {
             if (

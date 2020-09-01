@@ -12,5 +12,12 @@
       android:entryValues="@array/pref_videoplayer_array_values"
       android:defaultValue="@string/pref_videoplayer_default" />
 
+    <CheckBoxPreference
+      android:key="@string/pref_enableremotedebugger_key"
+      android:title="@string/pref_enableremotedebugger_title"
+      android:summaryOn="@string/pref_enableremotedebugger_summary_on"
+      android:summaryOff="@string/pref_enableremotedebugger_summary_off"
+      android:defaultValue="@string/pref_enableremotedebugger_default" />
+
   </PreferenceCategory>
 </PreferenceScreen>

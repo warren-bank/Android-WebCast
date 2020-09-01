@@ -138,6 +138,7 @@ public class BrowserActivity extends AppCompatActivity {
 
     private String current_page_url;
     private WebView webView;
+    private boolean shouldUpdateWebViewDebugConfigs;
     private boolean shouldClearWebView;
     private BrowserWebViewClient webViewClient;
     private BrowserDownloadListener downloadListener;
@@ -238,6 +239,11 @@ public class BrowserActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
         WebCastApplication.activityResumed();
+
+        if (shouldUpdateWebViewDebugConfigs) {
+            shouldUpdateWebViewDebugConfigs = false;
+            BrowserDebugUtils.configWebView(BrowserActivity.this);
+        }
 
         webView.loadUrl(current_page_url);
         shouldClearWebView = true;
@@ -799,6 +805,7 @@ public class BrowserActivity extends AppCompatActivity {
 
     private void initWebView() {
         BrowserDebugUtils.configWebView(BrowserActivity.this);
+        shouldUpdateWebViewDebugConfigs = false;
 
         webViewClient = new BrowserWebViewClient(BrowserActivity.this) {
             @Override
@@ -1022,6 +1029,7 @@ public class BrowserActivity extends AppCompatActivity {
             case R.id.action_settings: {
                 Intent in = new Intent(BrowserActivity.this, SettingsActivity.class);
                 startActivity(in);
+                shouldUpdateWebViewDebugConfigs = true;
                 return true;
             }
 

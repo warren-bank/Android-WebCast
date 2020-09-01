@@ -21,6 +21,7 @@
     <string translatable="false" name="pref_settings_key">settings_key</string>
     <string name="pref_settings_title">WebCast Settings</string>
 
+    <!-- SettingsActivity: Video Player -->
     <string name="pref_videoplayer_array_names_1">internal w/ Chromecast sender</string>
     <string name="pref_videoplayer_array_names_2">external</string>
     <string name="pref_videoplayer_array_names_3">@string/activity_name_exoairplayersender</string>
@@ -42,9 +43,16 @@
     </string-array>
 
     <string translatable="false" name="pref_videoplayer_key">pref_videoplayer</string>
-    <string translatable="false" name="pref_videoplayer_title">Video Player</string>
-    <string translatable="false" name="pref_videoplayer_summary">watch videos using..</string>
     <string translatable="false" name="pref_videoplayer_default">@string/pref_videoplayer_array_values_1</string>
+    <string name="pref_videoplayer_title">Video Player</string>
+    <string name="pref_videoplayer_summary">watch videos using..</string>
+
+    <!-- SettingsActivity: Enable Remote Debugger -->
+    <string translatable="false" name="pref_enableremotedebugger_key">pref_enableremotedebugger</string>
+    <string translatable="false" name="pref_enableremotedebugger_default">false</string>
+    <string name="pref_enableremotedebugger_title">Enable Remote Debugger</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView can be inspected on LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView cannot be inspected on LAN</string>
 
     <!-- ExoAirPlayerSenderActivity -->
     <string translatable="false" name="pref_persistentcookies_key">pref_persistentcookies</string>
