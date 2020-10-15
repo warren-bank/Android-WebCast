@@ -1,6 +1,7 @@
 package com.github.warren_bank.webcast.exoplayer2;
 
 import com.github.warren_bank.webcast.R;
+import com.github.warren_bank.webcast.SharedUtils;
 import com.github.warren_bank.webcast.WebCastApplication;
 
 import android.content.Intent;
@@ -206,6 +207,9 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
   private void addVideoSource(String uri, String mimeType, String referer) {
     if (uri == null) return;
 
+    if (mimeType == null)
+      mimeType = SharedUtils.getVideoMimeType(uri);
+
     VideoSource videoSource = VideoSource.createVideoSource(uri, mimeType, referer);
     playerManager.addItem(videoSource);
     mediaQueueListAdapter.notifyItemInserted(playerManager.getMediaQueueSize() - 1);
@@ -240,7 +244,7 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
 
       addVideoSource(
         /* uri=      */ intent.getDataString(),
-        /* mimeType= */ intent.getType(),
+        /* mimeType= */ null,
         /* referer=  */ intent.getStringExtra("referUrl")
       );
     }
