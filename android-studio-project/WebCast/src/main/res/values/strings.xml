@@ -4,6 +4,7 @@
     <string name="app_name">WebCast</string>
 
     <string name="activity_name_browser">@string/app_name</string>
+    <string name="activity_name_video">@string/app_name</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer sender</string>
 
     <string translatable="false" name="user_agent">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36</string>

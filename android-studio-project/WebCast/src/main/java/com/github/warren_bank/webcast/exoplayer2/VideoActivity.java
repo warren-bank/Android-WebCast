@@ -3,14 +3,8 @@ package com.github.warren_bank.webcast.exoplayer2;
 import com.github.warren_bank.webcast.R;
 import com.github.warren_bank.webcast.WebCastApplication;
 
+import android.content.Intent;
 import android.os.Bundle;
-import androidx.core.graphics.ColorUtils;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -18,9 +12,19 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.core.graphics.ColorUtils;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.ItemTouchHelper;
+
 import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.ui.PlayerControlView;
 import com.google.android.exoplayer2.ui.PlayerView;
+
 import com.google.android.gms.cast.framework.CastButtonFactory;
 import com.google.android.gms.cast.framework.CastContext;
 import com.google.android.gms.dynamite.DynamiteModule;
@@ -200,14 +204,20 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
   // Internal methods.
 
   private void addVideoSource(String uri, String mimeType, String referer) {
+    if (uri == null) return;
+
     VideoSource videoSource = VideoSource.createVideoSource(uri, mimeType, referer);
     playerManager.addItem(videoSource);
     mediaQueueListAdapter.notifyItemInserted(playerManager.getMediaQueueSize() - 1);
   }
 
   private void addVideoSources() {
-    if (getIntent().getExtras() != null) {
-      String jsonSources = getIntent().getStringExtra("video_sources");
+    Intent intent = getIntent();
+
+    if (intent.hasExtra("video_sources")) {
+      // explicit intent started by BrowserActivity
+
+      String jsonSources = intent.getStringExtra("video_sources");
 
       Gson gson = new Gson();
       ArrayList<String> arrSources = gson.fromJson(jsonSources, new TypeToken<ArrayList<String>>() {
@@ -219,11 +229,20 @@ public class VideoActivity extends AppCompatActivity implements PlayerManager.Qu
 
       for (int i=0; i < maxIndex; i = i + strings_per_video) {
         addVideoSource(
-          arrSources.get(i),
-          arrSources.get(i+1),
-          arrSources.get(i+2)
+          /* uri=      */ arrSources.get(i),
+          /* mimeType= */ arrSources.get(i+1),
+          /* referer=  */ arrSources.get(i+2)
         );
       }
+    }
+    else {
+      // implicit intent (compatible with ExoAirPlayer and ExoAirPlayerSenderActivity)
+
+      addVideoSource(
+        /* uri=      */ intent.getDataString(),
+        /* mimeType= */ intent.getType(),
+        /* referer=  */ intent.getStringExtra("referUrl")
+      );
     }
   }
 
