@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer 送信者</string>
+    <string name="action_bookmark">ブックマーク Web ページ</string>
+    <string name="action_bookmarks">ブックマーク</string>
+    <string name="action_videos">ヴィデオス</string>
+    <string name="action_settings">設定</string>
+    <string name="action_exit">出口</string>
+    <string name="title_intent_chooser">ビデオの視聴:</string>
+    <string name="pref_settings_title">WebCast 設定</string>
+    <string name="pref_videoplayer_array_names_1">内部 w/ Chromecast 送信者</string>
+    <string name="pref_videoplayer_array_names_2">外部</string>
+    <string name="pref_videoplayer_title">ビデオ・プレイヤー</string>
+    <string name="pref_videoplayer_summary">ビデオを見る..</string>
+    <string name="pref_enableremotedebugger_title">リモート・デバッガーを有効にする</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView 検査できる LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView について検査できない LAN</string>
+    <string name="media_route_menu_title">キャスト</string>
+    <string name="cast_context_error">Cast コンテキストの取得に失敗しました。 Google Play サービスを更新して、アプリを再起動してください.</string>
+</resources>

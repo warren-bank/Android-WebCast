@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer expeditor</string>
+    <string name="action_bookmark">Pagina web a semnului</string>
+    <string name="action_bookmarks">Semne semne</string>
+    <string name="action_videos">Videoclipuri</string>
+    <string name="action_settings">Setări</string>
+    <string name="action_exit">Ieşire</string>
+    <string name="title_intent_chooser">Urmăriţi video în:</string>
+    <string name="pref_settings_title">WebCast Setări</string>
+    <string name="pref_videoplayer_array_names_1">intern w/ Chromecast expeditor</string>
+    <string name="pref_videoplayer_array_names_2">extern</string>
+    <string name="pref_videoplayer_title">Player video</string>
+    <string name="pref_videoplayer_summary">vizionaţi videoclipuri folosind..</string>
+    <string name="pref_enableremotedebugger_title">Activare Depanator la distanţă</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView poate fi inspectat la LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView nu poate fi inspectat la LAN</string>
+    <string name="media_route_menu_title">Cast</string>
+    <string name="cast_context_error">Eşuare la obţinerea contextului Cast. Încercaţi actualizarea Google Play Services şi reporniţi aplicaţia.</string>
+</resources>

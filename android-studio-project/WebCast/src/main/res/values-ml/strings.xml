@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer സെന്ഡര്</string>
+    <string name="action_bookmark">ഓര്മ്മക്കുറിപ്പു് വെബ്ബ്</string>
+    <string name="action_bookmarks">ഓര്മ്മക്കുറിപ്പുകള്</string>
+    <string name="action_videos">വീഡിയോകള്</string>
+    <string name="action_settings">സജ്ജീകരണങ്ങള്</string>
+    <string name="action_exit">പ്രദര്ശിപ്പിക്കുക</string>
+    <string name="title_intent_chooser">വീഡിയോ കാണുക:</string>
+    <string name="pref_settings_title">WebCast സജ്ജീകരണങ്ങള്</string>
+    <string name="pref_videoplayer_array_names_1">ആന്തരിക/ Chromecast സെന്ഡര്</string>
+    <string name="pref_videoplayer_array_names_2">പുറമെ</string>
+    <string name="pref_videoplayer_title">വീഡിയോ പ്ലെയര്Name</string>
+    <string name="pref_videoplayer_summary">ഉപയോഗിച്ചുള്ള വീഡിയോകൾ കാണുക..</string>
+    <string name="pref_enableremotedebugger_title">വിദൂര ഡീബഗ്ഗര് സജ്ജമാക്കുക</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView പരിശോധിക്കാവുന്നതാണ്. LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView അത് പരിശോധിക്കുവാന് സാധ്യമല്ല. LAN</string>
+    <string name="media_route_menu_title">കാസ്റ്റ്</string>
+    <string name="cast_context_error">Cast സന്ദര്ശനം ലഭിക്കുന്നതില് പരാജയം. ഗൂഗിള് പ്ലേ സര്വീസുകള് പരിഷ്കരിക്കുക, ആപ്പ് പുനരാരണം ചെയ്യുക.</string>
+</resources>

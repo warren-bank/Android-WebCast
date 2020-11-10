@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer anfonwr</string>
+    <string name="action_bookmark">Tudalen Tudalen Tudalen</string>
+    <string name="action_bookmarks">Nodau Tudalen</string>
+    <string name="action_videos">Fideos</string>
+    <string name="action_settings">Gosodiadau</string>
+    <string name="action_exit">Gadael</string>
+    <string name="title_intent_chooser">Gwylio fideo yn:</string>
+    <string name="pref_settings_title">WebCast Gosodiadau</string>
+    <string name="pref_videoplayer_array_names_1">mewnol mewnol/ Chromecast anfonwr</string>
+    <string name="pref_videoplayer_array_names_2">allanol</string>
+    <string name="pref_videoplayer_title">Chwaraewr Fideo</string>
+    <string name="pref_videoplayer_summary">gwylio fideos gan ddefnyddio..</string>
+    <string name="pref_enableremotedebugger_title">Galluogi Dadfygiwr pell</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView gellir ei archwilio LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView ni ellir eu harchwilio LAN</string>
+    <string name="media_route_menu_title">Cast</string>
+    <string name="cast_context_error">Methu cael cyd-destun y cast. Ceisiwch ddiweddaru Google Play Services ac ailgychwyn yr ap.</string>
+</resources>

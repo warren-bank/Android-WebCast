@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer αποστολέα:</string>
+    <string name="action_bookmark">Ιστοσελίδα σελιδοδείκτη</string>
+    <string name="action_bookmarks">Οι σελιδοδείκτες</string>
+    <string name="action_videos">Βίντεο:</string>
+    <string name="action_settings">Ρυθμίσεις:</string>
+    <string name="action_exit">Έξοδος:</string>
+    <string name="title_intent_chooser">Παρακολουθήστε βίντεο στο:</string>
+    <string name="pref_settings_title">WebCast Ρυθμίσεις:</string>
+    <string name="pref_videoplayer_array_names_1">Εσωτερικές w/ Chromecast αποστολέα:</string>
+    <string name="pref_videoplayer_array_names_2">εξωτερική:</string>
+    <string name="pref_videoplayer_title">Βίντεο Player</string>
+    <string name="pref_videoplayer_summary">παρακολούθηση βίντεο με χρήση..</string>
+    <string name="pref_enableremotedebugger_title">Ενεργοποίηση απομακρυσμένου Debugger</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView (συνέχεια) LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView -δεν μπορεί να ελεγχθεί LAN</string>
+    <string name="media_route_menu_title">-Καστ</string>
+    <string name="cast_context_error">Αποτυχία ανάκτησης του περιβάλλοντος Cast. Προσπαθήστε να ενημερώσετε το Google Play Services και επανεκκινήστε την εφαρμογή.</string>
+</resources>

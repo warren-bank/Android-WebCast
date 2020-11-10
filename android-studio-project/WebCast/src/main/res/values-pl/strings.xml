@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer nadawca</string>
+    <string name="action_bookmark">Zakładka Strona WWW</string>
+    <string name="action_bookmarks">Zakładki</string>
+    <string name="action_videos">Filmy wideo</string>
+    <string name="action_settings">Ustawienia</string>
+    <string name="action_exit">Wyjdź</string>
+    <string name="title_intent_chooser">Obejrzyj wideo w:</string>
+    <string name="pref_settings_title">WebCast Ustawienia</string>
+    <string name="pref_videoplayer_array_names_1">wewnętrzna w/ Chromecast nadawca</string>
+    <string name="pref_videoplayer_array_names_2">zewnętrzne</string>
+    <string name="pref_videoplayer_title">Odtwarzacz wideo</string>
+    <string name="pref_videoplayer_summary">obejrzyj filmy wideo..</string>
+    <string name="pref_enableremotedebugger_title">Włącz debuger zdalny</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView można sprawdzić na LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView nie można sprawdzić w LAN</string>
+    <string name="media_route_menu_title">Rzutowanie</string>
+    <string name="cast_context_error">Pobranie kontekstu rzutowania nie powiodło się. Spróbuj zaktualizować usługi Google Play i zrestartuj aplikację.</string>
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer స్నేందర్</string>
+    <string name="action_bookmark">బూక్మార్క్ వెబ్ పేజీ</string>
+    <string name="action_bookmarks">గుర్తులు</string>
+    <string name="action_videos">వీడియోలు</string>
+    <string name="action_settings">అమరిక</string>
+    <string name="action_exit">ఎక్విట్</string>
+    <string name="title_intent_chooser">వీడియోను చూడండి:</string>
+    <string name="pref_settings_title">WebCast అమరిక</string>
+    <string name="pref_videoplayer_array_names_1">అంతర్గత w/ Chromecast స్నేందర్</string>
+    <string name="pref_videoplayer_array_names_2">బాహ్య</string>
+    <string name="pref_videoplayer_title">వీడియో ప్లేయర్</string>
+    <string name="pref_videoplayer_summary">వీడియోలను ఉపయోగించి చూడండి..</string>
+    <string name="pref_enableremotedebugger_title">రిమోట్ డీబగ్గర్ చేతనము చేయుము</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView పై విమర్యం చేయవచ్చు. LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView పై విమర్యం చేయలేము. LAN</string>
+    <string name="media_route_menu_title">కాస్ట్</string>
+    <string name="cast_context_error">Cast సందర్భం పొందుటకు విఫలమైంది. గూగుల్ ప్లేస్ సేవలను అప్డేటింగ్ చేయండి మరియు ఆప్ను పునర్ప్రారంభించు.</string>
+</resources>

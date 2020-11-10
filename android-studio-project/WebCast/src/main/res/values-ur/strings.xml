@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer سل</string>
+    <string name="action_bookmark">بک مارک ویپیج</string>
+    <string name="action_bookmarks">بک مارکس</string>
+    <string name="action_videos">ویڈیوز</string>
+    <string name="action_settings">سیٹنگز</string>
+    <string name="action_exit">باہر نکلیں</string>
+    <string name="title_intent_chooser">ویڈیو دیکھیں:</string>
+    <string name="pref_settings_title">WebCast سیٹنگز</string>
+    <string name="pref_videoplayer_array_names_1">اندرونی طور پر/ Chromecast سل</string>
+    <string name="pref_videoplayer_array_names_2">باہری</string>
+    <string name="pref_videoplayer_title">ویڈیو پلیئر</string>
+    <string name="pref_videoplayer_summary">ویڈیوز دیکھتے ہوئے..</string>
+    <string name="pref_enableremotedebugger_title">Enable ریموٹ Debugger</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView پر معائنہ کیا جا سکتا ہے LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView پر معائنہ نہیں کیا جاسکتا. LAN</string>
+    <string name="media_route_menu_title">کاسٹ</string>
+    <string name="cast_context_error">کو کاسٹ کرنے کے لئے بھیج دیا. گوگل پلے سروسز کو اپڈیٹ کرنے کی کوشش کریں اور ایپ کو دوبارہ شروع کریں.</string>
+</resources>

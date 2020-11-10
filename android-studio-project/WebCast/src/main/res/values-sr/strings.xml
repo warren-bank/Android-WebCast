@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer пошиљалац</string>
+    <string name="action_bookmark">Веб страница обележивача</string>
+    <string name="action_bookmarks">Обележивачи</string>
+    <string name="action_videos">Видео снимци</string>
+    <string name="action_settings">Поставке</string>
+    <string name="action_exit">Изађи</string>
+    <string name="title_intent_chooser">Погледајте видео у:</string>
+    <string name="pref_settings_title">WebCast Поставке</string>
+    <string name="pref_videoplayer_array_names_1">интерна w/ Chromecast пошиљалац</string>
+    <string name="pref_videoplayer_array_names_2">спољашње</string>
+    <string name="pref_videoplayer_title">Видео играч</string>
+    <string name="pref_videoplayer_summary">Гледање видеа помоћу..</string>
+    <string name="pref_enableremotedebugger_title">Омогући даљинско управљање</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView може да се прегледа LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView не могу да се прегледају LAN</string>
+    <string name="media_route_menu_title">Баци</string>
+    <string name="cast_context_error">Не могу да добијем контекст Cast. Покушајте да ажурирате Гугл плеј услуге и поново покрените апликацију.</string>
+</resources>

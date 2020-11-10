@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer gönderen</string>
+    <string name="action_bookmark">Web Sayfasına Yer İşareti</string>
+    <string name="action_bookmarks">Yer İşaretleri</string>
+    <string name="action_videos">Videolar</string>
+    <string name="action_settings">Ayarlar</string>
+    <string name="action_exit">Çıkış</string>
+    <string name="title_intent_chooser">Videoyu izleyin:</string>
+    <string name="pref_settings_title">WebCast Ayarlar</string>
+    <string name="pref_videoplayer_array_names_1">iç/ Chromecast gönderen</string>
+    <string name="pref_videoplayer_array_names_2">dış</string>
+    <string name="pref_videoplayer_title">Video Player</string>
+    <string name="pref_videoplayer_summary">kullanarak videoları izleyin..</string>
+    <string name="pref_enableremotedebugger_title">Uzak Hata Ayıklayıcıyı Etkinleştir</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView üzerinde incelenebilir LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView incelenemez LAN</string>
+    <string name="media_route_menu_title">Tip Dönüştür</string>
+    <string name="cast_context_error">Cast bağlamı alınamadı. Google Play hizmetlerini güncellemeyi deneyin ve uygulamayı yeniden başlatın.</string>
+</resources>

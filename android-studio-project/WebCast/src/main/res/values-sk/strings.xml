@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer odosielateľ</string>
+    <string name="action_bookmark">Webová stránka záložky</string>
+    <string name="action_bookmarks">Záložky</string>
+    <string name="action_videos">Videá</string>
+    <string name="action_settings">Nastavenia</string>
+    <string name="action_exit">Ukončiť</string>
+    <string name="title_intent_chooser">Pozrite si video v:</string>
+    <string name="pref_settings_title">WebCast Nastavenia</string>
+    <string name="pref_videoplayer_array_names_1">interný w/ Chromecast odosielateľ</string>
+    <string name="pref_videoplayer_array_names_2">externá</string>
+    <string name="pref_videoplayer_title">Prehrávač videa</string>
+    <string name="pref_videoplayer_summary">sledovať videá pomocou..</string>
+    <string name="pref_enableremotedebugger_title">Povoliť vzdialený ladiaci program</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView môžu byť skontrolované na LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView nie je možné vykonať inšpekciu LAN</string>
+    <string name="media_route_menu_title">Obsadenie</string>
+    <string name="cast_context_error">Nepodarilo sa získať kontext Cast. Skúste aktualizovať služby Google Play a znova spustiť aplikáciu.</string>
+</resources>

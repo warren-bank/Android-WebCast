@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer saatja</string>
+    <string name="action_bookmark">Järjehoidja veebileht</string>
+    <string name="action_bookmarks">Järjehoidjad</string>
+    <string name="action_videos">Videod</string>
+    <string name="action_settings">Seadistused</string>
+    <string name="action_exit">Välju</string>
+    <string name="title_intent_chooser">Video vaatamine:</string>
+    <string name="pref_settings_title">WebCast Seadistused</string>
+    <string name="pref_videoplayer_array_names_1">sisemine/ Chromecast saatja</string>
+    <string name="pref_videoplayer_array_names_2">Väline</string>
+    <string name="pref_videoplayer_title">Videomängija</string>
+    <string name="pref_videoplayer_summary">vaadata videoid kasutades..</string>
+    <string name="pref_enableremotedebugger_title">Võrgusiluri lubamine</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView võib kontrollida LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView ei saa kontrollida LAN</string>
+    <string name="media_route_menu_title">Valatud</string>
+    <string name="cast_context_error">Cast context nurjus. Proovige uuendada Google Play teenuseid ja taaskäivitada rakendus.</string>
+</resources>

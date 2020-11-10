@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer મોકલનાર</string>
+    <string name="action_bookmark">બુકમાર્ક વેબપાનું</string>
+    <string name="action_bookmarks">બુકમાર્કો</string>
+    <string name="action_videos">વિડિયો</string>
+    <string name="action_settings">સુયોજનો</string>
+    <string name="action_exit">બહાર નીકળવો</string>
+    <string name="title_intent_chooser">માં વીડિયો જુઓ:</string>
+    <string name="pref_settings_title">WebCast સુયોજનો</string>
+    <string name="pref_videoplayer_array_names_1">આંતરિક w/ Chromecast મોકલનાર</string>
+    <string name="pref_videoplayer_array_names_2">બાહ્ય</string>
+    <string name="pref_videoplayer_title">વીડિયો પ્લેયર</string>
+    <string name="pref_videoplayer_summary">ની મદદથી વીડિયો જોડો..</string>
+    <string name="pref_enableremotedebugger_title">દૂરસ્થ ડિબગર સક્રિય કરો</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView પર નિરીક્ષણ કરી શકાય છે LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView પર નિરીક્ષણ કરી શકાતો નથી LAN</string>
+    <string name="media_route_menu_title">કાસ્ટ</string>
+    <string name="cast_context_error">કાસ્ટ સંદર્ભ મેળવવામાં નિષ્ફળ. Google Play Services ને સુધારો અને કાર્યક્રમ પુનઃશરૂ કરવાનો પ્રયત્ન કરો.</string>
+</resources>

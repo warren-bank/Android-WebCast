@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer প্রেরক</string>
+    <string name="action_bookmark">বুকমার্ক ওয়েবপেজ</string>
+    <string name="action_bookmarks">বুকমার্ক</string>
+    <string name="action_videos">ভিডিও</string>
+    <string name="action_settings">সেটিংস</string>
+    <string name="action_exit">এক্সিট</string>
+    <string name="title_intent_chooser">ভিডিওটি দেখুন:</string>
+    <string name="pref_settings_title">WebCast সেটিংস</string>
+    <string name="pref_videoplayer_array_names_1">আভ্যন্তরীণ/ Chromecast প্রেরক</string>
+    <string name="pref_videoplayer_array_names_2">বহিঃস্থ</string>
+    <string name="pref_videoplayer_title">ভিডিও প্লেয়ারName</string>
+    <string name="pref_videoplayer_summary">ব্যবহার করে ভিডিও দেখুন..</string>
+    <string name="pref_enableremotedebugger_title">দূরবর্তী ডিবাগার সক্রিয় করো</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView পরিদর্শন করা যেতে পারে LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView এর উপর পরিদর্শন করা যাবেনা LAN</string>
+    <string name="media_route_menu_title">কাস্ট</string>
+    <string name="cast_context_error">ক্যাস্ট প্রেক্ষাপট পেতে ব্যর্থ. গুগল প্লে সার্ভিস আপডেট করার চেষ্টা করুন এবং অ্যাপ্লিকেশন পুনরায় আরম্ভ করুন.</string>
+</resources>

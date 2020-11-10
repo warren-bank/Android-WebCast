@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer Pengirim</string>
+    <string name="action_bookmark">Halaman Webpage</string>
+    <string name="action_bookmarks">Markah</string>
+    <string name="action_videos">Video</string>
+    <string name="action_settings">Pengaturan</string>
+    <string name="action_exit">Keluar</string>
+    <string name="title_intent_chooser">Menonton video di:</string>
+    <string name="pref_settings_title">WebCast Pengaturan</string>
+    <string name="pref_videoplayer_array_names_1">internal w/ Chromecast Pengirim</string>
+    <string name="pref_videoplayer_array_names_2">Eksternal</string>
+    <string name="pref_videoplayer_title">Pemutar Video</string>
+    <string name="pref_videoplayer_summary">menonton video dengan menggunakan..</string>
+    <string name="pref_enableremotedebugger_title">Aktifkan Debugger Jarak Jauh</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView dapat diinspeksi pada LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView tidak dapat diperiksa pada LAN</string>
+    <string name="media_route_menu_title">Cor</string>
+    <string name="cast_context_error">Gagal mendapatkan konteks Cast. Coba memutakhirkan Layanan Google Play dan restart aplikasi.</string>
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer G.</string>
+    <string name="action_bookmark">Web stranica za označavanje stranica</string>
+    <string name="action_bookmarks">Knjiške oznake</string>
+    <string name="action_videos">Jedan video.</string>
+    <string name="action_settings">Jedna postavka.</string>
+    <string name="action_exit">Jedan izlaz.</string>
+    <string name="title_intent_chooser">Pogledajte video.:</string>
+    <string name="pref_settings_title">WebCast Jedna postavka.</string>
+    <string name="pref_videoplayer_array_names_1">Unutrašnja kontrola/ Chromecast G.</string>
+    <string name="pref_videoplayer_array_names_2"></string>
+    <string name="pref_videoplayer_title">Jedan video.</string>
+    <string name="pref_videoplayer_summary">Pogledajte video koristeći..</string>
+    <string name="pref_enableremotedebugger_title">Omogući daljinski upravljač Debugera</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView Mogu da ih pregledam. LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView ne mogu da se pregledaju LAN</string>
+    <string name="media_route_menu_title">Gips</string>
+    <string name="cast_context_error">Nijesam uspio da dobijem Cast kontekst. Pokušajte da ažurirate usluge Google Play i ponovo pokrenite aplikaciju..</string>
+</resources>

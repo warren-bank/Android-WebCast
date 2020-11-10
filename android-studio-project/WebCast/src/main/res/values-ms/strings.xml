@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer Pengirim</string>
+    <string name="action_bookmark">Laman Sesawang Laman Buku</string>
+    <string name="action_bookmarks">Tanda Buku</string>
+    <string name="action_videos">Video</string>
+    <string name="action_settings">Tetapan</string>
+    <string name="action_exit">Keluar</string>
+    <string name="title_intent_chooser">Menonton video dalam:</string>
+    <string name="pref_settings_title">WebCast Tetapan</string>
+    <string name="pref_videoplayer_array_names_1">dalaman w/ Chromecast Pengirim</string>
+    <string name="pref_videoplayer_array_names_2">luaran</string>
+    <string name="pref_videoplayer_title">Pemain Video</string>
+    <string name="pref_videoplayer_summary">menonton video menggunakan..</string>
+    <string name="pref_enableremotedebugger_title">Benarkan Penyahpepijat Jauh</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView boleh diperiksa pada LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView tidak dapat diperiksa pada LAN</string>
+    <string name="media_route_menu_title">Lemparkan</string>
+    <string name="cast_context_error">Gagal mendapatkan konteks Cast. Cuba mengemaskini Perkhidmatan Main Google Play dan mulakan semula aplikasi.</string>
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer प्रेषक</string>
+    <string name="action_bookmark">बुकमार्क वेबपेज</string>
+    <string name="action_bookmarks">पसंद</string>
+    <string name="action_videos">वीडियो</string>
+    <string name="action_settings">विन्यास</string>
+    <string name="action_exit">बाहर निकलें</string>
+    <string name="title_intent_chooser">वीडियो देखें:</string>
+    <string name="pref_settings_title">WebCast विन्यास</string>
+    <string name="pref_videoplayer_array_names_1">आंतरिक/ Chromecast प्रेषक</string>
+    <string name="pref_videoplayer_array_names_2">बाहरी</string>
+    <string name="pref_videoplayer_title">वीडियो प्लेयर</string>
+    <string name="pref_videoplayer_summary">वीडियो प्रयोग करें..</string>
+    <string name="pref_enableremotedebugger_title">रिमोट डिबगर सक्षम करें</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView पर निरीक्षण किया जा सकता LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView पर निरीक्षण नहीं किया जाएगा LAN</string>
+    <string name="media_route_menu_title">डाली</string>
+    <string name="cast_context_error">कास्ट संदर्भ पाने में विफल. Google प्ले सेवाओं को अद्यतन करने और एप्लिकेशन को पुनः प्रारंभ करने की कोशिश.</string>
+</resources>

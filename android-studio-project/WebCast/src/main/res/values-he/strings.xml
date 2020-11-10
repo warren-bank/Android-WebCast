@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer שולח</string>
+    <string name="action_bookmark">Webpage של סימניה</string>
+    <string name="action_bookmarks">סימניות</string>
+    <string name="action_videos">וידאו</string>
+    <string name="action_settings">הגדרות</string>
+    <string name="action_exit">יציאה</string>
+    <string name="title_intent_chooser">צפייה בסרטון ב -:</string>
+    <string name="pref_settings_title">WebCast הגדרות</string>
+    <string name="pref_videoplayer_array_names_1">ח \' פנימי/ Chromecast שולח</string>
+    <string name="pref_videoplayer_array_names_2">חיצוני</string>
+    <string name="pref_videoplayer_title">נגן וידאו</string>
+    <string name="pref_videoplayer_summary">צפייה בסרטונים באמצעות..</string>
+    <string name="pref_enableremotedebugger_title">הפעלת דריד מרוחק</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView ניתן לבדיקה ב - LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView לא ניתן לבדיקה ב - LAN</string>
+    <string name="media_route_menu_title">קסט</string>
+    <string name="cast_context_error">נכשל בקבלת הקשר Cast. נסו לעדכן את Google Play Services והפעילו מחדש את היישום.</string>
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer Sender</string>
+    <string name="action_bookmark">புத்தகக்குறி இணைப்பு</string>
+    <string name="action_bookmarks">புத்தகக்குறிகள்</string>
+    <string name="action_videos">வீடியோக்கள்</string>
+    <string name="action_settings">அமைப்புகள்</string>
+    <string name="action_exit">வெளியேறு</string>
+    <string name="title_intent_chooser">வீடியோவை பார்க்கவும்:</string>
+    <string name="pref_settings_title">WebCast அமைப்புகள்</string>
+    <string name="pref_videoplayer_array_names_1">உள்ளார்ந்த/ Chromecast Sender</string>
+    <string name="pref_videoplayer_array_names_2">வெளி</string>
+    <string name="pref_videoplayer_title">வீடியோ விளையாட்டாளர்</string>
+    <string name="pref_videoplayer_summary">வீடியோக்கள் பயன்படுத்தி பார்க்கவும்..</string>
+    <string name="pref_enableremotedebugger_title">தொலைதூர வழுநீக்கியை செயல்படுத்து</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView மேற்கொள்ளலாம். LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView தேவையிட முடியவில்லை. LAN</string>
+    <string name="media_route_menu_title">காஸ்ட்</string>
+    <string name="cast_context_error">கேஸ்ட் சூழல் பெற முடியவில்லை. கூகிள் விளையாட்டு சேவைகளை மேம்படுத்தவும் மற்றும் பயன்பாடு மீண்டும் துவக்கவும்.</string>
+</resources>

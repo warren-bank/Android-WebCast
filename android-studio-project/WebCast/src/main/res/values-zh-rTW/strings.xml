@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer 傳送器</string>
+    <string name="action_bookmark">Bookmark Webpage</string>
+    <string name="action_bookmarks">書籤</string>
+    <string name="action_videos">維代奧斯</string>
+    <string name="action_settings">設定</string>
+    <string name="action_exit">出口</string>
+    <string name="title_intent_chooser">在中觀看視訊:</string>
+    <string name="pref_settings_title">WebCast 設定</string>
+    <string name="pref_videoplayer_array_names_1">內部 w/ Chromecast 傳送器</string>
+    <string name="pref_videoplayer_array_names_2">外部</string>
+    <string name="pref_videoplayer_title">視訊播放程式</string>
+    <string name="pref_videoplayer_summary">使用觀賞影片..</string>
+    <string name="pref_enableremotedebugger_title">啟用遠端除錯器</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView 可以在上檢查 LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView 無法在上檢查 LAN</string>
+    <string name="media_route_menu_title">鑄</string>
+    <string name="cast_context_error">無法取得 Cast 環境定義。 請嘗試更新 Google Play 服務，然後重新啟動應用程式.</string>
+</resources>

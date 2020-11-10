@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer sūtītājs</string>
+    <string name="action_bookmark">Grāmatzīmes tīmekļa vietne</string>
+    <string name="action_bookmarks">Grāmatzīmes</string>
+    <string name="action_videos">Video</string>
+    <string name="action_settings">Iestatījumi</string>
+    <string name="action_exit">Iziešana</string>
+    <string name="title_intent_chooser">Skatīties video in:</string>
+    <string name="pref_settings_title">WebCast Iestatījumi</string>
+    <string name="pref_videoplayer_array_names_1">iekšējs w/ Chromecast sūtītājs</string>
+    <string name="pref_videoplayer_array_names_2">Ārēji</string>
+    <string name="pref_videoplayer_title">Video atskaņotājs</string>
+    <string name="pref_videoplayer_summary">skatīties video, izmantojot..</string>
+    <string name="pref_enableremotedebugger_title">Ieslēgt atkļūdotāju</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView var pārbaudīt, pamatojoties uz LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView nevar pārbaudīt, pamatojoties uz LAN</string>
+    <string name="media_route_menu_title">Cast</string>
+    <string name="cast_context_error">Neizdevās iegūt Cast kontekstu. Mēģiniet atjaunināt Google Play pakalpojumus un restartējiet lietotni.</string>
+</resources>

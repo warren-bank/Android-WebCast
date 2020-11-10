@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer avsender</string>
+    <string name="action_bookmark">Bokmerke Webside</string>
+    <string name="action_bookmarks">Bokmerker</string>
+    <string name="action_videos">Videoer</string>
+    <string name="action_settings">Innstillinger</string>
+    <string name="action_exit">Avslutt</string>
+    <string name="title_intent_chooser">Se video i:</string>
+    <string name="pref_settings_title">WebCast Innstillinger</string>
+    <string name="pref_videoplayer_array_names_1">intern w/ Chromecast avsender</string>
+    <string name="pref_videoplayer_array_names_2">ekstern</string>
+    <string name="pref_videoplayer_title">Videospiller</string>
+    <string name="pref_videoplayer_summary">se videoer med bruk..</string>
+    <string name="pref_enableremotedebugger_title">Aktiver Remote Debugger</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView kan inspiseres på LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView kan ikke inspiseres på LAN</string>
+    <string name="media_route_menu_title">Omvandle</string>
+    <string name="cast_context_error">Kunne ikke hente Cast-kontekst. Prøv å oppdatere Google Play Services og start appen på nytt.</string>
+</resources>

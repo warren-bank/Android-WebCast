@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer Siuntėjas</string>
+    <string name="action_bookmark">Žymelių tinklalapis</string>
+    <string name="action_bookmarks">Žymelių</string>
+    <string name="action_videos">Vaizdo įrašai</string>
+    <string name="action_settings">Nustatymai</string>
+    <string name="action_exit">Išvykimas</string>
+    <string name="title_intent_chooser">Žiūrėti vaizdo įrašą:</string>
+    <string name="pref_settings_title">WebCast Nustatymai</string>
+    <string name="pref_videoplayer_array_names_1">vidaus w/ Chromecast Siuntėjas</string>
+    <string name="pref_videoplayer_array_names_2">išorinis</string>
+    <string name="pref_videoplayer_title">Vaizdo grotuvas</string>
+    <string name="pref_videoplayer_summary">žiūrėti vaizdo įrašus naudojant..</string>
+    <string name="pref_enableremotedebugger_title">Įjungti nutolę derintuvę</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView gali būti patikrinta dėl LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView negali būti inspektuojami LAN</string>
+    <string name="media_route_menu_title">Cast</string>
+    <string name="cast_context_error">Nepavyko gauti Cast konteksto. Pabandykite atnaujinti \"Google Play Services\" ir paleisti programą iš naujo.</string>
+</resources>

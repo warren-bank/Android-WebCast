@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer remitente</string>
+    <string name="action_bookmark">Página web de marcadores</string>
+    <string name="action_bookmarks">Marcadores</string>
+    <string name="action_videos">Vídeos</string>
+    <string name="action_settings">Configuración</string>
+    <string name="action_exit">Salida</string>
+    <string name="title_intent_chooser">Ver vídeo en:</string>
+    <string name="pref_settings_title">WebCast Configuración</string>
+    <string name="pref_videoplayer_array_names_1">interno w/ Chromecast remitente</string>
+    <string name="pref_videoplayer_array_names_2">externo</string>
+    <string name="pref_videoplayer_title">Reproductor de vídeo</string>
+    <string name="pref_videoplayer_summary">ver vídeos utilizando..</string>
+    <string name="pref_enableremotedebugger_title">Habilitar el depurador remoto</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView puede ser inspeccionado en LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView no se puede inspeccionar LAN</string>
+    <string name="media_route_menu_title">Fundición</string>
+    <string name="cast_context_error">Error al obtener el contexto de conversión. Intente actualizar los servicios de Google Play y reinicie la aplicación.</string>
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer 寄件人</string>
+    <string name="action_bookmark">书签 Web 页面</string>
+    <string name="action_bookmarks">书签</string>
+    <string name="action_videos">视频</string>
+    <string name="action_settings">设置</string>
+    <string name="action_exit">退出</string>
+    <string name="title_intent_chooser">观看视频:</string>
+    <string name="pref_settings_title">WebCast 设置</string>
+    <string name="pref_videoplayer_array_names_1">内部 w/ Chromecast 寄件人</string>
+    <string name="pref_videoplayer_array_names_2">外部</string>
+    <string name="pref_videoplayer_title">视频播放器</string>
+    <string name="pref_videoplayer_summary">观看视频使用..</string>
+    <string name="pref_enableremotedebugger_title">启用远程调试器</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView 可进行检查 LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView 无法检查 LAN</string>
+    <string name="media_route_menu_title">铸造</string>
+    <string name="cast_context_error">无法获取 Cast 上下文。 尝试更新 Google Play Services 并重新启动应用程序.</string>
+</resources>

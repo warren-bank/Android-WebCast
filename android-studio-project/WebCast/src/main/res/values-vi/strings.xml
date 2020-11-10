@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer Sender</string>
+    <string name="action_bookmark">Trang Mạng Đánh Dấu</string>
+    <string name="action_bookmarks">Đánh dấu</string>
+    <string name="action_videos">Video</string>
+    <string name="action_settings">Thiết lập</string>
+    <string name="action_exit">Thoát</string>
+    <string name="title_intent_chooser">Xem video trong:</string>
+    <string name="pref_settings_title">WebCast Thiết lập</string>
+    <string name="pref_videoplayer_array_names_1">Bên trong/ Chromecast Sender</string>
+    <string name="pref_videoplayer_array_names_2">bên ngoài</string>
+    <string name="pref_videoplayer_title">Trình phát video</string>
+    <string name="pref_videoplayer_summary">Xem các video..</string>
+    <string name="pref_enableremotedebugger_title">Dùng bộ gỡ lỗi từ xa</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView có thể được kiểm tra trên LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView không thể kiểm tra được trên LAN</string>
+    <string name="media_route_menu_title">Diễn viên</string>
+    <string name="cast_context_error">Không thể lấy ngư ̃ cảnh Cast. Thử cập nhật Dịch vụ Google Play và khởi động lại ứng dụng.</string>
+</resources>

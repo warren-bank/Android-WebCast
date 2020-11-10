@@ -1,0 +1,11 @@
+{
+  "name": "@warren-bank/Android-WebCast",
+  "private": true,
+  "license": "GPL-2.0",
+  "devDependencies": {
+    "@warren-bank/translate-android-strings": "^1.7.2"
+  },
+  "scripts": {
+    "translate": "node_modules/.bin/translate-android-strings -i \"en\" -f \"android-studio-project/WebCast/src/main/res/values/strings.xml\" -d \"android-studio-project/WebCast/src/main/res\" -m --na --nc --nw -b \"WebCast\" -b \"Chromecast\" -b \"ExoAirPlayer\" -b \"WebView\" -b \"LAN\""
+  }
+}

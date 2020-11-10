@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer відправник</string>
+    <string name="action_bookmark">Закладка на Webpage</string>
+    <string name="action_bookmarks">Закладки</string>
+    <string name="action_videos">Відео</string>
+    <string name="action_settings">ПараметриName</string>
+    <string name="action_exit">Вийти</string>
+    <string name="title_intent_chooser">Дивитися відео у:</string>
+    <string name="pref_settings_title">WebCast ПараметриName</string>
+    <string name="pref_videoplayer_array_names_1">внутрішня/ Chromecast відправник</string>
+    <string name="pref_videoplayer_array_names_2">зовнішня</string>
+    <string name="pref_videoplayer_title">Програвач відео</string>
+    <string name="pref_videoplayer_summary">переглядати відео за допомогою..</string>
+    <string name="pref_enableremotedebugger_title">Увімкнути віддалений зневаджу</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView може бути перевірені на LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView не може бути перевірені на LAN</string>
+    <string name="media_route_menu_title">Cast</string>
+    <string name="cast_context_error">Не вдалося отримати контекст Cast. Спробуйте оновлення служб Google Play і перезапустити програму.</string>
+</resources>

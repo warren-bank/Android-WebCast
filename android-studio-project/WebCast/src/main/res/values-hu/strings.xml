@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer Küldő</string>
+    <string name="action_bookmark">Könyvjelző weboldala</string>
+    <string name="action_bookmarks">Könyvjelzők</string>
+    <string name="action_videos">Videók</string>
+    <string name="action_settings">Beállítások</string>
+    <string name="action_exit">Kilép</string>
+    <string name="title_intent_chooser">Videó megtekintése közben:</string>
+    <string name="pref_settings_title">WebCast Beállítások</string>
+    <string name="pref_videoplayer_array_names_1">Belső m/ Chromecast Küldő</string>
+    <string name="pref_videoplayer_array_names_2">Külső</string>
+    <string name="pref_videoplayer_title">Videó bedolgozó</string>
+    <string name="pref_videoplayer_summary">Videók használata..</string>
+    <string name="pref_enableremotedebugger_title">Távoli hibakereső engedélyezése</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView Ellenőrizhetők a rendszeren LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView Nem vizsgálhatók felül LAN</string>
+    <string name="media_route_menu_title">Cast</string>
+    <string name="cast_context_error">A Cast kontextus lekérése meghiúsult. Próbálja meg frissíteni a Google Play Services alkalmazást és indítsa újra az alkalmazást.</string>
+</resources>

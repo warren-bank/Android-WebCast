@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer afzender</string>
+    <string name="action_bookmark">Bladwijzerwebpagina</string>
+    <string name="action_bookmarks">Bladwijzers</string>
+    <string name="action_videos">Video\'s</string>
+    <string name="action_settings">Instellingen</string>
+    <string name="action_exit">Afsluiten</string>
+    <string name="title_intent_chooser">Bekijk video in:</string>
+    <string name="pref_settings_title">WebCast Instellingen</string>
+    <string name="pref_videoplayer_array_names_1">interne w/ Chromecast afzender</string>
+    <string name="pref_videoplayer_array_names_2">extern</string>
+    <string name="pref_videoplayer_title">Videospeler</string>
+    <string name="pref_videoplayer_summary">bekijk video\'s met..</string>
+    <string name="pref_enableremotedebugger_title">Debugger op afstand inschakelen</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView kan worden geïnspecteerd op LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView kan niet worden geïnspecteerd op LAN</string>
+    <string name="media_route_menu_title">Cast</string>
+    <string name="cast_context_error">Ophalen van Cast-context is mislukt. Probeer Google Play Services bij te werken en start de app opnieuw.</string>
+</resources>

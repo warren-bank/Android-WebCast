@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer Lähettäjä</string>
+    <string name="action_bookmark">Kirjanmerkin Web-sivu</string>
+    <string name="action_bookmarks">Kirjanmerkit</string>
+    <string name="action_videos">Videot</string>
+    <string name="action_settings">Asetukset</string>
+    <string name="action_exit">Poistuminen</string>
+    <string name="title_intent_chooser">Katso video:</string>
+    <string name="pref_settings_title">WebCast Asetukset</string>
+    <string name="pref_videoplayer_array_names_1">Sisäinen w/ Chromecast Lähettäjä</string>
+    <string name="pref_videoplayer_array_names_2">Ulkoinen</string>
+    <string name="pref_videoplayer_title">Videopelaaja</string>
+    <string name="pref_videoplayer_summary">Katsella videoita..</string>
+    <string name="pref_enableremotedebugger_title">Ota yhteys Remote Debuggeriin</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView Voidaan tarkastaa LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView Ei voi tarkastaa LAN</string>
+    <string name="media_route_menu_title">Cast</string>
+    <string name="cast_context_error">Cast-kontekstin nouto ei onnistunut. Yritä päivittää Google Play Services -sovellusta ja aloita sovellus uudelleen.</string>
+</resources>

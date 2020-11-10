@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WebCast</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer mittente</string>
+    <string name="action_bookmark">Pagina web segnalibro</string>
+    <string name="action_bookmarks">Segnalibri</string>
+    <string name="action_videos">Video</string>
+    <string name="action_settings">Impostazioni</string>
+    <string name="action_exit">Uscita</string>
+    <string name="title_intent_chooser">Guarda video in:</string>
+    <string name="pref_settings_title">WebCast Impostazioni</string>
+    <string name="pref_videoplayer_array_names_1">interni w/ Chromecast mittente</string>
+    <string name="pref_videoplayer_array_names_2">esterne</string>
+    <string name="pref_videoplayer_title">Video Player</string>
+    <string name="pref_videoplayer_summary">guardare i video utilizzando..</string>
+    <string name="pref_enableremotedebugger_title">Abilitare Debugger Remoto</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView può essere ispezionato su LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView non può essere ispezionato su LAN</string>
+    <string name="media_route_menu_title">Cast</string>
+    <string name="cast_context_error">Impossibile ottenere il contesto di Cast. Provare ad aggiornare Google Play Services e riavviare l\'app.</string>
+</resources>
