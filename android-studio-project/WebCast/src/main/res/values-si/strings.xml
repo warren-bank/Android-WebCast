@@ -1,16 +1,17 @@
 <resources>
     <string name="app_name">WebCast</string>
-    <string name="activity_name_exoairplayersender">ExoAirPlayer Sender</string>
+    <string name="activity_name_video">WebCast දෘශ්ය වාදකයක්</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer යවන්නා</string>
     <string name="action_bookmark">පිටු සලකුණු වෙබ් පිටුව</string>
     <string name="action_bookmarks">පිටු සලකුණු</string>
     <string name="action_videos">වීඩීයෝ</string>
     <string name="action_settings">සැකසුම්</string>
-    <string name="action_exit">Exit</string>
+    <string name="action_exit">පිටවීම</string>
     <string name="title_intent_chooser">වීඩියෝව බලන්න:</string>
     <string name="pref_settings_title">WebCast සැකසුම්</string>
-    <string name="pref_videoplayer_array_names_1">අභ්යන්තර w/ Chromecast Sender</string>
+    <string name="pref_videoplayer_array_names_1">අභ්යන්තර w/ Chromecast යවන්නා</string>
     <string name="pref_videoplayer_array_names_2">බාහිර</string>
-    <string name="pref_videoplayer_title">වීඩියෝ වාදකයName</string>
+    <string name="pref_videoplayer_title">දෘශ්ය වාදකයක්</string>
     <string name="pref_videoplayer_summary">පාවිච්චි කරන වීඩියෝ බලන්න..</string>
     <string name="pref_enableremotedebugger_title">දුරස්ථ ඩිබියුගර් සක්රීය කරන්න</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView මත පරීක්ෂා කළ හැක. LAN</string>

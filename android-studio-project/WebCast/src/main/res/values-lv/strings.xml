@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">WebCast</string>
+    <string name="activity_name_video">WebCast Video atskaņotājs</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer sūtītājs</string>
     <string name="action_bookmark">Grāmatzīmes tīmekļa vietne</string>
     <string name="action_bookmarks">Grāmatzīmes</string>

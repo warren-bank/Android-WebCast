@@ -1,20 +1,21 @@
 <resources>
     <string name="app_name">WebCast</string>
+    <string name="activity_name_video">WebCast Seinnteoir Físe</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer an seoltóir</string>
     <string name="action_bookmark">Leabharmharcaigh Leabharmharcanna</string>
     <string name="action_bookmarks">Leabharmharcanna</string>
-    <string name="action_videos">Videos</string>
+    <string name="action_videos">Físeáin</string>
     <string name="action_settings">Socruithe</string>
     <string name="action_exit">Scoir</string>
     <string name="title_intent_chooser">Féach físeán i:</string>
     <string name="pref_settings_title">WebCast Socruithe</string>
-    <string name="pref_videoplayer_array_names_1">% 1/ Chromecast an seoltóir</string>
+    <string name="pref_videoplayer_array_names_1">inmheánach le seoltóir Chromecast</string>
     <string name="pref_videoplayer_array_names_2">seachtrach</string>
-    <string name="pref_videoplayer_title">Seinnteoir</string>
-    <string name="pref_videoplayer_summary">Videos ag baint úsáide as..</string>
+    <string name="pref_videoplayer_title">Seinnteoir Físe</string>
+    <string name="pref_videoplayer_summary">féachaint ar fhíseáin ag úsáid..</string>
     <string name="pref_enableremotedebugger_title">Cumasaigh an Dífhabhtóir Cianda</string>
-    <string name="pref_enableremotedebugger_summary_on" >WebView Is féidir a iniúchadh ar LAN</string>
-    <string name="pref_enableremotedebugger_summary_off">WebView ní féidir iniúchadh a dhéanamh ar LAN</string>
-    <string name="media_route_menu_title">% 1</string>
-    <string name="cast_context_error">Theip ar chomhthéacs Cósta a fháil. Bain triail as a thabhairt cothrom le dáta Google Play Seirbhísí agus aththosú an app.</string>
+    <string name="pref_enableremotedebugger_summary_on" >Is féidir WebView a iniúchadh ar LAN</string>
+    <string name="pref_enableremotedebugger_summary_off">Ní féidir WebView a iniúchadh ar LAN</string>
+    <string name="media_route_menu_title">Caitheadh</string>
+    <string name="cast_context_error">Theip ar chomhthéacs Caitheadh a fháil. Bain triail as Google Play Services a nuashonrú agus an aip a atosú.</string>
 </resources>

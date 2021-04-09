@@ -1,19 +1,20 @@
 <resources>
     <string name="app_name">WebCast</string>
+    <string name="activity_name_video">WebCast Vidjo Plejer</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer mittent</string>
     <string name="action_bookmark">Bookmark webpage</string>
     <string name="action_bookmarks">Bookmarks</string>
     <string name="action_videos">Vidjows</string>
     <string name="action_settings">Settings</string>
     <string name="action_exit">Ħruġ</string>
-    <string name="title_intent_chooser">Filmat | News Malta:</string>
+    <string name="title_intent_chooser">Ara l-vidjo ġewwa:</string>
     <string name="pref_settings_title">WebCast Settings</string>
     <string name="pref_videoplayer_array_names_1">intern w/ Chromecast mittent</string>
     <string name="pref_videoplayer_array_names_2">estern</string>
-    <string name="pref_videoplayer_title">Filmat:</string>
-    <string name="pref_videoplayer_summary">watch videos bl-użu..</string>
+    <string name="pref_videoplayer_title">Vidjo Plejer</string>
+    <string name="pref_videoplayer_summary">tara vidjows billi tuża..</string>
     <string name="pref_enableremotedebugger_title">Jippermettu Debugger Remoti</string>
-    <string name="pref_enableremotedebugger_summary_on" >WebView jista \' jiġi spezzjonat fuq LAN</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView jista \'jiġi spezzjonat fuq LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView ma jistgħux jiġu spezzjonati fuq LAN</string>
     <string name="media_route_menu_title">Fondut</string>
     <string name="cast_context_error">Naqset milli tikseb Cast Kuntest. Ipprova aġġornament Google Play Services u terġa \' tibda l-app.</string>

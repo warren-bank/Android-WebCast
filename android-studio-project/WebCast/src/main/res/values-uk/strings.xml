@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">WebCast</string>
+    <string name="activity_name_video">WebCast Програвач відео</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer відправник</string>
     <string name="action_bookmark">Закладка на Webpage</string>
     <string name="action_bookmarks">Закладки</string>

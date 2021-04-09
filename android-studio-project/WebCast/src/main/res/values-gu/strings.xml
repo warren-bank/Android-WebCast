@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">WebCast</string>
+    <string name="activity_name_video">WebCast વીડિયો પ્લેયર</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer મોકલનાર</string>
     <string name="action_bookmark">બુકમાર્ક વેબપાનું</string>
     <string name="action_bookmarks">બુકમાર્કો</string>

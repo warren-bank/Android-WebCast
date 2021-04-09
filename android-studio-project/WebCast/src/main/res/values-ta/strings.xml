@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">WebCast</string>
+    <string name="activity_name_video">WebCast நிகழ்பட ஓட்டி</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer Sender</string>
     <string name="action_bookmark">புத்தகக்குறி இணைப்பு</string>
     <string name="action_bookmarks">புத்தகக்குறிகள்</string>
@@ -10,7 +11,7 @@
     <string name="pref_settings_title">WebCast அமைப்புகள்</string>
     <string name="pref_videoplayer_array_names_1">உள்ளார்ந்த/ Chromecast Sender</string>
     <string name="pref_videoplayer_array_names_2">வெளி</string>
-    <string name="pref_videoplayer_title">வீடியோ விளையாட்டாளர்</string>
+    <string name="pref_videoplayer_title">நிகழ்பட ஓட்டி</string>
     <string name="pref_videoplayer_summary">வீடியோக்கள் பயன்படுத்தி பார்க்கவும்..</string>
     <string name="pref_enableremotedebugger_title">தொலைதூர வழுநீக்கியை செயல்படுத்து</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView மேற்கொள்ளலாம். LAN</string>

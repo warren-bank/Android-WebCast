@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">WebCast</string>
+    <string name="activity_name_video">WebCast 비디오 플레이어</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer 발신인</string>
     <string name="action_bookmark">책갈피 웹 페이지</string>
     <string name="action_bookmarks">책갈피</string>

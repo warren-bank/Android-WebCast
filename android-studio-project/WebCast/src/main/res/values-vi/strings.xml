@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">WebCast</string>
-    <string name="activity_name_exoairplayersender">ExoAirPlayer Sender</string>
+    <string name="activity_name_video">WebCast Trình phát video</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer Người gửi</string>
     <string name="action_bookmark">Trang Mạng Đánh Dấu</string>
     <string name="action_bookmarks">Đánh dấu</string>
     <string name="action_videos">Video</string>
@@ -8,7 +9,7 @@
     <string name="action_exit">Thoát</string>
     <string name="title_intent_chooser">Xem video trong:</string>
     <string name="pref_settings_title">WebCast Thiết lập</string>
-    <string name="pref_videoplayer_array_names_1">Bên trong/ Chromecast Sender</string>
+    <string name="pref_videoplayer_array_names_1">nội bộ với người gửi Chromecast</string>
     <string name="pref_videoplayer_array_names_2">bên ngoài</string>
     <string name="pref_videoplayer_title">Trình phát video</string>
     <string name="pref_videoplayer_summary">Xem các video..</string>

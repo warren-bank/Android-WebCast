@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">WebCast</string>
+    <string name="activity_name_video">WebCast भिडियो प्लेयर</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer प्रेषक</string>
     <string name="action_bookmark">पुस्तकचिनो वेबपृष्ठ</string>
     <string name="action_bookmarks">पुस्तकचिनो</string>
@@ -10,7 +11,7 @@
     <string name="pref_settings_title">WebCast सेटिङ</string>
     <string name="pref_videoplayer_array_names_1">आन्तरिक w/ Chromecast प्रेषक</string>
     <string name="pref_videoplayer_array_names_2">बाह्य</string>
-    <string name="pref_videoplayer_title">भिडियो प्लेयरName</string>
+    <string name="pref_videoplayer_title">भिडियो प्लेयर</string>
     <string name="pref_videoplayer_summary">प्रयोग गरेर भिडियो हेर्नुहोला..</string>
     <string name="pref_enableremotedebugger_title">टाढाको डिबगर सक्षम पार्नुहोस्</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView मा निरीक्षण गर्न सकिन्छ LAN</string>

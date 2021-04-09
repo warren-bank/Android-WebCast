@@ -1,20 +1,21 @@
 <resources>
     <string name="app_name">WebCast</string>
-    <string name="activity_name_exoairplayersender">ExoAirPlayer G.</string>
-    <string name="action_bookmark">Web stranica za označavanje stranica</string>
+    <string name="activity_name_video">WebCast Video Player</string>
+    <string name="activity_name_exoairplayersender">ExoAirPlayer pošiljatelja</string>
+    <string name="action_bookmark">Označi web stranicu</string>
     <string name="action_bookmarks">Knjiške oznake</string>
-    <string name="action_videos">Jedan video.</string>
-    <string name="action_settings">Jedna postavka.</string>
-    <string name="action_exit">Jedan izlaz.</string>
-    <string name="title_intent_chooser">Pogledajte video.:</string>
-    <string name="pref_settings_title">WebCast Jedna postavka.</string>
-    <string name="pref_videoplayer_array_names_1">Unutrašnja kontrola/ Chromecast G.</string>
-    <string name="pref_videoplayer_array_names_2"></string>
-    <string name="pref_videoplayer_title">Jedan video.</string>
+    <string name="action_videos">Videozapisi</string>
+    <string name="action_settings">Postavke</string>
+    <string name="action_exit">Izlaz</string>
+    <string name="title_intent_chooser">Pogledajte video zapis u:</string>
+    <string name="pref_settings_title">WebCast Postavke</string>
+    <string name="pref_videoplayer_array_names_1">interno s Chromecast pošiljateljem</string>
+    <string name="pref_videoplayer_array_names_2">vanjski</string>
+    <string name="pref_videoplayer_title">Video Player</string>
     <string name="pref_videoplayer_summary">Pogledajte video koristeći..</string>
-    <string name="pref_enableremotedebugger_title">Omogući daljinski upravljač Debugera</string>
-    <string name="pref_enableremotedebugger_summary_on" >WebView Mogu da ih pregledam. LAN</string>
-    <string name="pref_enableremotedebugger_summary_off">WebView ne mogu da se pregledaju LAN</string>
-    <string name="media_route_menu_title">Gips</string>
-    <string name="cast_context_error">Nijesam uspio da dobijem Cast kontekst. Pokušajte da ažurirate usluge Google Play i ponovo pokrenite aplikaciju..</string>
+    <string name="pref_enableremotedebugger_title">Omogući daljinski program za pronalaženje pogrešaka</string>
+    <string name="pref_enableremotedebugger_summary_on" >WebView se može pregledavati na LAN-u</string>
+    <string name="pref_enableremotedebugger_summary_off">WebView nije moguće pregledati na LAN-u</string>
+    <string name="media_route_menu_title">Uloge</string>
+    <string name="cast_context_error">Dohvaćanje konteksta Cast nije uspjelo. Pokušajte ažurirati usluge Google Play i ponovo pokrenite aplikaciju.</string>
 </resources>
