@@ -3,6 +3,8 @@ package com.github.warren_bank.webcast.webview;
 import com.github.warren_bank.webcast.R;
 import com.github.warren_bank.webcast.ExitActivity;
 import com.github.warren_bank.webcast.WebCastApplication;
+import com.github.warren_bank.webcast.webview.single_page_app.ExoAirPlayerSenderActivity;
+import com.github.warren_bank.webcast.webview.single_page_app.HlsProxyConfigurationActivity;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -40,6 +42,7 @@ import com.google.gson.reflect.TypeToken;
 
 import com.google.android.exoplayer2.util.MimeTypes;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 public class BrowserActivity extends AppCompatActivity {
@@ -904,27 +907,93 @@ public class BrowserActivity extends AppCompatActivity {
         startActivity(in);
     }
 
+    private void openVideoInWebcastReloadedSPA(DrawerListItem item, Class WebcastReloadedSPA) {
+        openVideoInWebcastReloadedSPA(item, WebcastReloadedSPA, /* force_internal= */ false);
+    }
+
+    private void openVideoInWebcastReloadedSPA(DrawerListItem item, Class WebcastReloadedSPA, boolean force_internal) {
+        Intent internal_intent = new Intent(BrowserActivity.this, WebcastReloadedSPA);
+        Uri    internal_data   = Uri.parse(item.uri);
+        String internal_type   = Intent.normalizeMimeType(item.mimeType);
+
+        internal_intent.setAction(Intent.ACTION_VIEW);
+        internal_intent.setDataAndType(internal_data, internal_type);
+
+        // reuse names of ExoAirPlayer extras
+        internal_intent.putExtra("referUrl", item.referer);
+
+        try {
+            if (force_internal) {
+                throw new Exception("always open in internal WebView");
+            }
+
+            Method method_get_page_url_base = WebcastReloadedSPA.getMethod("get_page_url_base", new Class[]{Context.class});
+            Method method_get_page_url_href = WebcastReloadedSPA.getMethod("get_page_url_href", new Class[]{String.class, Intent.class});
+
+            Intent external_intent   = new Intent();
+            String external_url_base = (String) method_get_page_url_base.invoke(null, BrowserActivity.this);
+            String external_url_href = (String) method_get_page_url_href.invoke(null, external_url_base, internal_intent);
+            Uri    external_data     = Uri.parse(external_url_href);
+            String external_type     = "text/html";
+
+            external_intent.setAction(Intent.ACTION_VIEW);
+            external_intent.setDataAndType(external_data, external_type);
+
+            if (external_intent.resolveActivity(getPackageManager()) != null) {
+                // present a chooser to open WebcastReloadedSPA in another app
+                //
+                // for example:
+                // * HLS-Proxy configuration
+                //   - Android-WebMonkey includes a WebView with matching Intent filter,
+                //     and a standard userscript to present a chooser to open the proxied HLS manifest in another app
+                //   - this would allow the proxied HLS manifest to be transferred BACK to Android-WebCast,
+                //     and viewed in the internal video player, which could then be "cast" to a Chromecast device
+            
+                // add title to chooser dialog
+                external_intent = Intent.createChooser(external_intent, getString(R.string.title_intent_chooser));
+
+                startActivity(external_intent);
+            }
+            else {
+                throw new Exception("fallback to internal WebView");
+            }
+        }
+        catch(Exception e) {
+            // open WebcastReloadedSPA in internal WebView
+
+            startActivity(internal_intent);
+            shouldClearWebView = false;
+        }
+    }
+
     private void openVideo(DrawerListItem item) {
         if (item == null) return;
 
         int videoPlayerPreferenceIndex = BrowserUtils.getVideoPlayerPreferenceIndex(BrowserActivity.this);
 
+        // only send HLS manifests to HLS-Proxy configuration
+        if (
+            (videoPlayerPreferenceIndex == 3)
+         && (
+                (item.mimeType == null)
+             || (!item.mimeType.equals("application/x-mpegURL"))
+            )
+        ) {
+            // fallback to internal video player w/ Chromecast sender
+            videoPlayerPreferenceIndex = 0;
+        }
+
         switch(videoPlayerPreferenceIndex) {
+
+            case 3: {
+                // HLS-Proxy configuration
+                openVideoInWebcastReloadedSPA(item, HlsProxyConfigurationActivity.class);
+                return;
+            }
 
             case 2: {
                 // ExoAirPlayer sender
-                Intent in   = new Intent(BrowserActivity.this, ExoAirPlayerSenderActivity.class);
-                Uri    data = Uri.parse(item.uri);
-                String type = Intent.normalizeMimeType(item.mimeType);
-
-                in.setAction(Intent.ACTION_VIEW);
-                in.setDataAndType(data, type);
-
-                // reuse names of ExoAirPlayer extras
-                in.putExtra("referUrl", item.referer);
-
-                startActivity(in);
-                shouldClearWebView = false;
+                openVideoInWebcastReloadedSPA(item, ExoAirPlayerSenderActivity.class, /* force_internal= */ true);
                 return;
             }
 

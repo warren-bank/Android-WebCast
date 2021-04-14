@@ -113,7 +113,7 @@
         </activity>
 
         <activity
-            android:name=".webview.ExoAirPlayerSenderActivity"
+            android:name=".webview.single_page_app.ExoAirPlayerSenderActivity"
             android:label="@string/activity_name_exoairplayersender"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
@@ -227,6 +227,43 @@
 
                 <data android:pathPattern=".*\\.m3u"/>
                 <data android:pathPattern=".*\\.M3U"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".webview.single_page_app.HlsProxyConfigurationActivity"
+            android:label="@string/activity_name_hlsproxyconfiguration"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:launchMode="standard">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data android:scheme=""/>
+                <data android:scheme="file"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+
+                <data android:mimeType="application/x-mpegurl"/>
+                <data android:mimeType="application/x-mpegURL"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data android:scheme=""/>
+                <data android:scheme="file"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:host="*"/>
+
+                <data android:pathPattern=".*\\.m3u8"/>
+                <data android:pathPattern=".*\\.M3U8"/>
             </intent-filter>
         </activity>
 

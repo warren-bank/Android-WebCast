@@ -6,6 +6,7 @@
     <string name="activity_name_browser">@string/app_name</string>
     <string name="activity_name_video">WebCast Video Player</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer sender</string>
+    <string name="activity_name_hlsproxyconfiguration">HLS-Proxy configuration</string>
 
     <string translatable="false" name="user_agent">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36</string>
 
@@ -26,21 +27,25 @@
     <string name="pref_videoplayer_array_names_1">internal w/ Chromecast sender</string>
     <string name="pref_videoplayer_array_names_2">external</string>
     <string name="pref_videoplayer_array_names_3">@string/activity_name_exoairplayersender</string>
+    <string name="pref_videoplayer_array_names_4">@string/activity_name_hlsproxyconfiguration</string>
 
     <string translatable="false" name="pref_videoplayer_array_values_1">internal</string>
     <string translatable="false" name="pref_videoplayer_array_values_2">external</string>
     <string translatable="false" name="pref_videoplayer_array_values_3">exoairplayer</string>
+    <string translatable="false" name="pref_videoplayer_array_values_4">hlsproxy</string>
 
     <string-array name="pref_videoplayer_array_names">
         <item>@string/pref_videoplayer_array_names_1</item>
         <item>@string/pref_videoplayer_array_names_2</item>
         <item>@string/pref_videoplayer_array_names_3</item>
+        <item>@string/pref_videoplayer_array_names_4</item>
     </string-array>
 
     <string-array name="pref_videoplayer_array_values">
         <item>@string/pref_videoplayer_array_values_1</item>
         <item>@string/pref_videoplayer_array_values_2</item>
         <item>@string/pref_videoplayer_array_values_3</item>
+        <item>@string/pref_videoplayer_array_values_4</item>
     </string-array>
 
     <string translatable="false" name="pref_videoplayer_key">pref_videoplayer</string>
@@ -56,10 +61,13 @@
     <string name="pref_enableremotedebugger_summary_off">WebView cannot be inspected on LAN</string>
 
     <!-- ExoAirPlayerSenderActivity -->
-    <string translatable="false" name="pref_persistentcookies_key">pref_persistentcookies</string>
+    <string translatable="false" name="pref_exoairplayersender_persistentcookies_key">pref_exoairplayersender_persistentcookies</string>
+    <string translatable="false" name="url_exoairplayersender_es6">http://webcast-reloaded.surge.sh/airplay_sender.html</string>
+    <string translatable="false" name="url_exoairplayersender_es5">http://webcast-reloaded.surge.sh/airplay_sender.es5.html</string>
 
-    <string translatable="false" name="url_airplay_sender_es6">http://webcast-reloaded.surge.sh/airplay_sender.html</string>
-    <string translatable="false" name="url_airplay_sender_es5">http://webcast-reloaded.surge.sh/airplay_sender.es5.html</string>
+    <!-- HlsProxyConfigurationActivity -->
+    <string translatable="false" name="pref_hlsproxyconfiguration_persistentcookies_key">pref_hlsproxyconfiguration_persistentcookies</string>
+    <string translatable="false" name="url_hlsproxyconfiguration">http://webcast-reloaded.surge.sh/proxy.html</string>
 
     <!-- VideoActivity -->
     <string translatable="false" name="cast_receiver_id">6BFED418</string>
