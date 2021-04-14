@@ -84,6 +84,7 @@
 
                 <data android:scheme="http"/>
                 <data android:scheme="https"/>
+                <data android:host="*"/>
 
                 <!-- video formats supported by Chromecast -->
                 <!-- https://developers.google.com/cast/docs/media -->
