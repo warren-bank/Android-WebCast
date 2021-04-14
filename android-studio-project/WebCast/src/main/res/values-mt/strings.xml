@@ -2,6 +2,7 @@
     <string name="app_name">WebCast</string>
     <string name="activity_name_video">WebCast Vidjo Plejer</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer mittent</string>
+    <string name="activity_name_hlsproxyconfiguration">HLS-Proxy konfigurazzjoni</string>
     <string name="action_bookmark">Bookmark webpage</string>
     <string name="action_bookmarks">Bookmarks</string>
     <string name="action_videos">Vidjows</string>

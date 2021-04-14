@@ -2,6 +2,7 @@
     <string name="app_name">WebCast</string>
     <string name="activity_name_video">WebCast 视频播放器</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer 寄件人</string>
+    <string name="activity_name_hlsproxyconfiguration">HLS-Proxy 配置</string>
     <string name="action_bookmark">书签 Web 页面</string>
     <string name="action_bookmarks">书签</string>
     <string name="action_videos">视频</string>

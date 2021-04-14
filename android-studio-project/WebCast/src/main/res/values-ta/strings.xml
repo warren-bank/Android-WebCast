@@ -2,6 +2,7 @@
     <string name="app_name">WebCast</string>
     <string name="activity_name_video">WebCast நிகழ்பட ஓட்டி</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer Sender</string>
+    <string name="activity_name_hlsproxyconfiguration">HLS-Proxy வடிவமைப்பு</string>
     <string name="action_bookmark">புத்தகக்குறி இணைப்பு</string>
     <string name="action_bookmarks">புத்தகக்குறிகள்</string>
     <string name="action_videos">வீடியோக்கள்</string>

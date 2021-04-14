@@ -2,6 +2,7 @@
     <string name="app_name">WebCast</string>
     <string name="activity_name_video">WebCast Prehrávač videa</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer odosielateľ</string>
+    <string name="activity_name_hlsproxyconfiguration">HLS-Proxy konfigurácia</string>
     <string name="action_bookmark">Webová stránka záložky</string>
     <string name="action_bookmarks">Záložky</string>
     <string name="action_videos">Videá</string>

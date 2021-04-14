@@ -2,6 +2,7 @@
     <string name="app_name">WebCast</string>
     <string name="activity_name_video">WebCast Vaizdo grotuvas</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer Siuntėjas</string>
+    <string name="activity_name_hlsproxyconfiguration">HLS-Proxy konfigūracija</string>
     <string name="action_bookmark">Žymelių tinklalapis</string>
     <string name="action_bookmarks">Žymelių</string>
     <string name="action_videos">Vaizdo įrašai</string>

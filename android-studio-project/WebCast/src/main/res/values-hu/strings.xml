@@ -2,6 +2,7 @@
     <string name="app_name">WebCast</string>
     <string name="activity_name_video">WebCast Videó Lejátszó</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer Küldő</string>
+    <string name="activity_name_hlsproxyconfiguration">HLS-Proxy Konfiguráció</string>
     <string name="action_bookmark">Könyvjelző weboldala</string>
     <string name="action_bookmarks">Könyvjelzők</string>
     <string name="action_videos">Videók</string>

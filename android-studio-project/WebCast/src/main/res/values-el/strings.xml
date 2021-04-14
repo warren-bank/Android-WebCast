@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">WebCast</string>
-    <string name="activity_name_video">WebCast Βίντεο Player</string>
-    <string name="activity_name_exoairplayersender">ExoAirPlayer αποστολέα:</string>
+    <string name="activity_name_video">WebCast Βίντεο</string>
+    <string name="activity_name_exoairplayersender">Αποστολέας ExoAirPlayer</string>
+    <string name="activity_name_hlsproxyconfiguration">Διαμόρφωση HLS-Proxy</string>
     <string name="action_bookmark">Ιστοσελίδα σελιδοδείκτη</string>
     <string name="action_bookmarks">Οι σελιδοδείκτες</string>
     <string name="action_videos">Βίντεο:</string>

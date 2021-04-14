@@ -2,6 +2,7 @@
     <string name="app_name">WebCast</string>
     <string name="activity_name_video">WebCast දෘශ්ය වාදකයක්</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer යවන්නා</string>
+    <string name="activity_name_hlsproxyconfiguration">HLS-Proxy සැකසුම්</string>
     <string name="action_bookmark">පිටු සලකුණු වෙබ් පිටුව</string>
     <string name="action_bookmarks">පිටු සලකුණු</string>
     <string name="action_videos">වීඩීයෝ</string>

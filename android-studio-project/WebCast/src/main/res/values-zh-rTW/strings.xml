@@ -2,6 +2,7 @@
     <string name="app_name">WebCast</string>
     <string name="activity_name_video">WebCast 視訊播放程式</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer 傳送器</string>
+    <string name="activity_name_hlsproxyconfiguration">HLS-Proxy 配置</string>
     <string name="action_bookmark">Bookmark Webpage</string>
     <string name="action_bookmarks">書籤</string>
     <string name="action_videos">維代奧斯</string>

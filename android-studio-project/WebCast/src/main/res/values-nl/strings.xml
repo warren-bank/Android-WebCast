@@ -2,6 +2,7 @@
     <string name="app_name">WebCast</string>
     <string name="activity_name_video">WebCast Videospeler</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer afzender</string>
+    <string name="activity_name_hlsproxyconfiguration">HLS-Proxy configuratie</string>
     <string name="action_bookmark">Bladwijzerwebpagina</string>
     <string name="action_bookmarks">Bladwijzers</string>
     <string name="action_videos">Video\'s</string>

@@ -2,6 +2,7 @@
     <string name="app_name">WebCast</string>
     <string name="activity_name_video">WebCast נגן וידאו</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer שולח</string>
+    <string name="activity_name_hlsproxyconfiguration">HLS-Proxy תצורה</string>
     <string name="action_bookmark">Webpage של סימניה</string>
     <string name="action_bookmarks">סימניות</string>
     <string name="action_videos">וידאו</string>

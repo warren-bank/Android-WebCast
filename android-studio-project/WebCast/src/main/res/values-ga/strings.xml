@@ -2,6 +2,7 @@
     <string name="app_name">WebCast</string>
     <string name="activity_name_video">WebCast Seinnteoir Físe</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer an seoltóir</string>
+    <string name="activity_name_hlsproxyconfiguration">HLS-Proxy Cumraíocht</string>
     <string name="action_bookmark">Leabharmharcaigh Leabharmharcanna</string>
     <string name="action_bookmarks">Leabharmharcanna</string>
     <string name="action_videos">Físeáin</string>

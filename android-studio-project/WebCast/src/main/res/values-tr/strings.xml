@@ -2,6 +2,7 @@
     <string name="app_name">WebCast</string>
     <string name="activity_name_video">WebCast Video oynatıcı</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer gönderen</string>
+    <string name="activity_name_hlsproxyconfiguration">HLS-Proxy yapılandırma</string>
     <string name="action_bookmark">Web Sayfasına Yer İşareti</string>
     <string name="action_bookmarks">Yer İşaretleri</string>
     <string name="action_videos">Videolar</string>

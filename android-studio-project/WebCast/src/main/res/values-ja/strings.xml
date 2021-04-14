@@ -2,6 +2,7 @@
     <string name="app_name">WebCast</string>
     <string name="activity_name_video">WebCast ビデオ・プレイヤー</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer 送信者</string>
+    <string name="activity_name_hlsproxyconfiguration">HLS-Proxy 構成</string>
     <string name="action_bookmark">ブックマーク Web ページ</string>
     <string name="action_bookmarks">ブックマーク</string>
     <string name="action_videos">ヴィデオス</string>

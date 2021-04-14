@@ -2,6 +2,7 @@
     <string name="app_name">WebCast</string>
     <string name="activity_name_video">WebCast เครื่องเล่นวิดีโอ</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer ผู้ส่ง</string>
+    <string name="activity_name_hlsproxyconfiguration">HLS-Proxy การตั้งค่า</string>
     <string name="action_bookmark">เว็บเพจบุ๊กมาร์ก</string>
     <string name="action_bookmarks">บุ๊กมาร์ก</string>
     <string name="action_videos">วิดีโอ</string>

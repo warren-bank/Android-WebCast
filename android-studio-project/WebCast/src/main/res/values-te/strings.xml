@@ -2,6 +2,7 @@
     <string name="app_name">WebCast</string>
     <string name="activity_name_video">WebCast వీడియో ప్లేయర్</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer స్నేందర్</string>
+    <string name="activity_name_hlsproxyconfiguration">HLS-Proxy ఆకృతీకరణము</string>
     <string name="action_bookmark">బూక్మార్క్ వెబ్ పేజీ</string>
     <string name="action_bookmarks">గుర్తులు</string>
     <string name="action_videos">వీడియోలు</string>

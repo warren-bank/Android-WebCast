@@ -2,6 +2,7 @@
     <string name="app_name">WebCast</string>
     <string name="activity_name_video">WebCast ویڈیو پلیئر</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer سل</string>
+    <string name="activity_name_hlsproxyconfiguration">HLS-Proxy کنيکٹ</string>
     <string name="action_bookmark">بک مارک ویپیج</string>
     <string name="action_bookmarks">بک مارکس</string>
     <string name="action_videos">ویڈیوز</string>

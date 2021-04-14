@@ -2,6 +2,7 @@
     <string name="app_name">WebCast</string>
     <string name="activity_name_video">WebCast طبقة الفيديو</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer الراسل</string>
+    <string name="activity_name_hlsproxyconfiguration">HLS-Proxy توصيف</string>
     <string name="action_bookmark">صفحة الانترنت لعلامة التوقف</string>
     <string name="action_bookmarks">علامات التوقف</string>
     <string name="action_videos">Videos</string>

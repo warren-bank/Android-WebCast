@@ -2,6 +2,7 @@
     <string name="app_name">WebCast</string>
     <string name="activity_name_video">WebCast Player video</string>
     <string name="activity_name_exoairplayersender">ExoAirPlayer expeditor</string>
+    <string name="activity_name_hlsproxyconfiguration">HLS-Proxy configuraţie</string>
     <string name="action_bookmark">Pagina web a semnului</string>
     <string name="action_bookmarks">Semne semne</string>
     <string name="action_videos">Videoclipuri</string>
