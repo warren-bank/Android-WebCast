@@ -2,28 +2,28 @@
 
 Android app to extract video (file/stream) URLs from websites and watch them elsewhere (internal/external video player, Google Chromecast, [ExoAirPlayer](https://github.com/warren-bank/Android-ExoPlayer-AirPlay-Receiver)).
 
-- - - -
+<details>
+  <summary>Screenshots..</summary>
 
-#### Screenshots
-
-![WebCast](./screenshots/01-BrowserActivity-blank.png)
-![WebCast](./screenshots/02-BrowserActivity-leftdrawer-bookmarks.png)
-![WebCast](./screenshots/03-BrowserActivity-rightdrawer-videos.png)
-![WebCast](./screenshots/04-BrowserActivity-menu.png)
-![WebCast](./screenshots/05-SettingsActivity-preferences.png)
-![WebCast](./screenshots/06-SettingsActivity-videoplayer.png)
-![WebCast](./screenshots/07-BrowserActivity-leftdrawer-open-bookmark.png)
-![WebCast](./screenshots/08-BrowserActivity-ABCNews.png)
-![WebCast](./screenshots/09-BrowserActivity-ABCNews-rightdrawer-videos.png)
-![WebCast](./screenshots/10-BrowserActivity-ABCNews-rightdrawer-open-video.png)
-![WebCast](./screenshots/11-VideoActivity-internalvideoplayer-ABCNews.png)
-![WebCast](./screenshots/12-VideoActivity-internalvideoplayer-ABCNews-landscape-fullscreen.png)
-![WebCast](./screenshots/13-VideoActivity-internalvideoplayer-ABCNews-chromecast-devicelist.png)
-![WebCast](./screenshots/14-VideoActivity-internalvideoplayer-ABCNews-chromecast-connected-casting.png)
-![WebCast](./screenshots/15-Android-System-MediaRouter.png)
-![WebCast](./screenshots/16-BrowserActivity-externalvideoplayer-implicit-intent-chooser.png)
-![WebCast](./screenshots/17-ExoAirPlayerSenderActivity-landscape-zoom.png)
-![WebCast](./screenshots/18-ExoAirPlayerSenderActivity.png)
+  ![WebCast](./screenshots/01-BrowserActivity-blank.png)
+  ![WebCast](./screenshots/02-BrowserActivity-leftdrawer-bookmarks.png)
+  ![WebCast](./screenshots/03-BrowserActivity-rightdrawer-videos.png)
+  ![WebCast](./screenshots/04-BrowserActivity-menu.png)
+  ![WebCast](./screenshots/05-SettingsActivity-preferences.png)
+  ![WebCast](./screenshots/06-SettingsActivity-videoplayer.png)
+  ![WebCast](./screenshots/07-BrowserActivity-leftdrawer-open-bookmark.png)
+  ![WebCast](./screenshots/08-BrowserActivity-ABCNews.png)
+  ![WebCast](./screenshots/09-BrowserActivity-ABCNews-rightdrawer-videos.png)
+  ![WebCast](./screenshots/10-BrowserActivity-ABCNews-rightdrawer-open-video.png)
+  ![WebCast](./screenshots/11-VideoActivity-internalvideoplayer-ABCNews.png)
+  ![WebCast](./screenshots/12-VideoActivity-internalvideoplayer-ABCNews-landscape-fullscreen.png)
+  ![WebCast](./screenshots/13-VideoActivity-internalvideoplayer-ABCNews-chromecast-devicelist.png)
+  ![WebCast](./screenshots/14-VideoActivity-internalvideoplayer-ABCNews-chromecast-connected-casting.png)
+  ![WebCast](./screenshots/15-Android-System-MediaRouter.png)
+  ![WebCast](./screenshots/16-BrowserActivity-externalvideoplayer-implicit-intent-chooser.png)
+  ![WebCast](./screenshots/17-ExoAirPlayerSenderActivity-landscape-zoom.png)
+  ![WebCast](./screenshots/18-ExoAirPlayerSenderActivity.png)
+</details>
 
 - - - -
 
@@ -83,7 +83,18 @@ Android app to extract video (file/stream) URLs from websites and watch them els
             * used by [ExoAirPlayer](https://github.com/warren-bank/Android-ExoPlayer-AirPlay-Receiver)
     * [ExoAirPlayer](https://github.com/warren-bank/Android-ExoPlayer-AirPlay-Receiver) sender
       - start `ExoAirPlayerSenderActivity`
-* `VideoActivity` is started when a video URL is watched in the internal video player, and includes:
+    * [HLS-Proxy](https://github.com/warren-bank/HLS-Proxy) configuration
+      - start Activity chooser w/ an implicit Intent
+        * action
+          - `android.intent.action.VIEW`
+        * data
+          - `http://webcast-reloaded.surge.sh/proxy.html#/watch/${base64_video}/referer/${base64_referer}`
+        * type
+          - "text/html"
+      - start `HlsProxyConfigurationActivity`
+        * only when there is no Activity having a matching Intent filter
+          - which should never happen, since any standard web browser should offer to handle this Intent
+* `VideoActivity` is started when a video URL is watched using the internal video player, and includes:
   - [ExoPlayer](https://github.com/google/ExoPlayer/tree/release-v2)
     * displays an icon in lower right corner of video controls toolbar to toggle fullscreen mode on/off
   - [Chromecast sender](https://github.com/google/ExoPlayer/tree/release-v2/extensions/cast)
@@ -105,7 +116,7 @@ Android app to extract video (file/stream) URLs from websites and watch them els
         * otherwise:
           - on Android, in _ExoPlayer_
             * all HTTP requests include the referer url
-* `ExoAirPlayerSenderActivity` is started when a video URL is watched in the [ExoAirPlayer](https://github.com/warren-bank/Android-ExoPlayer-AirPlay-Receiver) sender, and includes:
+* `ExoAirPlayerSenderActivity` is started when a video URL is watched using the [ExoAirPlayer](https://github.com/warren-bank/Android-ExoPlayer-AirPlay-Receiver) sender, and includes:
   - `WebView` that loads a single web page
     * URL of the web page depends on version of Android
       - Android 5.0 and newer
@@ -122,6 +133,27 @@ Android app to extract video (file/stream) URLs from websites and watch them els
     * port
     * https
   - provides a basic UI to control any [ExoAirPlayer](https://github.com/warren-bank/Android-ExoPlayer-AirPlay-Receiver) receiver app that is reachable through the network
+* `HlsProxyConfigurationActivity` is started when a video URL is watched using [HLS-Proxy](https://github.com/warren-bank/HLS-Proxy) configuration on a device without any available web browser, and includes:
+  - `WebView` that loads an ES5 compliant [web page](http://webcast-reloaded.surge.sh/proxy.html)
+    * URL hash contains:
+      - `#/watch/${base64_video}/referer/${base64_referer}`
+  - web page reads data from URL hash and pre-populates fields:
+    * video url
+    * referer url
+  - web page reads data from cookies and pre-populates fields:
+    * host
+    * port
+    * https
+  - clicking the _Load Player_ button performs the following tasks:
+    * configures a new video URL that redirects the HLS manifest through [HLS-Proxy](https://github.com/warren-bank/HLS-Proxy)
+    * redirects `WebView` to another ES5 compliant [web page](http://webcast-reloaded.surge.sh/index.html) that provides optional endpoint destinations for the proxied HLS manifest
+      - [ES6 web page](http://webcast-reloaded.surge.sh/airplay_sender.html) for [ExoAirPlayer](https://github.com/warren-bank/Android-ExoPlayer-AirPlay-Receiver) sender
+      - [ES5 web page](http://webcast-reloaded.surge.sh/chromecast_sender.html) for _Chromecast sender_
+        * in `WebView` on Android 4.x and older:
+          - video player functionality does not work
+        * in `WebView` on Android 5.0 and newer:
+          - video player functionality works
+          - _Chromecast sender_ functionality does not work
 
 - - - -
 
@@ -139,6 +171,49 @@ Android app to extract video (file/stream) URLs from websites and watch them els
     * other external video players would need to:
       - read the `referUrl` extra in the starting Intent
       - configure its HTTP client library to change the value of this header
+    * [HLS-Proxy](https://github.com/warren-bank/HLS-Proxy) provides a convenient general-purpose workaround
+      - setup for integration with [WebCast](https://github.com/warren-bank/Android-WebCast/tree/04-webcast-filename):
+        1. install [HLS-Proxy](https://github.com/warren-bank/HLS-Proxy)
+           * `npm install --global "@warren-bank/hls-proxy"`
+        2. install [WebMonkey](https://github.com/warren-bank/Android-WebMonkey)
+           * app to open [HLS-Proxy](https://github.com/warren-bank/HLS-Proxy) configuration
+        3. in [WebMonkey](https://github.com/warren-bank/Android-WebMonkey)
+           * install [WebCast-Reloaded userscript](https://github.com/warren-bank/crx-webcast-reloaded/raw/gh-pages/external_website_helper/external_website_webmonkey.user.js)
+             - adds enhanced functionality to the ES5 compliant [web page](http://webcast-reloaded.surge.sh/proxy.html) that provides [HLS-Proxy](https://github.com/warren-bank/HLS-Proxy) configuration
+               * enables a button labeled: _Start App_
+               * when clicked:
+                 - start Activity chooser w/ an implicit Intent
+                   * action
+                     - `android.intent.action.VIEW`
+                   * data
+                     - proxied HLS manifest URL
+                   * type
+                     - "application/x-mpegurl"
+        4. in [WebCast](https://github.com/warren-bank/Android-WebCast/tree/04-webcast-filename)
+           * _Settings_ &gt; _Video Player_ &gt; _HLS-Proxy configuration_
+      - usage:
+        1. run [HLS-Proxy](https://github.com/warren-bank/HLS-Proxy)
+           * `hlsd --port 8080 --req-insecure --useragent "Chrome/90"`
+        2. in [WebCast](https://github.com/warren-bank/Android-WebCast/tree/04-webcast-filename)
+           * navigate internal `WebView` to a page having the desired HLS video stream
+           * open the __Videos__ drawer (on right)
+           * click on the URL for the desired HLS video stream
+           * click: _Watch_
+             - an Activity chooser will start
+             - [WebMonkey](https://github.com/warren-bank/Android-WebMonkey) will be included in the list of apps that contain a matching Activity
+             - click: _WebMonkey_
+        3. in [WebMonkey](https://github.com/warren-bank/Android-WebMonkey)
+           * configure the location of your running instance of [HLS-Proxy](https://github.com/warren-bank/HLS-Proxy):
+             - host
+             - port
+             - https
+           * click: _Start App_
+             - an Activity chooser will start
+             - [WebCast](https://github.com/warren-bank/Android-WebCast/tree/04-webcast-filename) will be included in the list of apps that contain a matching Activity
+             - click: _WebCast Video Player_
+        4. in [WebCast](https://github.com/warren-bank/Android-WebCast/tree/04-webcast-filename)
+           * click the ![Chromecast sender icon](https://github.com/warren-bank/crx-webcast-reloaded/raw/gh-pages/chrome_extension/2-release/popup/img/chromecast.png) _Chromecast sender_ icon to cast the proxied HLS video stream to a Chromecast device
+
 * the Android System [`WebView`](https://developer.chrome.com/multidevice/webview/overview) component is wholly responsible for the web browser experience
   - this component has a complicated history
   - without going into detail:
@@ -173,17 +248,18 @@ Android app to extract video (file/stream) URLs from websites and watch them els
   - [05-chromecast-receiver-app](https://github.com/warren-bank/Android-WebCast/tree/05-chromecast-receiver-app)
     * WebCast Chromecast receiver app
   - [gh-pages](https://github.com/warren-bank/Android-WebCast/tree/gh-pages)
-    * WebCast Chromecast receiver app (mirror)
+    * WebCast Chromecast receiver app
+      - the _HEAD_ of this branch should always reference/alias the _HEAD_ of the [05-chromecast-receiver-app](https://github.com/warren-bank/Android-WebCast/tree/05-chromecast-receiver-app) branch
     * [hosted](https://warren-bank.github.io/Android-WebCast/CastReceiver/receiver.html) by [GitHub Pages](https://pages.github.com/)
 
 #### Highlights of Source Code
 
 * __identification of video URLs in outbound HTTP requests__
-  - `BrowserWebViewClient`
-    * [regex to detect video files](https://github.com/warren-bank/Android-WebCast/blob/04-webcast-filename/android-studio-project/WebCast/src/main/java/com/github/warren_bank/webcast/webview/BrowserWebViewClient.java#L96)
-* __same methodology as applied to a Chrome extension__
+  - [`BrowserWebViewClient`](https://github.com/warren-bank/Android-WebCast/blob/v04.09.10/android-studio-project/WebCast/src/main/java/com/github/warren_bank/webcast/webview/BrowserWebViewClient.java#L15)
+    * [regex to detect video files](https://github.com/warren-bank/Android-WebCast/blob/v04.09.10/android-studio-project/WebCast/src/main/java/com/github/warren_bank/webcast/SharedUtils.java#L8)
+* __same methodology as implemented by a web browser extension__
   - ["WebCast-Reloaded" Chromium extension](https://github.com/warren-bank/crx-webcast-reloaded)
-    * [regex to detect video files](https://github.com/warren-bank/crx-webcast-reloaded/blob/gh-pages/chrome_extension/background.js#L2)
+    * [regex to detect video files](https://github.com/warren-bank/crx-webcast-reloaded/blob/v0.7.4/chrome_extension/2-release/background/js/background.js#L62)
 
 - - - -
 
