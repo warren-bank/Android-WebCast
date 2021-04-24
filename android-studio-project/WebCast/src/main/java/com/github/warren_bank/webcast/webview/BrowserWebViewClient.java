@@ -36,6 +36,11 @@ public class BrowserWebViewClient extends WebViewClient {
     }
 
     @Override
+    public void onLoadResource(WebView view, String url) {
+        process_URL(url, view);
+    }
+
+    @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
         process_URL(url, view);
         return false;
