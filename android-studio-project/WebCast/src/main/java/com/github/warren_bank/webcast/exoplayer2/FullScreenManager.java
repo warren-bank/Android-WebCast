@@ -7,7 +7,7 @@ import android.app.Dialog;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import com.google.android.exoplayer2.ui.PlaybackControlView;
+import com.google.android.exoplayer2.ui.PlayerControlView;
 import com.google.android.exoplayer2.ui.PlayerView;
 
 final class FullScreenManager {
@@ -97,8 +97,8 @@ final class FullScreenManager {
   }
 
   private void initFullscreenButton() {
-    PlaybackControlView controlView;
-    controlView       = (PlaybackControlView) localPlayerView.findViewById(R.id.exo_controller);
+    PlayerControlView controlView;
+    controlView       = (PlayerControlView) localPlayerView.findViewById(R.id.exo_controller);
     mFullScreenIcon   = (ImageView) controlView.findViewById(R.id.exo_fullscreen_icon);
     mFullScreenButton = (ViewGroup) controlView.findViewById(R.id.exo_fullscreen_button);      // FrameLayout
     mFullScreenButton.setOnClickListener(new View.OnClickListener() {

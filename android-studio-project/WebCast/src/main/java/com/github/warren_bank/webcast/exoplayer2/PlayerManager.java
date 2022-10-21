@@ -10,22 +10,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.google.android.exoplayer2.C;
-import com.google.android.exoplayer2.DefaultRenderersFactory;
-import com.google.android.exoplayer2.ExoPlaybackException;
-import com.google.android.exoplayer2.ExoPlayerFactory;
+import com.google.android.exoplayer2.ExoPlayer;
+import com.google.android.exoplayer2.MediaItem;
+import com.google.android.exoplayer2.PlaybackException;
 import com.google.android.exoplayer2.Player;
-import com.google.android.exoplayer2.Player.DiscontinuityReason;
-import com.google.android.exoplayer2.Player.EventListener;
-import com.google.android.exoplayer2.Player.TimelineChangeReason;
-import com.google.android.exoplayer2.RenderersFactory;
-import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.Timeline;
 import com.google.android.exoplayer2.Timeline.Period;
+import com.google.android.exoplayer2.analytics.DefaultAnalyticsCollector;
 import com.google.android.exoplayer2.ext.cast.CastPlayer;
 import com.google.android.exoplayer2.ext.cast.SessionAvailabilityListener;
 import com.google.android.exoplayer2.source.ConcatenatingMediaSource;
-import com.google.android.exoplayer2.source.ExtractorMediaSource;
 import com.google.android.exoplayer2.source.MediaSource;
+import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.android.exoplayer2.source.dash.DashMediaSource;
 import com.google.android.exoplayer2.source.hls.HlsMediaSource;
 import com.google.android.exoplayer2.source.smoothstreaming.SsMediaSource;
@@ -33,18 +29,17 @@ import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
 import com.google.android.exoplayer2.ui.PlayerControlView;
 import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.android.exoplayer2.util.MimeTypes;
-import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
+import com.google.android.exoplayer2.upstream.DefaultHttpDataSource;
+import com.google.android.exoplayer2.util.Clock;
+import com.google.android.exoplayer2.util.EventLogger;
 
-import com.google.android.gms.cast.MediaInfo;
-import com.google.android.gms.cast.MediaMetadata;
-import com.google.android.gms.cast.MediaQueueItem;
 import com.google.android.gms.cast.framework.CastContext;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /** Manages players and an internal media queue */
-public final class PlayerManager
-    implements EventListener, SessionAvailabilityListener {
+public final class PlayerManager implements Player.Listener, SessionAvailabilityListener {
 
   /**
    * Listener for changes in the media queue playback position.
@@ -64,9 +59,9 @@ public final class PlayerManager
   private FullScreenManager fullScreenManager;
   private ArrayList<VideoSource> mediaQueue;
   private ConcatenatingMediaSource concatenatingMediaSource;
-  private SimpleExoPlayer exoPlayer;
+  private ExoPlayer exoPlayer;
   private CastPlayer castPlayer;
-  private DefaultHttpDataSourceFactory dataSourceFactory;
+  private DefaultHttpDataSource.Factory dataSourceFactory;
 
   private int currentItemIndex;
   private boolean castMediaQueueCreationPending;
@@ -114,13 +109,18 @@ public final class PlayerManager
     this.concatenatingMediaSource = new ConcatenatingMediaSource();
 
     DefaultTrackSelector trackSelector = new DefaultTrackSelector();
-    RenderersFactory renderersFactory = new DefaultRenderersFactory(context);
-    this.exoPlayer = ExoPlayerFactory.newSimpleInstance(context, renderersFactory, trackSelector);
+
+    EventLogger exoLogger = new EventLogger(trackSelector);
+    DefaultAnalyticsCollector analyticsCollector = new DefaultAnalyticsCollector(Clock.DEFAULT);
+    analyticsCollector.addListener(exoLogger);
+
+    this.exoPlayer = new ExoPlayer.Builder(context)
+      .setTrackSelector(trackSelector)
+      .setAnalyticsCollector(analyticsCollector)
+      .build();
+
     this.exoPlayer.addListener(this);
     this.localPlayerView.setPlayer(this.exoPlayer);
-
-    ExoPlayerEventLogger exoLogger = new ExoPlayerEventLogger(trackSelector);
-    this.exoPlayer.addListener(exoLogger);
 
     this.castPlayer = new CastPlayer(castContext);
     this.castPlayer.addListener(this);
@@ -128,13 +128,15 @@ public final class PlayerManager
     this.castControlView.setPlayer(this.castPlayer);
 
     String userAgent = context.getResources().getString(R.string.user_agent);
-    this.dataSourceFactory = new DefaultHttpDataSourceFactory(userAgent);
+    this.dataSourceFactory = new DefaultHttpDataSource.Factory().setUserAgent(userAgent);
 
     this.currentItemIndex = C.INDEX_UNSET;
     this.playbackMode = PlaybackMode.NORMAL;
   }
 
+  // ===========================================================================
   // Queue manipulation methods.
+  // ===========================================================================
 
   /**
    * Plays a specified queue item in the current player.
@@ -161,7 +163,11 @@ public final class PlayerManager
     mediaQueue.add(sample);
     concatenatingMediaSource.addMediaSource(buildMediaSource(sample));
     if (currentPlayer == castPlayer) {
-      castPlayer.addItems(buildMediaQueueItem(sample));
+      int lastIndex = castPlayer.getCurrentTimeline().getWindowCount() - 1;
+      List<MediaItem> mediaItems = new ArrayList<MediaItem>();
+      mediaItems.add(sample.getMediaItem());
+
+      castPlayer.addMediaItems(lastIndex, mediaItems);
     }
   }
 
@@ -198,7 +204,7 @@ public final class PlayerManager
         if (castTimeline.getPeriodCount() <= itemIndex) {
           return false;
         }
-        castPlayer.removeItem((int) castTimeline.getPeriod(itemIndex, new Period()).id);
+        castPlayer.removeMediaItems(itemIndex, (itemIndex + 1));
       }
     }
     mediaQueue.remove(itemIndex);
@@ -226,8 +232,7 @@ public final class PlayerManager
       if (periodCount <= fromIndex || periodCount <= toIndex) {
         return false;
       }
-      int elementId = (int) castTimeline.getPeriod(fromIndex, new Period()).id;
-      castPlayer.moveItem(elementId, toIndex);
+      castPlayer.moveMediaItems(fromIndex, (fromIndex + 1), toIndex);
     }
 
     mediaQueue.add(toIndex, mediaQueue.remove(fromIndex));
@@ -244,7 +249,9 @@ public final class PlayerManager
     return true;
   }
 
+  // ===========================================================================
   // Miscellaneous methods.
+  // ===========================================================================
 
   /**
    * Is cast player currently active?
@@ -364,10 +371,14 @@ public final class PlayerManager
     catch (Exception e){}
   }
 
-  // Player.EventListener implementation.
+  // ===========================================================================
+  // https://github.com/google/ExoPlayer/blob/r2.18.1/library/common/src/main/java/com/google/android/exoplayer2/Player.java#L612
+  // ===========================================================================
+  // Player.Listener implementation.
+  // ===========================================================================
 
   @Override
-  public void onPlayerStateChanged(boolean playWhenReady, int playbackState) {
+  public void onPlaybackStateChanged(@Player.State int playbackState) {
     updateCurrentItemIndex();
 
     if (playbackMode == PlaybackMode.CAST_ONLY) {
@@ -383,14 +394,17 @@ public final class PlayerManager
   }
 
   @Override
-  public void onPositionDiscontinuity(@DiscontinuityReason int reason) {
+  public void onPlayWhenReadyChanged(boolean playWhenReady, @Player.PlayWhenReadyChangeReason int reason) {
     updateCurrentItemIndex();
   }
 
   @Override
-  public void onTimelineChanged(
-      Timeline timeline, @Nullable Object manifest, @TimelineChangeReason int reason
-  ){
+  public void onPositionDiscontinuity(Player.PositionInfo oldPosition, Player.PositionInfo newPosition, @Player.DiscontinuityReason int reason) {
+    updateCurrentItemIndex();
+  }
+
+  @Override
+  public void onTimelineChanged(Timeline timeline, @Player.TimelineChangeReason int reason) {
     updateCurrentItemIndex();
     if (timeline.isEmpty()) {
       castMediaQueueCreationPending = true;
@@ -398,13 +412,15 @@ public final class PlayerManager
   }
 
   @Override
-  public void onPlayerError(ExoPlaybackException error) {
+  public void onPlayerError(PlaybackException error) {
     if (playbackMode == PlaybackMode.CAST_ONLY) {
       setPlaybackMode(PlaybackMode.RELEASED);
     }
   }
 
+  // ===========================================================================
   // SessionAvailabilityListener implementation.
+  // ===========================================================================
 
   @Override
   public void onCastSessionAvailable() {
@@ -425,7 +441,9 @@ public final class PlayerManager
     }
   }
 
+  // ===========================================================================
   // Internal methods.
+  // ===========================================================================
 
   private void init() {
     boolean isCasting = castPlayer.isCastSessionAvailable();
@@ -507,12 +525,13 @@ public final class PlayerManager
   private void setCurrentItem(int itemIndex, long positionMs, boolean playWhenReady) {
     maybeSetCurrentItemAndNotify(itemIndex);
     if (castMediaQueueCreationPending) {
-      MediaQueueItem[] items = new MediaQueueItem[mediaQueue.size()];
-      for (int i = 0; i < items.length; i++) {
-        items[i] = buildMediaQueueItem(mediaQueue.get(i));
+      List<MediaItem> mediaItems = new ArrayList<MediaItem>();
+      for (int i = 0; i < mediaQueue.size(); i++) {
+        VideoSource sample = mediaQueue.get(i);
+        mediaItems.add(sample.getMediaItem());
       }
       castMediaQueueCreationPending = false;
-      castPlayer.loadItems(items, itemIndex, positionMs, Player.REPEAT_MODE_OFF);
+      castPlayer.setMediaItems(mediaItems, itemIndex, positionMs);
     } else {
       currentPlayer.seekTo(itemIndex, positionMs);
       currentPlayer.setPlayWhenReady(playWhenReady);
@@ -532,48 +551,29 @@ public final class PlayerManager
   }
 
   private void setHttpRequestHeaders(int currentItemIndex) {
+    if (dataSourceFactory == null) return;
+
     VideoSource sample = getItem(currentItemIndex);
     if (sample == null) return;
 
-    if (sample.referer != null) {
-      Uri referer   = Uri.parse(sample.referer);
-      String origin = referer.getScheme() + "://" + referer.getAuthority();
-
-      setHttpRequestHeader("origin",  origin);
-      setHttpRequestHeader("referer", sample.referer);
+    if (sample.reqHeadersMap != null) {
+      dataSourceFactory.setDefaultRequestProperties(sample.reqHeadersMap);
     }
-  }
-
-  private void setHttpRequestHeader(String name, String value) {
-    dataSourceFactory.getDefaultRequestProperties().set(name, value);
   }
 
   private MediaSource buildMediaSource(VideoSource sample) {
-    Uri uri = Uri.parse(sample.uri);
+    MediaItem mediaItem = sample.getMediaItem();
 
     switch (sample.mimeType) {
       case MimeTypes.APPLICATION_M3U8:
-        return new HlsMediaSource.Factory(dataSourceFactory).createMediaSource(uri);
+        return new HlsMediaSource.Factory(dataSourceFactory).createMediaSource(mediaItem);
       case MimeTypes.APPLICATION_MPD:
-        return new DashMediaSource.Factory(dataSourceFactory).createMediaSource(uri);
+        return new DashMediaSource.Factory(dataSourceFactory).createMediaSource(mediaItem);
       case MimeTypes.APPLICATION_SS:
-        return new SsMediaSource.Factory(dataSourceFactory).createMediaSource(uri);
+        return new SsMediaSource.Factory(dataSourceFactory).createMediaSource(mediaItem);
       default:
-        return new ExtractorMediaSource.Factory(dataSourceFactory).createMediaSource(uri);
+        return new ProgressiveMediaSource.Factory(dataSourceFactory).createMediaSource(mediaItem);
     }
-  }
-
-  private MediaQueueItem buildMediaQueueItem(VideoSource sample) {
-    MediaMetadata movieMetadata = new MediaMetadata(MediaMetadata.MEDIA_TYPE_MOVIE);
-  //movieMetadata.putString(MediaMetadata.KEY_TITLE, sample.uri);
-
-    MediaInfo mediaInfo = new MediaInfo.Builder(sample.uri)
-        .setStreamType(MediaInfo.STREAM_TYPE_BUFFERED)
-        .setContentType(sample.mimeType)
-        .setMetadata(movieMetadata)
-        .build();
-
-    return new MediaQueueItem.Builder(mediaInfo).build();
   }
 
 }
