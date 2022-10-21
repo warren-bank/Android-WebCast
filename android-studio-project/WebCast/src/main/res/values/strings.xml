@@ -48,6 +48,7 @@
         <item>@string/pref_videoplayer_array_values_4</item>
     </string-array>
 
+    <!-- SettingsActivity: Video Player -->
     <string translatable="false" name="pref_videoplayer_key">pref_videoplayer</string>
     <string translatable="false" name="pref_videoplayer_default">@string/pref_videoplayer_array_values_1</string>
     <string name="pref_videoplayer_title">Video Player</string>
@@ -59,6 +60,13 @@
     <string name="pref_enableremotedebugger_title">Enable Remote Debugger</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView can be inspected on LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView cannot be inspected on LAN</string>
+
+    <!-- SettingsActivity: Enable AdBlock -->
+    <string translatable="false" name="pref_enableadblock_key">pref_enableadblock</string>
+    <string translatable="false" name="pref_enableadblock_default">true</string>
+    <string name="pref_enableadblock_title">Enable AdBlock</string>
+    <string name="pref_enableadblock_summary_on" >Blocking hosts that serve: ads, trackers, malware, spam</string>
+    <string name="pref_enableadblock_summary_off">Allowing requests to all hosts</string>
 
     <!-- ExoAirPlayerSenderActivity -->
     <string translatable="false" name="pref_exoairplayersender_persistentcookies_key">pref_exoairplayersender_persistentcookies</string>

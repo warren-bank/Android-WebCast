@@ -7,7 +7,7 @@ import android.webkit.WebView;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 
-public class BrowserWebViewClient extends WebViewClient {
+public class BrowserWebViewClient_VideoDetector extends WebViewClient {
 
     private BrowserActivity browserActivity;
 
@@ -29,7 +29,7 @@ public class BrowserWebViewClient extends WebViewClient {
         process_URL(uri, null);
     }
 
-    public BrowserWebViewClient(BrowserActivity browserActivity) {
+    public BrowserWebViewClient_VideoDetector(BrowserActivity browserActivity) {
         super();
 
         this.browserActivity = browserActivity;
