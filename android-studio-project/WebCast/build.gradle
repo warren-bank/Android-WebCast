@@ -17,10 +17,25 @@ android {
         applicationId "com.github.warren_bank.webcast"
         versionName project.ext.releaseVersion
         versionCode project.ext.releaseVersionCode
+
+        archivesBaseName += "-$versionName"
+    }
+
+    flavorDimensions "languageResources"
+
+    productFlavors {
+        withAllLanguageTranslations {
+            dimension "languageResources"
+        }
+        english {
+            dimension "languageResources"
+        }
     }
 
     buildTypes {
         release {
+            debuggable      false
+            jniDebuggable   false
             shrinkResources true
             minifyEnabled   true
             proguardFiles = [
@@ -29,8 +44,10 @@ android {
             ]
         }
         debug {
-            debuggable    true
-            jniDebuggable true
+            debuggable      true
+            jniDebuggable   true
+            shrinkResources false
+            minifyEnabled   false
         }
     }
 

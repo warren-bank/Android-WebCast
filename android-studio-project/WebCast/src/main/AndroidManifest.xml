@@ -32,7 +32,8 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
             android:windowSoftInputMode="stateHidden|adjustResize"
-            android:launchMode="standard">
+            android:launchMode="standard"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -51,7 +52,8 @@
             android:label="@string/activity_name_video"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
-            android:launchMode="standard">
+            android:launchMode="standard"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
 
@@ -119,7 +121,8 @@
             android:label="@string/activity_name_exoairplayersender"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
-            android:launchMode="standard">
+            android:launchMode="standard"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
 
@@ -233,7 +236,8 @@
             android:label="@string/activity_name_hlsproxyconfiguration"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
-            android:launchMode="standard">
+            android:launchMode="standard"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
 
@@ -264,10 +268,12 @@
         <activity
             android:name=".webview.SettingsActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode" />
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:exported="false" />
 
         <activity
-            android:name=".ExitActivity" />
+            android:name=".ExitActivity"
+            android:exported="false" />
 
     </application>
 

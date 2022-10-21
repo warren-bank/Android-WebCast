@@ -2,9 +2,9 @@ project.ext {
     releaseVersionCode = Integer.parseInt("004091216", 10)  //Integer.MAX_VALUE == 2147483647
     releaseVersion     = '004.09.12-16API'
     minSdkVersion      = 16
-    targetSdkVersion   = 28
-    compileSdkVersion  = 28
-    buildToolsVersion  = '28.0.3'
+    targetSdkVersion   = 31
+    compileSdkVersion  = 31
+    buildToolsVersion  = '31.0.0'
     javaVersion        = JavaVersion.VERSION_1_8
     jetpackVersion     = '1.0.0'
     exoPlayerVersion   = '2.11.7'
