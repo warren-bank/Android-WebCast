@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Aktiver Remote Debugger</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView kan inspiseres på LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView kan ikke inspiseres på LAN</string>
+    <string name="pref_enableadblock_title">Aktiver Ad-blokk</string>
+    <string name="pref_enableadblock_summary_on" >Blokking av verter som tjener: annonser, sporere, malware, søppelpost</string>
+    <string name="pref_enableadblock_summary_off">Alløsende forespørsler til alle verter</string>
     <string name="media_route_menu_title">Omvandle</string>
     <string name="cast_context_error">Kunne ikke hente Cast-kontekst. Prøv å oppdatere Google Play Services og start appen på nytt.</string>
 </resources>

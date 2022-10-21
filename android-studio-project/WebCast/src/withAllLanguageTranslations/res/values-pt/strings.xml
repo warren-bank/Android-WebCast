@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Ativar o Depurador Remoto</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView podem ser inspecionados em LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView não pode ser inspecionado LAN</string>
+    <string name="pref_enableadblock_title">Ativar Bloco De Anúncios</string>
+    <string name="pref_enableadblock_summary_on" >Bloquear hosts que servem: anúncios, rastreadores, malwares, spam</string>
+    <string name="pref_enableadblock_summary_off">Permitindo solicitações a todos os hosts</string>
     <string name="media_route_menu_title">Elenco</string>
     <string name="cast_context_error">Falha ao obter contexto de Cast. Tente atualizar o Google Play Services e reinicie o app.</string>
 </resources>

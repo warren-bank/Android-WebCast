@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Омогући даљинско управљање</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView може да се прегледа LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView не могу да се прегледају LAN</string>
+    <string name="pref_enableadblock_title">Омогући блок ад</string>
+    <string name="pref_enableadblock_summary_on" >Блокирање домаћина који служе: рекламе, уређаји за праћење, малвер, spam</string>
+    <string name="pref_enableadblock_summary_off">Омогућавање захтева свим домаћинима</string>
     <string name="media_route_menu_title">Баци</string>
     <string name="cast_context_error">Не могу да добијем контекст Cast. Покушајте да ажурирате Гугл плеј услуге и поново покрените апликацију.</string>
 </resources>

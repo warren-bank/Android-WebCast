@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">啟用遠端除錯器</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView 可以在上檢查 LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView 無法在上檢查 LAN</string>
+    <string name="pref_enableadblock_title">啟用廣告區塊</string>
+    <string name="pref_enableadblock_summary_on" >封鎖的主機服務：廣告、追踪者、惡意軟體、垃圾郵件</string>
+    <string name="pref_enableadblock_summary_off">容許要求給所有主機</string>
     <string name="media_route_menu_title">鑄</string>
     <string name="cast_context_error">無法取得 Cast 環境定義。 請嘗試更新 Google Play 服務，然後重新啟動應用程式.</string>
 </resources>

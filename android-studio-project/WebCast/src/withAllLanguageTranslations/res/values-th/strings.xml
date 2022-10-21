@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">เปิดใช้งาน Debugger แบบรีโมต</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView สามารถถูกตรวจสอบบน LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView ไม่สามารถตรวจสอบได้ LAN</string>
+    <string name="pref_enableadblock_title">เปิดใช้งานบล็อกการโฆษณา</string>
+    <string name="pref_enableadblock_summary_on" >ปิดกั้นโฮสต์ที่ให้บริการ: โฆษณา, trackers, มัลแวร์, สแปม</string>
+    <string name="pref_enableadblock_summary_off">การอนุญาตให้คำร้องขอไปยังโฮสต์ทั้งหมด</string>
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">ล้มเหลวในการรับบริบท Cast ลองอัพเดต Google Play Services และรีสตาร์ทแอ็พ.</string>
 </resources>

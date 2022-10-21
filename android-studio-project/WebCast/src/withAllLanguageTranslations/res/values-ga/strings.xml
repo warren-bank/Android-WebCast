@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Cumasaigh an Dífhabhtóir Cianda</string>
     <string name="pref_enableremotedebugger_summary_on" >Is féidir WebView a iniúchadh ar LAN</string>
     <string name="pref_enableremotedebugger_summary_off">Ní féidir WebView a iniúchadh ar LAN</string>
+    <string name="pref_enableadblock_title">Cumasaigh Bloc Ad</string>
+    <string name="pref_enableadblock_summary_on" >Blocála óstáin a sheirbheáil: fógraí, tarracóirí, malware, spamáil</string>
+    <string name="pref_enableadblock_summary_off">Ceadaigh iarratais ar gach óstáin</string>
     <string name="media_route_menu_title">Caitheadh</string>
     <string name="cast_context_error">Theip ar chomhthéacs Caitheadh a fháil. Bain triail as Google Play Services a nuashonrú agus an aip a atosú.</string>
 </resources>

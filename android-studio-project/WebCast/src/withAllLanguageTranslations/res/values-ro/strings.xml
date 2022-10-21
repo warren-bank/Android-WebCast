@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Activare Depanator la distanţă</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView poate fi inspectat la LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView nu poate fi inspectat la LAN</string>
+    <string name="pref_enableadblock_title">Activează blocul de anunțuri</string>
+    <string name="pref_enableadblock_summary_on" >Blocarea gazdelor care servesc: reclame, trackere, malware, spam</string>
+    <string name="pref_enableadblock_summary_off">Permiterea solicitărilor tuturor gazdelor</string>
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">Eşuare la obţinerea contextului Cast. Încercaţi actualizarea Google Play Services şi reporniţi aplicaţia.</string>
 </resources>

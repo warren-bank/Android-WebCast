@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Aktivér fjernopkoblet fejlfinding</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView kan inspiceres på LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView kan ikke inspiceres på LAN</string>
+    <string name="pref_enableadblock_title">Aktivér ad hoc</string>
+    <string name="pref_enableadblock_summary_on" >Blokering af værter, der betjener: annoncer, sporingsenheder, malware, spam</string>
+    <string name="pref_enableadblock_summary_off">Tillad anmodninger til alle værter</string>
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">Kan ikke hente Cast-kontekst. Prøv at opdatere Google Play Services, og genstart appen.</string>
 </resources>

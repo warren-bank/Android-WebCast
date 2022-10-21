@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">启用远程调试器</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView 可进行检查 LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView 无法检查 LAN</string>
+    <string name="pref_enableadblock_title">启用广告块</string>
+    <string name="pref_enableadblock_summary_on" >阻止服务的主机 : 广告，跟踪程序，恶意软件，垃圾邮件</string>
+    <string name="pref_enableadblock_summary_off">允许对所有主机的请求</string>
     <string name="media_route_menu_title">铸造</string>
     <string name="cast_context_error">无法获取 Cast 上下文。 尝试更新 Google Play Services 并重新启动应用程序.</string>
 </resources>

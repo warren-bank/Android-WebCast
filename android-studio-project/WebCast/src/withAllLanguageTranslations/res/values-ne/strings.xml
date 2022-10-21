@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">टाढाको डिबगर सक्षम पार्नुहोस्</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView मा निरीक्षण गर्न सकिन्छ LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView मा निरीक्षण गर्न सकिँदैन LAN</string>
+    <string name="pref_enableadblock_title">Ad खण्ड सक्षम पार्नुहोस्</string>
+    <string name="pref_enableadblock_summary_on" >सेवा गर्ने होस्टहरू: विज्ञापन, ट्रकर्स, मालवेयर, स्पाम</string>
+    <string name="pref_enableadblock_summary_off">सबै होस्टमा अनुरोधहरू अनुमति</string>
     <string name="media_route_menu_title">कास्ट</string>
     <string name="cast_context_error">कास्ट प्रसङ्ग प्राप्त गर्न असफल. गुगल प्ले सेवाहरू अद्यावधिक गर्ने प्रयास गर्नुहोस् र एप पुन: सुरु गर्नुहोस्.</string>
 </resources>

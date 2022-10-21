@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Benarkan Penyahpepijat Jauh</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView boleh diperiksa pada LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView tidak dapat diperiksa pada LAN</string>
+    <string name="pref_enableadblock_title">Benarkan Blok Iklan</string>
+    <string name="pref_enableadblock_summary_on" >Menghalang hos yang berkhidmat: iklan, trackers, malware, spam</string>
+    <string name="pref_enableadblock_summary_off">Membenarkan permintaan kepada semua hos</string>
     <string name="media_route_menu_title">Lemparkan</string>
     <string name="cast_context_error">Gagal mendapatkan konteks Cast. Cuba mengemaskini Perkhidmatan Main Google Play dan mulakan semula aplikasi.</string>
 </resources>

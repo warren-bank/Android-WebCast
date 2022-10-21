@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Abilitare Debugger Remoto</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView può essere ispezionato su LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView non può essere ispezionato su LAN</string>
+    <string name="pref_enableadblock_title">Abilitare Ad Block</string>
+    <string name="pref_enableadblock_summary_on" >Bloccare gli host che servono: pubblicità, tracker, malware, spam</string>
+    <string name="pref_enableadblock_summary_off">Consentire richieste a tutti gli host</string>
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">Impossibile ottenere il contesto di Cast. Provare ad aggiornare Google Play Services e riavviare l\'app.</string>
 </resources>

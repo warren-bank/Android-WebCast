@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Povoliť vzdialený ladiaci program</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView môžu byť skontrolované na LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView nie je možné vykonať inšpekciu LAN</string>
+    <string name="pref_enableadblock_title">Povoliť blok reklamy</string>
+    <string name="pref_enableadblock_summary_on" >Blokovanie hostiteľov, ktorí slúžia: reklamy, trackery, malware, nevyžiadaná pošta</string>
+    <string name="pref_enableadblock_summary_off">Povolenie požiadaviek pre všetkých hostiteľov</string>
     <string name="media_route_menu_title">Obsadenie</string>
     <string name="cast_context_error">Nepodarilo sa získať kontext Cast. Skúste aktualizovať služby Google Play a znova spustiť aplikáciu.</string>
 </resources>

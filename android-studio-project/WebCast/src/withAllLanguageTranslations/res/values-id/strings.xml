@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Aktifkan Debugger Jarak Jauh</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView dapat diinspeksi pada LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView tidak dapat diperiksa pada LAN</string>
+    <string name="pref_enableadblock_title">Aktifkan Blok Iklan</string>
+    <string name="pref_enableadblock_summary_on" >Memblokir host yang melayani: ads, trackers, malware, spam</string>
+    <string name="pref_enableadblock_summary_off">Memungkinkan permintaan untuk semua host</string>
     <string name="media_route_menu_title">Cor</string>
     <string name="cast_context_error">Gagal mendapatkan konteks Cast. Coba memutakhirkan Layanan Google Play dan restart aplikasi.</string>
 </resources>

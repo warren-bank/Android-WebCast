@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Habilitar el depurador remoto</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView puede ser inspeccionado en LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView no se puede inspeccionar LAN</string>
+    <string name="pref_enableadblock_title">Habilitar bloque de anuncios</string>
+    <string name="pref_enableadblock_summary_on" >Bloquear hosts que sirven: anuncios, rastreadores, malware, spam</string>
+    <string name="pref_enableadblock_summary_off">Permitir solicitudes a todos los hosts</string>
     <string name="media_route_menu_title">Fundición</string>
     <string name="cast_context_error">Error al obtener el contexto de conversión. Intente actualizar los servicios de Google Play y reinicie la aplicación.</string>
 </resources>

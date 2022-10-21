@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Ενεργοποίηση απομακρυσμένου Debugger</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView (συνέχεια) LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView -δεν μπορεί να ελεγχθεί LAN</string>
+    <string name="pref_enableadblock_title">Ενεργοποίηση ενότητας Ad</string>
+    <string name="pref_enableadblock_summary_on" >Οικοδεσπότες που σερβίρουν: διαφημίσεις, ανιχνευτές, κακόβουλο λογισμικό, spam</string>
+    <string name="pref_enableadblock_summary_off">Επιτρέποντας αιτήσεις σε όλους τους υπολογιστές.</string>
     <string name="media_route_menu_title">-Καστ</string>
     <string name="cast_context_error">Αποτυχία ανάκτησης του περιβάλλοντος Cast. Προσπαθήστε να ενημερώσετε το Google Play Services και επανεκκινήστε την εφαρμογή.</string>
 </resources>

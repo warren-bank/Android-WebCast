@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Увімкнути віддалений зневаджу</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView може бути перевірені на LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView не може бути перевірені на LAN</string>
+    <string name="pref_enableadblock_title">Увімкнути блок Ad</string>
+    <string name="pref_enableadblock_summary_on" >Блокування вузлів, які служать: ads, trackers, malware, спам</string>
+    <string name="pref_enableadblock_summary_off">Дозволяти запити на всі вузли</string>
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">Не вдалося отримати контекст Cast. Спробуйте оновлення служб Google Play і перезапустити програму.</string>
 </resources>

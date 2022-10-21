@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">रिमोट डिबगर सक्षम करें</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView पर निरीक्षण किया जा सकता LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView पर निरीक्षण नहीं किया जाएगा LAN</string>
+    <string name="pref_enableadblock_title">एड ब्लॉक सक्षम करें</string>
+    <string name="pref_enableadblock_summary_on" >होस्ट करता है कि सेवा बंद करें: विज्ञापन, ट्रेकर्स, मैलवेयर, स्पैम</string>
+    <string name="pref_enableadblock_summary_off">सभी होस्ट को अनुरोध की अनुमति देता है</string>
     <string name="media_route_menu_title">डाली</string>
     <string name="cast_context_error">कास्ट संदर्भ पाने में विफल. Google प्ले सेवाओं को अद्यतन करने और एप्लिकेशन को पुनः प्रारंभ करने की कोशिश.</string>
 </resources>

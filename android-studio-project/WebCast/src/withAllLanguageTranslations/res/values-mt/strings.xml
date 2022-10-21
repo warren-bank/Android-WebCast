@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Jippermettu Debugger Remoti</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView jista \'jiġi spezzjonat fuq LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView ma jistgħux jiġu spezzjonati fuq LAN</string>
+    <string name="pref_enableadblock_title">Jippermettu Blokk Ad</string>
+    <string name="pref_enableadblock_summary_on" >Imblukkar ospiti li jservu: ads, trackers, malware, spam</string>
+    <string name="pref_enableadblock_summary_off">Permess ta \' talbiet għall-ospiti kollha</string>
     <string name="media_route_menu_title">Fondut</string>
     <string name="cast_context_error">Naqset milli tikseb Cast Kuntest. Ipprova aġġornament Google Play Services u terġa \' tibda l-app.</string>
 </resources>

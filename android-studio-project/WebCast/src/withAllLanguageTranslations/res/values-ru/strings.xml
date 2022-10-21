@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Включить удаленный отладчик</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView можно проверить на LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView невозможно проверить на LAN</string>
+    <string name="pref_enableadblock_title">Включить блок рекламы</string>
+    <string name="pref_enableadblock_summary_on" >Блокирующие хосты, которые обслуживают: объявления, трекеры, вредоносные программы, спам</string>
+    <string name="pref_enableadblock_summary_off">Разрешение запросов всем хостам</string>
     <string name="media_route_menu_title">Приведение</string>
     <string name="cast_context_error">Не удалось получить контекст Cast. Попробуйте обновить Google Play Services и перезапустить приложение.</string>
 </resources>

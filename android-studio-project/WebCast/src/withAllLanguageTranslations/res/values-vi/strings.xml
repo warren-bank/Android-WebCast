@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Dùng bộ gỡ lỗi từ xa</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView có thể được kiểm tra trên LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView không thể kiểm tra được trên LAN</string>
+    <string name="pref_enableadblock_title">Bật Block</string>
+    <string name="pref_enableadblock_summary_on" >Chặn chủ nhà phục vụ: quảng cáo, trackers, malware, spam</string>
+    <string name="pref_enableadblock_summary_off">Cho phép yêu cầu tất cả máy chủ</string>
     <string name="media_route_menu_title">Diễn viên</string>
     <string name="cast_context_error">Không thể lấy ngư ̃ cảnh Cast. Thử cập nhật Dịch vụ Google Play và khởi động lại ứng dụng.</string>
 </resources>

@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">വിദൂര ഡീബഗ്ഗര് സജ്ജമാക്കുക</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView പരിശോധിക്കാവുന്നതാണ്. LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView അത് പരിശോധിക്കുവാന് സാധ്യമല്ല. LAN</string>
+    <string name="pref_enableadblock_title">ആഡ് ബ്ലോക്ക് സജ്ജമാക്കുക</string>
+    <string name="pref_enableadblock_summary_on" >സേവനം ചെയ്യുന്ന ഹോസ്റ്റുകള്: അഡ്ഡുകള്, ട്രാക്കര്, മാള്വെയര്, സ്പാം</string>
+    <string name="pref_enableadblock_summary_off">എല്ലാ ഹോസ്റ്റുകള്ക്കു് ആവശ്യങ്ങള് അനുവദിക്കുന്നു</string>
     <string name="media_route_menu_title">കാസ്റ്റ്</string>
     <string name="cast_context_error">കാസ്റ്റ് സന്ദർഭം നേടുന്നതിൽ പരാജയപ്പെട്ടു. Google Play സേവനങ്ങൾ അപ്‌ഡേറ്റുചെയ്‌ത് അപ്ലിക്കേഷൻ പുനരാരംഭിക്കുക.</string>
 </resources>

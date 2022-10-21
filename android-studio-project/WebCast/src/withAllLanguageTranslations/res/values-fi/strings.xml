@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Ota yhteys Remote Debuggeriin</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView Voidaan tarkastaa LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView Ei voi tarkastaa LAN</string>
+    <string name="pref_enableadblock_title">Ota Ad-lohko käyttöön</string>
+    <string name="pref_enableadblock_summary_on" >Isäntälaitteet, jotka palvelevat: mainoksia, jäljittimiä, haittaohjelmia, roskapostia</string>
+    <string name="pref_enableadblock_summary_off">Kaikkien koneiden pyyntöjen salliminen</string>
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">Cast-kontekstin nouto ei onnistunut. Yritä päivittää Google Play Services -sovellusta ja aloita sovellus uudelleen.</string>
 </resources>

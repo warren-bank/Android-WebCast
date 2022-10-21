@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">రిమోట్ డీబగ్గర్ చేతనము చేయుము</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView పై విమర్యం చేయవచ్చు. LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView పై విమర్యం చేయలేము. LAN</string>
+    <string name="pref_enableadblock_title">అడ్ బ్లాక్ ను చేతనము చేయుము</string>
+    <string name="pref_enableadblock_summary_on" >సేవించు బల్కింగ్ సైన్యం: అడ్డులు, ట్రాకర్లు, మల్వేర్, స్పామ్</string>
+    <string name="pref_enableadblock_summary_off">అన్ని సైన్సులకు అభ్యర్ధనలను అనుమతిస్తుంది</string>
     <string name="media_route_menu_title">కాస్ట్</string>
     <string name="cast_context_error">Cast సందర్భం పొందుటకు విఫలమైంది. గూగుల్ ప్లేస్ సేవలను అప్డేటింగ్ చేయండి మరియు ఆప్ను పునర్ప్రారంభించు.</string>
 </resources>

@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Omogući daljinski program za pronalaženje pogrešaka</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView se može pregledavati na LAN-u</string>
     <string name="pref_enableremotedebugger_summary_off">WebView nije moguće pregledati na LAN-u</string>
+    <string name="pref_enableadblock_title">Omogući Ad Block</string>
+    <string name="pref_enableadblock_summary_on" >Blokiranje hostova koji služe: oglasi, pratitelji, zlonamjerni softver, spam</string>
+    <string name="pref_enableadblock_summary_off">Dozvoljavanje zahtjeva svim hostovima</string>
     <string name="media_route_menu_title">Uloge</string>
     <string name="cast_context_error">Dohvaćanje konteksta Cast nije uspjelo. Pokušajte ažurirati usluge Google Play i ponovo pokrenite aplikaciju.</string>
 </resources>

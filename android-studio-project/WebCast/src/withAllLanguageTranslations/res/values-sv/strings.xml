@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Aktivera fjärradebuggare</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView kan inspekteras LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView kan inte inspekteras LAN</string>
+    <string name="pref_enableadblock_title">Aktivera Ad-block</string>
+    <string name="pref_enableadblock_summary_on" >Blockerande värdar som betjänar: annonser, spårare, malware, spam</string>
+    <string name="pref_enableadblock_summary_off">Tillåta begäran till alla värdar</string>
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">Misslyckades hämta Cast-kontext. Försök uppdatera Google Play Services och starta om appen.</string>
 </resources>

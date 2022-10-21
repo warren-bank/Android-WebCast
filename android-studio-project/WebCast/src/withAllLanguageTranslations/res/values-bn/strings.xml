@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">দূরবর্তী ডিবাগার সক্রিয় করো</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView পরিদর্শন করা যেতে পারে LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView এর উপর পরিদর্শন করা যাবেনা LAN</string>
+    <string name="pref_enableadblock_title">Ad ব্লক সক্রিয় করো</string>
+    <string name="pref_enableadblock_summary_on" >Blocking এমন হোস্ট যা কাজ করে: বিজ্ঞাপন, ট্রাকার্স, ম্যালওয়্যার, স্প্যাম</string>
+    <string name="pref_enableadblock_summary_off">সকল হোস্টকে অনুরোধ করা হচ্ছে</string>
     <string name="media_route_menu_title">কাস্ট</string>
     <string name="cast_context_error">ক্যাস্ট প্রেক্ষাপট পেতে ব্যর্থ. গুগল প্লে সার্ভিস আপডেট করার চেষ্টা করুন এবং অ্যাপ্লিকেশন পুনরায় আরম্ভ করুন.</string>
 </resources>

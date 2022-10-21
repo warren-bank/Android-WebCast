@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">தொலைதூர வழுநீக்கியை செயல்படுத்து</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView மேற்கொள்ளலாம். LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView தேவையிட முடியவில்லை. LAN</string>
+    <string name="pref_enableadblock_title">Ad தொகுதியை செயல்படுத்து</string>
+    <string name="pref_enableadblock_summary_on" >வலைப்பதிவொன்றின் சேவைகள்: ஆடைகள், டிராக்கர், மல்வார், ஸ்பம்</string>
+    <string name="pref_enableadblock_summary_off">அனைத்து புள்ளிகளையும் அனுமதிக்கிறது</string>
     <string name="media_route_menu_title">காஸ்ட்</string>
     <string name="cast_context_error">கேஸ்ட் சூழல் பெற முடியவில்லை. கூகிள் விளையாட்டு சேவைகளை மேம்படுத்தவும் மற்றும் பயன்பாடு மீண்டும் துவக்கவும்.</string>
 </resources>

@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Galluogi Dadfygiwr pell</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView gellir ei archwilio LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView ni ellir eu harchwilio LAN</string>
+    <string name="pref_enableadblock_title">Galluogi Bloc</string>
+    <string name="pref_enableadblock_summary_on" >Rhwystro gwesteiwyr sy\'n gwasanaethu: tadau, tracwyr, malwyr, sbam</string>
+    <string name="pref_enableadblock_summary_off">Caniatáu ceisiadau i bob gwesteiwr</string>
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">Methu cael cyd-destun y cast. Ceisiwch ddiweddaru Google Play Services ac ailgychwyn yr ap.</string>
 </resources>

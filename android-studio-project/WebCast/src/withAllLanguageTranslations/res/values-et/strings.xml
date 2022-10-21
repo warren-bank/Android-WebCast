@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Võrgusiluri lubamine</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView võib kontrollida LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView ei saa kontrollida LAN</string>
+    <string name="pref_enableadblock_title">Reklaamiploki lubamine</string>
+    <string name="pref_enableadblock_summary_on" >Blokeerivad hosts, mis teenivad: reklaamid, jälitajad, pahavara, rämpspost</string>
+    <string name="pref_enableadblock_summary_off">Kõigi masinate taotluste lubamine</string>
     <string name="media_route_menu_title">Valatud</string>
     <string name="cast_context_error">Cast context nurjus. Proovige uuendada Google Play teenuseid ja taaskäivitada rakendus.</string>
 </resources>

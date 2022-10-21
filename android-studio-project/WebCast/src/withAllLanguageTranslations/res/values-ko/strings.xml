@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">원격 디버거 사용</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView 검사를 받을 수 있다. LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView 검사할 수 없음 LAN</string>
+    <string name="pref_enableadblock_title">광고 블록 사용</string>
+    <string name="pref_enableadblock_summary_on" >서비스를 제공하는 차단 호스트: 광고, 추적 프로그램, 멀웨어, 스팸</string>
+    <string name="pref_enableadblock_summary_off">모든 호스트에 대한 요청 허용</string>
     <string name="media_route_menu_title">캐스트</string>
     <string name="cast_context_error">캐스트 컨텍스트를 가져오는 데 실패했습니다. Google Play Services 업데이트를 시도하고 앱을 다시 시작한다..</string>
 </resources>

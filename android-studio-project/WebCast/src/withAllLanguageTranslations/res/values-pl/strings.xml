@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Włącz debuger zdalny</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView można sprawdzić na LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView nie można sprawdzić w LAN</string>
+    <string name="pref_enableadblock_title">Włącz blok reklamowy</string>
+    <string name="pref_enableadblock_summary_on" >Blokowanie hostów, które służą: reklamy, trackery, złośliwe oprogramowanie, spam</string>
+    <string name="pref_enableadblock_summary_off">Zezwalanie na żądania do wszystkich hostów</string>
     <string name="media_route_menu_title">Rzutowanie</string>
     <string name="cast_context_error">Pobranie kontekstu rzutowania nie powiodło się. Spróbuj zaktualizować usługi Google Play i zrestartuj aplikację.</string>
 </resources>

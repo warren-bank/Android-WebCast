@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Debugger op afstand inschakelen</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView kan worden geïnspecteerd op LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView kan niet worden geïnspecteerd op LAN</string>
+    <string name="pref_enableadblock_title">Ad-blok inschakelen</string>
+    <string name="pref_enableadblock_summary_on" >Blokkeren van hosts die dienen: advertenties, trackers, malware, spam</string>
+    <string name="pref_enableadblock_summary_off">Aanvragen voor alle hosts toestaan</string>
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">Ophalen van Cast-context is mislukt. Probeer Google Play Services bij te werken en start de app opnieuw.</string>
 </resources>

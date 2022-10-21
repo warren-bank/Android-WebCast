@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Povolit vzdálený ladicí program</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView mohou být zkontrolovány dne LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView nelze zkontrolovat na LAN</string>
+    <string name="pref_enableadblock_title">Povolit reklamní blok</string>
+    <string name="pref_enableadblock_summary_on" >Blocking hosts that serve: ads, trackers, malware, spam</string>
+    <string name="pref_enableadblock_summary_off">Povolení požadavků na všechny hostitele</string>
     <string name="media_route_menu_title">Hrají:</string>
     <string name="cast_context_error">Nezdařilo se získat kontext přetypování. Zkuste aktualizovat službu Google Play a restartujte aplikaci.</string>
 </resources>

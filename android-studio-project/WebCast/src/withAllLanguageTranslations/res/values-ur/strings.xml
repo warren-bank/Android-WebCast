@@ -17,6 +17,9 @@
     <string name="pref_enableremotedebugger_title">Enable ریموٹ Debugger</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView پر معائنہ کیا جا سکتا ہے LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView پر معائنہ نہیں کیا جاسکتا. LAN</string>
+    <string name="pref_enableadblock_title">Enable ایڈہاک بلاک</string>
+    <string name="pref_enableadblock_summary_on" >Blocking کے میزبانوں کہ خدمت: اشتھارات, ٹریکرز, میلویئر, سپیم</string>
+    <string name="pref_enableadblock_summary_off">تمام میزبانوں کو Allowing کی درخواستوں</string>
     <string name="media_route_menu_title">کاسٹ</string>
     <string name="cast_context_error">کو کاسٹ کرنے کے لئے بھیج دیا. گوگل پلے سروسز کو اپڈیٹ کرنے کی کوشش کریں اور ایپ کو دوبارہ شروع کریں.</string>
 </resources>
