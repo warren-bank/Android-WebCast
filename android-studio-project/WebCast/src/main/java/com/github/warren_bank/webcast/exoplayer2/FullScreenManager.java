@@ -7,18 +7,16 @@ import android.app.Dialog;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import com.google.android.exoplayer2.ui.PlayerControlView;
-import com.google.android.exoplayer2.ui.PlayerView;
 
-final class FullScreenManager {
+import androidx.media3.ui.PlayerView;
+
+final class FullScreenManager implements PlayerView.FullscreenButtonClickListener {
 
   private boolean isEnabled;
   private boolean isFullScreen;
   private VideoActivity videoActivity;
   private PlayerView localPlayerView;
   private Dialog mFullScreenDialog;
-  private ImageView mFullScreenIcon;
-  private ViewGroup mFullScreenButton;
 
   // static factory
 
@@ -64,8 +62,6 @@ final class FullScreenManager {
     videoActivity     = null;
     localPlayerView   = null;
     mFullScreenDialog = null;
-    mFullScreenIcon   = null;
-    mFullScreenButton = null;
   }
 
   // Internal methods.
@@ -83,7 +79,6 @@ final class FullScreenManager {
   private void openFullscreenDialog() {
     ((ViewGroup) localPlayerView.getParent()).removeView(localPlayerView);                     // FrameLayout
     mFullScreenDialog.addContentView(localPlayerView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-    mFullScreenIcon.setImageDrawable(ContextCompat.getDrawable(videoActivity, R.drawable.ic_fullscreen_close));
     isFullScreen = true;
     mFullScreenDialog.show();
   }
@@ -93,25 +88,20 @@ final class FullScreenManager {
     ((ViewGroup) videoActivity.findViewById(R.id.main_media_frame)).addView(localPlayerView);  // FrameLayout
     isFullScreen = false;
     mFullScreenDialog.dismiss();
-    mFullScreenIcon.setImageDrawable(ContextCompat.getDrawable(videoActivity, R.drawable.ic_fullscreen_open));
   }
 
   private void initFullscreenButton() {
-    PlayerControlView controlView;
-    controlView       = (PlayerControlView) localPlayerView.findViewById(R.id.exo_controller);
-    mFullScreenIcon   = (ImageView) controlView.findViewById(R.id.exo_fullscreen_icon);
-    mFullScreenButton = (ViewGroup) controlView.findViewById(R.id.exo_fullscreen_button);      // FrameLayout
-    mFullScreenButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-          if (!isEnabled)
-            return;
-          if (!isFullScreen)
-            openFullscreenDialog();
-          else
-            closeFullscreenDialog();
-        }
-    });
+    localPlayerView.setFullscreenButtonClickListener(this);
+  }
+
+  // PlayerView.FullscreenButtonClickListener implementation.
+
+  @Override
+  public void onFullscreenButtonClick​(boolean isFullScreen) {
+    if (isFullScreen)
+      openFullscreenDialog();
+    else
+      closeFullscreenDialog();
   }
 
 }

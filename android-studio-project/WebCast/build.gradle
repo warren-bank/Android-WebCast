@@ -78,21 +78,26 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.legacy:legacy-support-v4:'                      + project.ext.libVersionAndroidxLegacySupportV4           // (  3 KB) https://mvnrepository.com/artifact/androidx.legacy/legacy-support-v4?repo=google
-    implementation 'androidx.appcompat:appcompat:'                           + project.ext.libVersionAndroidxAppCompat                 // (1.0 MB) https://mvnrepository.com/artifact/androidx.appcompat/appcompat?repo=google
-    implementation 'androidx.constraintlayout:constraintlayout:'             + project.ext.libVersionAndroidxConstraintLayout          // ( 63 KB) https://mvnrepository.com/artifact/com.android.support.constraint/constraint-layout?repo=google
-    implementation 'androidx.core:core:'                                     + project.ext.libVersionAndroidxCore                      // (618 KB) https://mvnrepository.com/artifact/androidx.core/core?repo=google
-    implementation 'androidx.recyclerview:recyclerview:'                     + project.ext.libVersionAndroidxRecyclerView              // (344 KB) https://mvnrepository.com/artifact/androidx.recyclerview/recyclerview?repo=google
-    implementation 'com.google.android.material:material:'                   + project.ext.libVersionAndroidxMaterial                  // (566 KB) https://mvnrepository.com/artifact/com.google.android.material/material?repo=google
+    implementation 'androidx.legacy:legacy-support-v4:'                + project.ext.libVersionAndroidxLegacySupportV4     // (  3 KB) https://mvnrepository.com/artifact/androidx.legacy/legacy-support-v4?repo=google
+    implementation 'androidx.appcompat:appcompat:'                     + project.ext.libVersionAndroidxAppCompat           // (1.0 MB) https://mvnrepository.com/artifact/androidx.appcompat/appcompat?repo=google
+    implementation 'androidx.constraintlayout:constraintlayout:'       + project.ext.libVersionAndroidxConstraintLayout    // ( 63 KB) https://mvnrepository.com/artifact/com.android.support.constraint/constraint-layout?repo=google
+    implementation 'androidx.core:core:'                               + project.ext.libVersionAndroidxCore                // (618 KB) https://mvnrepository.com/artifact/androidx.core/core?repo=google
+    implementation 'androidx.recyclerview:recyclerview:'               + project.ext.libVersionAndroidxRecyclerView        // (344 KB) https://mvnrepository.com/artifact/androidx.recyclerview/recyclerview?repo=google
+    implementation 'com.google.android.material:material:'             + project.ext.libVersionAndroidxMaterial            // (566 KB) https://mvnrepository.com/artifact/com.google.android.material/material?repo=google
 
-    implementation 'com.google.android.exoplayer:exoplayer-core:'            + project.ext.libVersionExoPlayer                         // (1.6 MB) https://mvnrepository.com/artifact/com.google.android.exoplayer/exoplayer-core?repo=google
-    implementation 'com.google.android.exoplayer:exoplayer-dash:'            + project.ext.libVersionExoPlayer                         // (111 KB) https://mvnrepository.com/artifact/com.google.android.exoplayer/exoplayer-dash?repo=google
-    implementation 'com.google.android.exoplayer:exoplayer-hls:'             + project.ext.libVersionExoPlayer                         // (117 KB) https://mvnrepository.com/artifact/com.google.android.exoplayer/exoplayer-hls?repo=google
-    implementation 'com.google.android.exoplayer:exoplayer-smoothstreaming:' + project.ext.libVersionExoPlayer                         // ( 43 KB) https://mvnrepository.com/artifact/com.google.android.exoplayer/exoplayer-smoothstreaming?repo=google
-    implementation 'com.google.android.exoplayer:exoplayer-ui:'              + project.ext.libVersionExoPlayer                         // (267 KB) https://mvnrepository.com/artifact/com.google.android.exoplayer/exoplayer-ui?repo=google
-    implementation 'com.google.android.exoplayer:extension-cast:'            + project.ext.libVersionExoPlayer                         // ( 55 KB) https://mvnrepository.com/artifact/com.google.android.exoplayer/extension-cast?repo=google
+    implementation 'androidx.media3:media3-cast:'                      + project.ext.libVersionAndroidxMedia3              // ( 52 KB) https://mvnrepository.com/artifact/androidx.media3/media3-cast?repo=google
+    implementation 'androidx.media3:media3-common:'                    + project.ext.libVersionAndroidxMedia3              // (360 KB) https://mvnrepository.com/artifact/androidx.media3/media3-common?repo=google
+    implementation 'androidx.media3:media3-datasource:'                + project.ext.libVersionAndroidxMedia3              // (136 KB) https://mvnrepository.com/artifact/androidx.media3/media3-datasource?repo=google
+ // implementation 'androidx.media3:media3-decoder:'                   + project.ext.libVersionAndroidxMedia3              // ( 16 KB) https://mvnrepository.com/artifact/androidx.media3/media3-decoder?repo=google
+    implementation 'androidx.media3:media3-exoplayer:'                 + project.ext.libVersionAndroidxMedia3              // (1.1 MB) https://mvnrepository.com/artifact/androidx.media3/media3-exoplayer?repo=google
+    implementation 'androidx.media3:media3-exoplayer-dash:'            + project.ext.libVersionAndroidxMedia3              // (127 KB) https://mvnrepository.com/artifact/androidx.media3/media3-exoplayer-dash?repo=google
+    implementation 'androidx.media3:media3-exoplayer-hls:'             + project.ext.libVersionAndroidxMedia3              // (155 KB) https://mvnrepository.com/artifact/androidx.media3/media3-exoplayer-hls?repo=google
+    implementation 'androidx.media3:media3-exoplayer-smoothstreaming:' + project.ext.libVersionAndroidxMedia3              // ( 45 KB) https://mvnrepository.com/artifact/androidx.media3/media3-exoplayer-smoothstreaming?repo=google
+ // implementation 'androidx.media3:media3-extractor:'                 + project.ext.libVersionAndroidxMedia3              // (694 KB) https://mvnrepository.com/artifact/androidx.media3/media3-extractor?repo=google
+ // implementation 'androidx.media3:media3-session:'                   + project.ext.libVersionAndroidxMedia3              // (442 KB) https://mvnrepository.com/artifact/androidx.media3/media3-session?repo=google
+    implementation 'androidx.media3:media3-ui:'                        + project.ext.libVersionAndroidxMedia3              // (422 KB) https://mvnrepository.com/artifact/androidx.media3/media3-ui?repo=google
 
-    implementation 'com.google.code.gson:gson:'                              + project.ext.libVersionGson                              // (235 KB) https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation 'com.google.code.gson:gson:'                        + project.ext.libVersionGson                        // (235 KB) https://mvnrepository.com/artifact/com.google.code.gson/gson
 }
 
 apply plugin: 'com.google.android.gms.strict-version-matcher-plugin'

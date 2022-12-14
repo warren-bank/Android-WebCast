@@ -40,7 +40,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import com.google.android.exoplayer2.util.MimeTypes;
+import androidx.media3.common.MimeTypes;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;

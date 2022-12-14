@@ -1,4 +1,4 @@
-### [WebCast](https://github.com/warren-bank/Android-WebCast/tree/04-webcast-filename)
+### [WebCast](https://github.com/warren-bank/Android-WebCast/tree/05-webcast-filename-media3)
 
 Android app to extract video (file/stream) URLs from websites and watch them elsewhere (internal/external video player, Google Chromecast, [ExoAirPlayer](https://github.com/warren-bank/Android-ExoPlayer-AirPlay-Receiver)).
 
@@ -106,7 +106,7 @@ Android app to extract video (file/stream) URLs from websites and watch them els
         * transfer would not be effected by any of the following events:
           - `VideoActivity` stopped
           - `BrowserActivity` stopped
-          - [WebCast](https://github.com/warren-bank/Android-WebCast/tree/04-webcast-filename) app exited
+          - [WebCast](https://github.com/warren-bank/Android-WebCast/tree/05-webcast-filename-media3) app exited
           - Android device powered off
   - list of video URLs
     * click a list item to:
@@ -159,20 +159,20 @@ Android app to extract video (file/stream) URLs from websites and watch them els
 
 #### Important Caveats
 
-* some video URLs may play in [WebCast](https://github.com/warren-bank/Android-WebCast/tree/04-webcast-filename) and [ExoAirPlayer](https://github.com/warren-bank/Android-ExoPlayer-AirPlay-Receiver), but cannot play on Chromecast or other external video players
+* some video URLs may play in [WebCast](https://github.com/warren-bank/Android-WebCast/tree/05-webcast-filename-media3) and [ExoAirPlayer](https://github.com/warren-bank/Android-ExoPlayer-AirPlay-Receiver), but cannot play on Chromecast or other external video players
   - this can occur when a video URL is hosted by a server that uses the `Referer` HTTP request header to restrict access, which is a common strategy
-    * [WebCast](https://github.com/warren-bank/Android-WebCast/tree/04-webcast-filename) and [ExoAirPlayer](https://github.com/warren-bank/Android-ExoPlayer-AirPlay-Receiver) have the functionality to configure the value of this header for each unique video URL
+    * [WebCast](https://github.com/warren-bank/Android-WebCast/tree/05-webcast-filename-media3) and [ExoAirPlayer](https://github.com/warren-bank/Android-ExoPlayer-AirPlay-Receiver) have the functionality to configure the value of this header for each unique video URL
     * Chromecast receiver apps cannot change the value of this header because they are restrained by standard browser security policies
       - the specs for [XHR](https://xhr.spec.whatwg.org/#dom-xmlhttprequest-setrequestheader) and [fetch](https://fetch.spec.whatwg.org/#forbidden-header-name) forbid changing certain HTTP request headers, including `Referer`
-      - the [WebCast Chromecast receiver app](https://github.com/warren-bank/Android-WebCast/tree/05-chromecast-receiver-app)
-        * [attempts](https://github.com/warren-bank/Android-WebCast/blob/05-chromecast-receiver-app/CastReceiver/js/receiver.js#L42) to change the value of this header
-        * [reveals](https://github.com/warren-bank/Android-WebCast/blob/05-chromecast-receiver-app/notes.txt#L122) in the remote debugger console that this attempt raises the warning:
+      - the [WebCast Chromecast receiver app](https://github.com/warren-bank/Android-WebCast/tree/00-chromecast-receiver-app)
+        * [attempts](https://github.com/warren-bank/Android-WebCast/blob/00-chromecast-receiver-app/CastReceiver/js/receiver.js#L42) to change the value of this header
+        * [reveals](https://github.com/warren-bank/Android-WebCast/blob/00-chromecast-receiver-app/notes.txt#L122) in the remote debugger console that this attempt raises the warning:
           - _Refused to set unsafe header "referer"_
     * other external video players would need to:
       - read the `referUrl` extra in the starting Intent
       - configure its HTTP client library to change the value of this header
     * [HLS-Proxy](https://github.com/warren-bank/HLS-Proxy) provides a convenient general-purpose workaround
-      - setup for integration with [WebCast](https://github.com/warren-bank/Android-WebCast/tree/04-webcast-filename):
+      - setup for integration with [WebCast](https://github.com/warren-bank/Android-WebCast/tree/05-webcast-filename-media3):
         1. install [HLS-Proxy](https://github.com/warren-bank/HLS-Proxy)
            * `npm install --global "@warren-bank/hls-proxy"`
         2. install [WebMonkey](https://github.com/warren-bank/Android-WebMonkey)
@@ -189,12 +189,12 @@ Android app to extract video (file/stream) URLs from websites and watch them els
                      - proxied HLS manifest URL
                    * type
                      - "application/x-mpegurl"
-        4. in [WebCast](https://github.com/warren-bank/Android-WebCast/tree/04-webcast-filename)
+        4. in [WebCast](https://github.com/warren-bank/Android-WebCast/tree/05-webcast-filename-media3)
            * _Settings_ &gt; _Video Player_ &gt; _HLS-Proxy configuration_
       - usage:
         1. run [HLS-Proxy](https://github.com/warren-bank/HLS-Proxy)
            * `hlsd --port 8080 --req-insecure --useragent "Chrome/90"`
-        2. in [WebCast](https://github.com/warren-bank/Android-WebCast/tree/04-webcast-filename)
+        2. in [WebCast](https://github.com/warren-bank/Android-WebCast/tree/05-webcast-filename-media3)
            * navigate internal `WebView` to a page having the desired HLS video stream
            * open the __Videos__ drawer (on right)
            * click on the URL for the desired HLS video stream
@@ -209,9 +209,9 @@ Android app to extract video (file/stream) URLs from websites and watch them els
              - https
            * click: _Start App_
              - an Activity chooser will start
-             - [WebCast](https://github.com/warren-bank/Android-WebCast/tree/04-webcast-filename) will be included in the list of apps that contain a matching Activity
+             - [WebCast](https://github.com/warren-bank/Android-WebCast/tree/05-webcast-filename-media3) will be included in the list of apps that contain a matching Activity
              - click: _WebCast Video Player_
-        4. in [WebCast](https://github.com/warren-bank/Android-WebCast/tree/04-webcast-filename)
+        4. in [WebCast](https://github.com/warren-bank/Android-WebCast/tree/05-webcast-filename-media3)
            * click the ![Chromecast sender icon](https://github.com/warren-bank/crx-webcast-reloaded/raw/gh-pages/chrome_extension/2-release/popup/img/chromecast.png) _Chromecast sender_ icon to cast the proxied HLS video stream to a Chromecast device
 
 * the Android System [`WebView`](https://developer.chrome.com/multidevice/webview/overview) component is wholly responsible for the web browser experience
@@ -241,15 +241,19 @@ Android app to extract video (file/stream) URLs from websites and watch them els
   - [03-webcast-okhttp](https://github.com/warren-bank/Android-WebCast/tree/03-webcast-okhttp)
     * used an external HTTP client library: [okhttp](https://github.com/square/okhttp)
     * used the `Content-Type` response header to detect video files
-* __active branches__
   - [04-webcast-filename](https://github.com/warren-bank/Android-WebCast/tree/04-webcast-filename)
     * uses `WebView` to download all HTTP requests
     * uses regular expressions to detect file extensions associated with video formats in URL requests
-  - [05-chromecast-receiver-app](https://github.com/warren-bank/Android-WebCast/tree/05-chromecast-receiver-app)
+* __active branches__
+  - [05-webcast-filename-media3](https://github.com/warren-bank/Android-WebCast/tree/05-webcast-filename-media3)
+    * uses `WebView` to download all HTTP requests
+    * uses regular expressions to detect file extensions associated with video formats in URL requests
+    * builds upon the [04-webcast-filename](https://github.com/warren-bank/Android-WebCast/tree/04-webcast-filename) branch, and migrates from [ExoPlayer](https://github.com/google/ExoPlayer) to [AndroidX Media3](https://github.com/androidx/media)
+  - [00-chromecast-receiver-app](https://github.com/warren-bank/Android-WebCast/tree/00-chromecast-receiver-app)
     * WebCast Chromecast receiver app
   - [gh-pages](https://github.com/warren-bank/Android-WebCast/tree/gh-pages)
     * WebCast Chromecast receiver app
-      - the _HEAD_ of this branch should always reference/alias the _HEAD_ of the [05-chromecast-receiver-app](https://github.com/warren-bank/Android-WebCast/tree/05-chromecast-receiver-app) branch
+      - the _HEAD_ of this branch should always reference/alias the _HEAD_ of the [00-chromecast-receiver-app](https://github.com/warren-bank/Android-WebCast/tree/00-chromecast-receiver-app) branch
     * [hosted](https://warren-bank.github.io/Android-WebCast/CastReceiver/receiver.html) by [GitHub Pages](https://pages.github.com/)
 
 #### Highlights of Source Code

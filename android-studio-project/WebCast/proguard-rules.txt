@@ -1,7 +1,7 @@
 -keep class com.github.warren_bank.webcast.** { *; }
 
--keep class com.google.android.exoplayer2.** { *; }
+-keep class androidx.media3.exoplayer.** { *; }
 -keep class com.google.android.gms.** { *; }
 -keep class androidx.mediarouter.app.MediaRouteActionProvider { *; }
 
--dontwarn com.google.android.exoplayer2.**
+-dontwarn androidx.media3.exoplayer.**

@@ -1,6 +1,6 @@
 package com.github.warren_bank.webcast.exoplayer2;
 
-import com.google.android.exoplayer2.MediaItem;
+import androidx.media3.common.MediaItem;
 
 import android.net.Uri;
 import android.text.TextUtils;
