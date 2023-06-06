@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">extern</string>
     <string name="pref_videoplayer_title">Videospeler</string>
     <string name="pref_videoplayer_summary">bekijk video\'s met..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Annuleren</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Doorgaan</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Vragen</string>
+    <string name="pref_badssl_pageloadbehavior_title">Aan HTTPS Certificaatfout</string>
+    <string name="pref_badssl_pageloadbehavior_summary">gedrag van paginaladen kiezen..</string>
     <string name="pref_enableremotedebugger_title">Debugger op afstand inschakelen</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView kan worden geïnspecteerd op LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView kan niet worden geïnspecteerd op LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Aanvragen voor alle hosts toestaan</string>
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">Ophalen van Cast-context is mislukt. Probeer Google Play Services bij te werken en start de app opnieuw.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Certificaatfout</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">De datum van het certificaat is ongeldig.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Het certificaat is verlopen.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Ongeldige hostnaam.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Er is een generieke fout opgetreden.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Het certificaat is nog niet geldig.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">De certificaatgever is niet betrouwbaar.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

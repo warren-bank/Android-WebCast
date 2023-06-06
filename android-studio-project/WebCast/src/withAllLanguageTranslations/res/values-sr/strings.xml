@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">спољашње</string>
     <string name="pref_videoplayer_title">Видео играч</string>
     <string name="pref_videoplayer_summary">Гледање видеа помоћу..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Откажи</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Настави</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Питај</string>
+    <string name="pref_badssl_pageloadbehavior_title">На HTTPS Грешка церти</string>
+    <string name="pref_badssl_pageloadbehavior_summary">изаберите понашање учитавања странице..</string>
     <string name="pref_enableremotedebugger_title">Омогући даљинско управљање</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView може да се прегледа LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView не могу да се прегледају LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Омогућавање захтева свим домаћинима</string>
     <string name="media_route_menu_title">Баци</string>
     <string name="cast_context_error">Не могу да добијем контекст Cast. Покушајте да ажурирате Гугл плеј услуге и поново покрените апликацију.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Грешка церти</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Датум цертификата није важећи.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Цертификат је истекао.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Неподударање имена домаћина.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Дошло је до генеричке грешке.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Сертификат још увек није важећи.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Ауторитет цертификата није поуздан.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

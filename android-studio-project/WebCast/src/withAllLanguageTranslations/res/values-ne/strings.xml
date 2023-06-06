@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">बाह्य</string>
     <string name="pref_videoplayer_title">भिडियो प्लेयर</string>
     <string name="pref_videoplayer_summary">प्रयोग गरेर भिडियो हेर्नुहोला..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">रद्द गर्नुहोस्</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">प्रोसेड</string>
+    <string name="pref_pageloadbehavior_array_name_ask">सोध्नुहोस्</string>
+    <string name="pref_badssl_pageloadbehavior_title">माथि HTTPS प्रमाणपत्र त्रुटि</string>
+    <string name="pref_badssl_pageloadbehavior_summary">पृष्ठ लोड व्यवहार रोज्नुहोस्..</string>
     <string name="pref_enableremotedebugger_title">टाढाको डिबगर सक्षम पार्नुहोस्</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView मा निरीक्षण गर्न सकिन्छ LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView मा निरीक्षण गर्न सकिँदैन LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">सबै होस्टमा अनुरोधहरू अनुमति</string>
     <string name="media_route_menu_title">कास्ट</string>
     <string name="cast_context_error">कास्ट प्रसङ्ग प्राप्त गर्न असफल. गुगल प्ले सेवाहरू अद्यावधिक गर्ने प्रयास गर्नुहोस् र एप पुन: सुरु गर्नुहोस्.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS प्रमाणपत्र त्रुटि</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">प्रमाणपत्रको मिति अवैध छ.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">प्रमाणपत्र समाप्त भएको छ.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">होस्टनाम बेमेल.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">जेनेरिक त्रुटि उत्पन्न भयो.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">SSL error.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">प्रमाणपत्र अधिकार विश्वस्त छैन.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">Ārēji</string>
     <string name="pref_videoplayer_title">Video atskaņotājs</string>
     <string name="pref_videoplayer_summary">skatīties video, izmantojot..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Atcelt</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Turpināt</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Vaicā</string>
+    <string name="pref_badssl_pageloadbehavior_title">Par HTTPS Sertifikāta kļūda</string>
+    <string name="pref_badssl_pageloadbehavior_summary">izvēlēties lapu slodzes uzvedību..</string>
     <string name="pref_enableremotedebugger_title">Ieslēgt atkļūdotāju</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView var pārbaudīt, pamatojoties uz LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView nevar pārbaudīt, pamatojoties uz LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Atļaut pieprasījumus visiem saimniekiem</string>
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">Neizdevās iegūt Cast kontekstu. Mēģiniet atjaunināt Google Play pakalpojumus un restartējiet lietotni.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Sertifikāta kļūda</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Sertifikāta datums nav derīgs.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Sertifikāts ir beidzies.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Resursdatora nosaukums.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Gadījās vispārēja kļūda.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Sertifikāts vēl nav derīgs.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Sertifikāta autoritāte nav uzticama.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

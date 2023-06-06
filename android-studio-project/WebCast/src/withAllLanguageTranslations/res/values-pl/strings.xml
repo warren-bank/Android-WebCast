@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">zewnętrzne</string>
     <string name="pref_videoplayer_title">Odtwarzacz wideo</string>
     <string name="pref_videoplayer_summary">obejrzyj filmy wideo..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Anuluj</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Kontynuuj</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Pytaj</string>
+    <string name="pref_badssl_pageloadbehavior_title">W dniu HTTPS Błąd certyfikatu</string>
+    <string name="pref_badssl_pageloadbehavior_summary">Wybierz zachowanie ładowania strony..</string>
     <string name="pref_enableremotedebugger_title">Włącz debuger zdalny</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView można sprawdzić na LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView nie można sprawdzić w LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Zezwalanie na żądania do wszystkich hostów</string>
     <string name="media_route_menu_title">Rzutowanie</string>
     <string name="cast_context_error">Pobranie kontekstu rzutowania nie powiodło się. Spróbuj zaktualizować usługi Google Play i zrestartuj aplikację.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Błąd certyfikatu</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Data certyfikatu jest niepoprawna.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Certyfikat utracił ważność.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Niezgodność nazwy hosta.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Wystąpił błąd ogólny..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Certyfikat nie jest jeszcze ważny.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Ośrodek certyfikacji nie jest zaufany.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

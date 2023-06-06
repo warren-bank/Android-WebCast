@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">બાહ્ય</string>
     <string name="pref_videoplayer_title">વીડિયો પ્લેયર</string>
     <string name="pref_videoplayer_summary">ની મદદથી વીડિયો જોડો..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">રદ કરો</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">પ્રક્રિયા કરો</string>
+    <string name="pref_pageloadbehavior_array_name_ask">પૂછો</string>
+    <string name="pref_badssl_pageloadbehavior_title">ચાલુ HTTPS પ્રમાણપત્ર ભૂલ</string>
+    <string name="pref_badssl_pageloadbehavior_summary">પાનાં લોડ વર્તણૂક પસંદ કરો..</string>
     <string name="pref_enableremotedebugger_title">દૂરસ્થ ડિબગર સક્રિય કરો</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView પર નિરીક્ષણ કરી શકાય છે LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView પર નિરીક્ષણ કરી શકાતો નથી LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">બધા યજમાનોને મંજૂરી આપે છે</string>
     <string name="media_route_menu_title">કાસ્ટ</string>
     <string name="cast_context_error">કાસ્ટ સંદર્ભ મેળવવામાં નિષ્ફળ. Google Play Services ને સુધારો અને કાર્યક્રમ પુનઃશરૂ કરવાનો પ્રયત્ન કરો.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS પ્રમાણપત્ર ભૂલ</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">પ્રમાણપત્રની તારીખ અયોગ્ય છે.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">પ્રમાણપત્ર નિવૃત્ત થયેલ છે.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">યજમાન નામ બંધબેસતુ નથી.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">સામાન્ય ભૂલ ઉદ્ભવી.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">પ્રમાણપત્ર હજુ યોગ્ય નથી.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">પ્રમાણપત્ર સત્તા વિશ્ર્વાસપાત્ર નથી.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

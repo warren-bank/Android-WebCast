@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">Външни.</string>
     <string name="pref_videoplayer_title">Видео плеър</string>
     <string name="pref_videoplayer_summary">Видео клипове с..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Отмяна\?</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Давайте!</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Питай!</string>
+    <string name="pref_badssl_pageloadbehavior_title">На ... HTTPS Грешка в сертификата</string>
+    <string name="pref_badssl_pageloadbehavior_summary">изберете поведение за зареждане на страница..</string>
     <string name="pref_enableremotedebugger_title">Активиране на отдалечен дебъгер</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView могат да бъдат инспектирани на LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView не може да се провери на LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Разрешаване на заявки за всички хостове</string>
     <string name="media_route_menu_title">\" ...</string>
     <string name="cast_context_error">Неуспешно получаване на Cast контекст. Опитайте обновяване на Google Play Services и рестартирайте приложението.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Грешка в сертификата</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Датата на сертификата е невалидна.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Сертификатът е изтекъл..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Несъответствие на име на хост.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Възникна обща грешка.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Сертификатът все още не е валиден.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Не се доверява на органа на сертификата.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

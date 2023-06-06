@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">dış</string>
     <string name="pref_videoplayer_title">Video oynatıcı</string>
     <string name="pref_videoplayer_summary">kullanarak videoları izleyin..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">İptal</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Devam Et</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Sor</string>
+    <string name="pref_badssl_pageloadbehavior_title">Açık HTTPS Sertifika Hatası</string>
+    <string name="pref_badssl_pageloadbehavior_summary">sayfa yükleme davranışını seçme..</string>
     <string name="pref_enableremotedebugger_title">Uzak Hata Ayıklayıcıyı Etkinleştir</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView üzerinde incelenebilir LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView incelenemez LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Tüm anasistemlere yönelik isteklere izin verilmesi</string>
     <string name="media_route_menu_title">Fırlatmak</string>
     <string name="cast_context_error">Fırlatmak bağlamı alınamadı. Google Play Hizmetlerini güncellemeyi deneyin ve uygulamayı yeniden başlatın.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Sertifika Hatası</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Sertifikana ilişkin tarih geçersiz.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Sertifikanda geçerlilik süresi doldu.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Anasistem adı eşleşmiyor.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Soysal bir hata oluştu.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Sertifika henüz geçerli değil.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Sertifika yetkilisi güvenilir değil.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

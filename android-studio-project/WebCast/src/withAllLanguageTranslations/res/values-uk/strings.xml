@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">зовнішня</string>
     <string name="pref_videoplayer_title">Програвач відео</string>
     <string name="pref_videoplayer_summary">переглядати відео за допомогою..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Скасувати</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Продовжити</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Запитувати</string>
+    <string name="pref_badssl_pageloadbehavior_title">На HTTPS Помилка сертифіката</string>
+    <string name="pref_badssl_pageloadbehavior_summary">обрати поведінку завантаження сторінки..</string>
     <string name="pref_enableremotedebugger_title">Увімкнути віддалений зневаджу</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView може бути перевірені на LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView не може бути перевірені на LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Дозволяти запити на всі вузли</string>
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">Не вдалося отримати контекст Cast. Спробуйте оновлення служб Google Play і перезапустити програму.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Помилка сертифіката</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Дата неправильного сертифіката.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Сертифікат застарілий.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Невідповідність вузла.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Сталася загальна помилка.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Сертифікат ще не дійсний.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Авторитет сертифіката не є надійним.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

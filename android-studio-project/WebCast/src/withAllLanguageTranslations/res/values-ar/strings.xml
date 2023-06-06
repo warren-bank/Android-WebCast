@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">خارجية</string>
     <string name="pref_videoplayer_title">طبقة الفيديو</string>
     <string name="pref_videoplayer_summary">مشاهدة الفيديو باستخدام..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">الغاء</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">الاستمرار</string>
+    <string name="pref_pageloadbehavior_array_name_ask">سؤال</string>
+    <string name="pref_badssl_pageloadbehavior_title">في HTTPS خطأ في الشهادة</string>
+    <string name="pref_badssl_pageloadbehavior_summary">حدد تصرف تحميل الصفحة..</string>
     <string name="pref_enableremotedebugger_title">اتاحة وحدة تصحيح الأخطاء عن بعد</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView يمكن فحصها على LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView لا يمكن تفقده على LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">السماح بالطلبات لكل الأنظمة الرئيسية</string>
     <string name="media_route_menu_title">طاقم العمل</string>
     <string name="cast_context_error">فشل في الحصول على سياق Cast. حاول تعديل Google Play Services واعادة بدء التطبيق.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS خطأ في الشهادة</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">تاريخ الشهادة غير صحيح.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">انتهت صلاحية الشهادة.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">عدم تطابق اسم النظام الرئيسي.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">حدث خطأ عام.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">الشهادة غير صحيحة بعد.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">تصريح الشهادة غير موثوق به.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

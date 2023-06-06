@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">extern</string>
     <string name="pref_videoplayer_title">Player video</string>
     <string name="pref_videoplayer_summary">vizionaţi videoclipuri folosind..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Anulează</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Continuă.</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Întreabă</string>
+    <string name="pref_badssl_pageloadbehavior_title">Pe HTTPS Eroare de certificat</string>
+    <string name="pref_badssl_pageloadbehavior_summary">alege comportamentul de încărcare a paginii..</string>
     <string name="pref_enableremotedebugger_title">Activare Depanator la distanţă</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView poate fi inspectat la LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView nu poate fi inspectat la LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Permiterea solicitărilor tuturor gazdelor</string>
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">Eşuare la obţinerea contextului Cast. Încercaţi actualizarea Google Play Services şi reporniţi aplicaţia.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Eroare de certificat</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Data certificatului este invalidă..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Certificatul a expirat.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Neconcordanță cu numele.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">A apărut o eroare generică.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Certificatul nu este încă valabil.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Autoritatea de certificare nu este de încredere.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

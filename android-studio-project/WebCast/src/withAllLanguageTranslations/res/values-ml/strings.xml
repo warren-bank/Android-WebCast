@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">പുറമെ</string>
     <string name="pref_videoplayer_title">വീഡിയോ പ്ലെയർ</string>
     <string name="pref_videoplayer_summary">ഉപയോഗിച്ചുള്ള വീഡിയോകൾ കാണുക..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">റദ്ദാക്കുക</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">പ്രോസീഡ്</string>
+    <string name="pref_pageloadbehavior_array_name_ask">ചോദിയ്ക്കുക</string>
+    <string name="pref_badssl_pageloadbehavior_title">ഓണ് HTTPS സാക്ഷ്യപത്രം പിശക്</string>
+    <string name="pref_badssl_pageloadbehavior_summary">താള് ലോഡ് സ്വഭാവം തെരഞ്ഞെടുക്കുക..</string>
     <string name="pref_enableremotedebugger_title">വിദൂര ഡീബഗ്ഗര് സജ്ജമാക്കുക</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView പരിശോധിക്കാവുന്നതാണ്. LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView അത് പരിശോധിക്കുവാന് സാധ്യമല്ല. LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">എല്ലാ ഹോസ്റ്റുകള്ക്കു് ആവശ്യങ്ങള് അനുവദിക്കുന്നു</string>
     <string name="media_route_menu_title">കാസ്റ്റ്</string>
     <string name="cast_context_error">കാസ്റ്റ് സന്ദർഭം നേടുന്നതിൽ പരാജയപ്പെട്ടു. Google Play സേവനങ്ങൾ അപ്‌ഡേറ്റുചെയ്‌ത് അപ്ലിക്കേഷൻ പുനരാരംഭിക്കുക.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS സാക്ഷ്യപത്രം പിശക്</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">സാക്ഷ്യപത്രത്തിന്റെ തീയതി അസാധുവാണ്.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">സാക്ഷ്യപത്രം കാലാവധി.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">ഹോസ്റ്റ്നാമിന്റെ പൊരുത്തം.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">ഒരു ജെനറിക് പിശക് സംഭവിച്ചിരിക്കുന്നു.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">സാക്ഷ്യപത്രം ഇതുവരെ സാധിച്ചിട്ടില്ല.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">സര്ട്ടിഫിക്കേറ്റ് അധികാരം വിശ്വസിക്കില്ല.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

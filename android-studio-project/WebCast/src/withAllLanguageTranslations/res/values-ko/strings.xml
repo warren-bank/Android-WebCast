@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">외부의</string>
     <string name="pref_videoplayer_title">비디오 플레이어</string>
     <string name="pref_videoplayer_summary">사용하는 비디오 보기..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">취소</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">진행하기</string>
+    <string name="pref_pageloadbehavior_array_name_ask">물어보세요</string>
+    <string name="pref_badssl_pageloadbehavior_title">켜면 HTTPS 인증서 오류</string>
+    <string name="pref_badssl_pageloadbehavior_summary">페이지 로드 동작 선택..</string>
     <string name="pref_enableremotedebugger_title">원격 디버거 사용</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView 검사를 받을 수 있다. LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView 검사할 수 없음 LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">모든 호스트에 대한 요청 허용</string>
     <string name="media_route_menu_title">캐스트</string>
     <string name="cast_context_error">캐스트 컨텍스트를 가져오는 데 실패했습니다. Google Play Services 업데이트를 시도하고 앱을 다시 시작한다..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS 인증서 오류</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">인증서의 날짜가 올바르지 않습니다..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">인증서가 만료되었습니다..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">호스트 이름 불일치.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">일반 오류가 발생했습니다..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">인증서가 아직 유효하지 않습니다..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">인증 기관을 신뢰할 수 없습니다..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

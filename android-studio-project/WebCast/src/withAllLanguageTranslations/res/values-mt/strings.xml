@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">estern</string>
     <string name="pref_videoplayer_title">Vidjo Plejer</string>
     <string name="pref_videoplayer_summary">tara vidjows billi tuża..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Tħassir</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Kompli</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Staqsi</string>
+    <string name="pref_badssl_pageloadbehavior_title">Fuq HTTPS Żball taċ-ċertifikat</string>
+    <string name="pref_badssl_pageloadbehavior_summary">tagħżel imġieba tagħbija paġna..</string>
     <string name="pref_enableremotedebugger_title">Jippermettu Debugger Remoti</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView jista \'jiġi spezzjonat fuq LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView ma jistgħux jiġu spezzjonati fuq LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Permess ta \' talbiet għall-ospiti kollha</string>
     <string name="media_route_menu_title">Fondut</string>
     <string name="cast_context_error">Naqset milli tikseb Cast Kuntest. Ipprova aġġornament Google Play Services u terġa \' tibda l-app.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Żball taċ-ċertifikat</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Id-data taċ-ċertifikat hija invalida.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Iċ-ċertifikat skada.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Nuqqas ta \' diskrepanza.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Seħħ żball ġeneriku.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Iċ-ċertifikat għadu mhux validu.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">L-awtorità taċ-ċertifikat ma tkunx fdata.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">внешний</string>
     <string name="pref_videoplayer_title">Проигрыватель видео</string>
     <string name="pref_videoplayer_summary">смотреть видео с использованием..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Отмена</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Продолжить</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Спросите</string>
+    <string name="pref_badssl_pageloadbehavior_title">Вс HTTPS Ошибка сертификата</string>
+    <string name="pref_badssl_pageloadbehavior_summary">выбор режима загрузки страницы..</string>
     <string name="pref_enableremotedebugger_title">Включить удаленный отладчик</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView можно проверить на LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView невозможно проверить на LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Разрешение запросов всем хостам</string>
     <string name="media_route_menu_title">Приведение</string>
     <string name="cast_context_error">Не удалось получить контекст Cast. Попробуйте обновить Google Play Services и перезапустить приложение.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Ошибка сертификата</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Недопустимая дата сертификата.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Срок действия сертификата истек.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Несовпадение имен.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Возникла общая ошибка.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Сертификат еще не действителен.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Сертификатный орган не является доверенным.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

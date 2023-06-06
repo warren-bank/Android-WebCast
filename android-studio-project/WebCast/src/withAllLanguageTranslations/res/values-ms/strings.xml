@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">luaran</string>
     <string name="pref_videoplayer_title">Pemain Video</string>
     <string name="pref_videoplayer_summary">menonton video menggunakan..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Batal</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Teruskan</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Tanya</string>
+    <string name="pref_badssl_pageloadbehavior_title">Atas HTTPS Ralat Sijil</string>
+    <string name="pref_badssl_pageloadbehavior_summary">pilih kelakuan muat halaman..</string>
     <string name="pref_enableremotedebugger_title">Benarkan Penyahpepijat Jauh</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView boleh diperiksa pada LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView tidak dapat diperiksa pada LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Membenarkan permintaan kepada semua hos</string>
     <string name="media_route_menu_title">Lemparkan</string>
     <string name="cast_context_error">Gagal mendapatkan konteks Cast. Cuba mengemaskini Perkhidmatan Main Google Play dan mulakan semula aplikasi.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Ralat Sijil</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Tarikh sijil tidak sah.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Sijil telah luput.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Nama hos tidak sepadan.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Ralat generik berlaku.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Sijil belum lagi sah.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Kuasa sijil tidak dipercayai.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

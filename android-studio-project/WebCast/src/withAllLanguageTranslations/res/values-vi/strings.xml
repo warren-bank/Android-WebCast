@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">bên ngoài</string>
     <string name="pref_videoplayer_title">Trình phát video</string>
     <string name="pref_videoplayer_summary">Xem các video..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Hủy</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Tiếp tục</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Yêu cầu</string>
+    <string name="pref_badssl_pageloadbehavior_title">Vào HTTPS Lỗi chứng nhận</string>
+    <string name="pref_badssl_pageloadbehavior_summary">chọn hành vi tải trang..</string>
     <string name="pref_enableremotedebugger_title">Dùng bộ gỡ lỗi từ xa</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView có thể được kiểm tra trên LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView không thể kiểm tra được trên LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Cho phép yêu cầu tất cả máy chủ</string>
     <string name="media_route_menu_title">Diễn viên</string>
     <string name="cast_context_error">Không thể lấy ngư ̃ cảnh Cast. Thử cập nhật Dịch vụ Google Play và khởi động lại ứng dụng.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Lỗi chứng nhận</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Ngày của chứng nhận không hợp lệ.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Chứng nhận đã hết hạn.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Không khớp tên máy.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Lỗi chung xảy ra.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Chứng nhận chưa hợp lệ.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Cơ quan chứng nhận không được tin cậy.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

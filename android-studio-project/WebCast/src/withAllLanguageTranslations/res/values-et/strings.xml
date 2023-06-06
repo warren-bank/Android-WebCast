@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">Väline</string>
     <string name="pref_videoplayer_title">Videomängija</string>
     <string name="pref_videoplayer_summary">vaadata videoid kasutades..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Loobu</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Jätka</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Küsitakse</string>
+    <string name="pref_badssl_pageloadbehavior_title">Sees HTTPS Sertifikaadi viga</string>
+    <string name="pref_badssl_pageloadbehavior_summary">Vali lehekülje koormuse käitumine..</string>
     <string name="pref_enableremotedebugger_title">Võrgusiluri lubamine</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView võib kontrollida LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView ei saa kontrollida LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Kõigi masinate taotluste lubamine</string>
     <string name="media_route_menu_title">Valatud</string>
     <string name="cast_context_error">Cast context nurjus. Proovige uuendada Google Play teenuseid ja taaskäivitada rakendus.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Sertifikaadi viga</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Sertifikaadi kuupäev on vigane.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Sertifikaat on aegunud.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Masinanime sobivus.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Esines üldine viga.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Sertifikaat ei ole veel kehtiv.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Sertifikaadiasutus ei ole usaldusväärne.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

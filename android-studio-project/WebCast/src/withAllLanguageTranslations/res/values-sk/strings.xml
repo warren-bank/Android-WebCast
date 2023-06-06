@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">externá</string>
     <string name="pref_videoplayer_title">Prehrávač videa</string>
     <string name="pref_videoplayer_summary">sledovať videá pomocou..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Zrušiť</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Pokračovať</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Opýtať sa</string>
+    <string name="pref_badssl_pageloadbehavior_title">Zapnuté HTTPS Chyba certifikátu</string>
+    <string name="pref_badssl_pageloadbehavior_summary">vybrať správanie zaťaženia stránky..</string>
     <string name="pref_enableremotedebugger_title">Povoliť vzdialený ladiaci program</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView môžu byť skontrolované na LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView nie je možné vykonať inšpekciu LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Povolenie požiadaviek pre všetkých hostiteľov</string>
     <string name="media_route_menu_title">Obsadenie</string>
     <string name="cast_context_error">Nepodarilo sa získať kontext Cast. Skúste aktualizovať služby Google Play a znova spustiť aplikáciu.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Chyba certifikátu</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Dátum certifikátu je neplatný.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Platnosť certifikátu vypršala.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Nezhoda hostiteľa.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Nastala generická chyba.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Certifikát ešte nie je platný.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Certifikačný orgán nie je dôveryhodný.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

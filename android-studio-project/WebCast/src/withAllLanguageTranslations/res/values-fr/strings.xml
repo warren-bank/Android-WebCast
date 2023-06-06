@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">Externe</string>
     <string name="pref_videoplayer_title">Lecteur Vidéo</string>
     <string name="pref_videoplayer_summary">Regarder des vidéos en utilisant..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Annuler</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Proceed</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Demander</string>
+    <string name="pref_badssl_pageloadbehavior_title">Sur HTTPS Erreur de certificat</string>
+    <string name="pref_badssl_pageloadbehavior_summary">Choix du comportement de chargement de page..</string>
     <string name="pref_enableremotedebugger_title">Activer le débogueur distant</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView Peut être inspecté sur LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView Ne peut pas être inspecté sur LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Autorisation des demandes à tous les hôtes</string>
     <string name="media_route_menu_title">Refonte</string>
     <string name="cast_context_error">Impossible d\'obtenir le contexte Cast. Essayez de mettre à jour Google Play Services et redémarrez l\'application.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Erreur de certificat</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">La date du certificat n\'est pas valide.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Le certificat a expiré.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Non concordance du nom d\'hôte.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Une erreur générique s\'est produite.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Le certificat n\'est pas encore valide.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">L\'autorité de certification n\'est pas digne de confiance.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">εξωτερική:</string>
     <string name="pref_videoplayer_title">Βίντεο Player</string>
     <string name="pref_videoplayer_summary">παρακολούθηση βίντεο με χρήση..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Ακύρωση.</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Συνεχίστε.</string>
+    <string name="pref_pageloadbehavior_array_name_ask">-Ρώτα.</string>
+    <string name="pref_badssl_pageloadbehavior_title">- HTTPS Σφάλμα πιστοποιητικού</string>
+    <string name="pref_badssl_pageloadbehavior_summary">επιλογή συμπεριφοράς φόρτωσης σελίδας..</string>
     <string name="pref_enableremotedebugger_title">Ενεργοποίηση απομακρυσμένου Debugger</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView (συνέχεια) LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView -δεν μπορεί να ελεγχθεί LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Επιτρέποντας αιτήσεις σε όλους τους υπολογιστές.</string>
     <string name="media_route_menu_title">-Καστ</string>
     <string name="cast_context_error">Αποτυχία ανάκτησης του περιβάλλοντος Cast. Προσπαθήστε να ενημερώσετε το Google Play Services και επανεκκινήστε την εφαρμογή.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Σφάλμα πιστοποιητικού</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Η ημερομηνία του πιστοποιητικού δεν είναι έγκυρη..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Το πιστοποιητικό έχει λήξει..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Ασυμφωνία ονόματος υπολογιστή.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Προέκυψε γενικό σφάλμα..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Το πιστοποιητικό δεν είναι ακόμα έγκυρο..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Η αρχή έκδοσης πιστοποιητικών δεν είναι έμπιστη.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

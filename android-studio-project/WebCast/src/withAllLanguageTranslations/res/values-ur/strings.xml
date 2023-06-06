@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">باہری</string>
     <string name="pref_videoplayer_title">ویڈیو پلیئر</string>
     <string name="pref_videoplayer_summary">ویڈیوز دیکھتے ہوئے..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">منسوخ</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">پراکتاد</string>
+    <string name="pref_pageloadbehavior_array_name_ask">پوچھیے</string>
+    <string name="pref_badssl_pageloadbehavior_title">پر HTTPS سند Error</string>
+    <string name="pref_badssl_pageloadbehavior_summary">صفحے لوڈ رویے کا انتخاب کریں..</string>
     <string name="pref_enableremotedebugger_title">Enable ریموٹ Debugger</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView پر معائنہ کیا جا سکتا ہے LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView پر معائنہ نہیں کیا جاسکتا. LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">تمام میزبانوں کو Allowing کی درخواستوں</string>
     <string name="media_route_menu_title">کاسٹ</string>
     <string name="cast_context_error">کو کاسٹ کرنے کے لئے بھیج دیا. گوگل پلے سروسز کو اپڈیٹ کرنے کی کوشش کریں اور ایپ کو دوبارہ شروع کریں.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS سند Error</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">سند کی تاریخ باطل ہے.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">سرٹیفکیٹ کی میعاد ختم ہوگئی ہے.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">ہاسٹل کا غلط میچ.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">ایک کلی غلطی واقع ہوئی.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">سرٹیفکیٹ ابھی تک درست نہیں ہے.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">سرٹیفکیٹ اتھارٹی پر بھروسہ نہیں ہے.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

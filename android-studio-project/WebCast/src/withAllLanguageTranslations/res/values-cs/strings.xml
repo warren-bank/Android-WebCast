@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">externí</string>
     <string name="pref_videoplayer_title">Přehrávač videa</string>
     <string name="pref_videoplayer_summary">sledování videí pomocí..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Storno</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Pokračovat</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Ptát se</string>
+    <string name="pref_badssl_pageloadbehavior_title">Zap. HTTPS Chyba certifikátu</string>
+    <string name="pref_badssl_pageloadbehavior_summary">zvolte chování načítání stránky..</string>
     <string name="pref_enableremotedebugger_title">Povolit vzdálený ladicí program</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView mohou být zkontrolovány dne LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView nelze zkontrolovat na LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Povolení požadavků na všechny hostitele</string>
     <string name="media_route_menu_title">Hrají:</string>
     <string name="cast_context_error">Nezdařilo se získat kontext přetypování. Zkuste aktualizovat službu Google Play a restartujte aplikaci.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Chyba certifikátu</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Datum certifikátu je neplatné.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Platnost certifikátu vypršela.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Neshoda názvu hostitele.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Vyskytla se generická chyba.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Certifikát ještě není platný.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Certifikační autorita není důvěryhodná..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

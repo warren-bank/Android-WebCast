@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">ekstern</string>
     <string name="pref_videoplayer_title">Videoafspiller</string>
     <string name="pref_videoplayer_summary">se videoer med..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Annullér</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Fortsæt</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Spørg</string>
+    <string name="pref_badssl_pageloadbehavior_title">På HTTPS Certifikatfejl</string>
+    <string name="pref_badssl_pageloadbehavior_summary">Vælg sideindlæsningsadfærd..</string>
     <string name="pref_enableremotedebugger_title">Aktivér fjernopkoblet fejlfinding</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView kan inspiceres på LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView kan ikke inspiceres på LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Tillad anmodninger til alle værter</string>
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">Kan ikke hente Cast-kontekst. Prøv at opdatere Google Play Services, og genstart appen.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Certifikatfejl</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Datoen for certifikatet er ugyldigt.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Certifikatet er udløbet.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Værtsnavn stemmer ikke overens.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Der er opstået en generel fejl.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Certifikatet er endnu ikke gyldigt.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Certifikatautoriteten er ikke betroet.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

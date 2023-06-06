@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">allanol</string>
     <string name="pref_videoplayer_title">Chwaraewr Fideo</string>
     <string name="pref_videoplayer_summary">gwylio fideos gan ddefnyddio..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Diddymu</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Mynd ymlaen</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Gofyn</string>
+    <string name="pref_badssl_pageloadbehavior_title">Ymlaen HTTPS Gwall Tystysgrif</string>
+    <string name="pref_badssl_pageloadbehavior_summary">dewis ymddygiad llwyth tudalen..</string>
     <string name="pref_enableremotedebugger_title">Galluogi Dadfygiwr pell</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView gellir ei archwilio LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView ni ellir eu harchwilio LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Caniatáu ceisiadau i bob gwesteiwr</string>
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">Methu cael cyd-destun y cast. Ceisiwch ddiweddaru Google Play Services ac ailgychwyn yr ap.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Gwall Tystysgrif</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Mae dyddiad y dystysgrif yn annilys.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Mae\'r dystysgrif wedi dod i ben.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Name.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Digwyddodd gwall generig.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Nid yw\'r dystysgrif yn ddilys eto.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Nid oes modd ymddiried yn yr awdurdod tystysgrif.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

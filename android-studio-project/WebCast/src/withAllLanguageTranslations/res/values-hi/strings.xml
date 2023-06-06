@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">बाहरी</string>
     <string name="pref_videoplayer_title">वीडियो प्लेयर</string>
     <string name="pref_videoplayer_summary">वीडियो प्रयोग करें..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">रद्द करें</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">आगे बढ़ें</string>
+    <string name="pref_pageloadbehavior_array_name_ask">पूछें</string>
+    <string name="pref_badssl_pageloadbehavior_title">पर HTTPS प्रमाणपत्र त्रुटि</string>
+    <string name="pref_badssl_pageloadbehavior_summary">पृष्ठ लोड व्यवहार चुनें..</string>
     <string name="pref_enableremotedebugger_title">रिमोट डिबगर सक्षम करें</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView पर निरीक्षण किया जा सकता LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView पर निरीक्षण नहीं किया जाएगा LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">सभी होस्ट को अनुरोध की अनुमति देता है</string>
     <string name="media_route_menu_title">डाली</string>
     <string name="cast_context_error">कास्ट संदर्भ पाने में विफल. Google प्ले सेवाओं को अद्यतन करने और एप्लिकेशन को पुनः प्रारंभ करने की कोशिश.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS प्रमाणपत्र त्रुटि</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">प्रमाणपत्र की तिथि अवैध है..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">प्रमाणपत्र समाप्त हो गया.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">होस्टनाम बेमेल.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">जेनेरिक त्रुटि हुई.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">प्रमाणपत्र अभी मान्य नहीं है.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">प्रमाणपत्र प्राधिकारी विश्वसनीय नहीं है.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

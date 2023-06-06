@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">חיצוני</string>
     <string name="pref_videoplayer_title">נגן וידאו</string>
     <string name="pref_videoplayer_summary">צפייה בסרטונים באמצעות..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">ביטול</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">המשך</string>
+    <string name="pref_pageloadbehavior_array_name_ask">שאל</string>
+    <string name="pref_badssl_pageloadbehavior_title">ב - HTTPS שגיאת אישור</string>
+    <string name="pref_badssl_pageloadbehavior_summary">לבחור התנהגות טעינה של עמוד...</string>
     <string name="pref_enableremotedebugger_title">הפעלת דריד מרוחק</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView ניתן לבדיקה ב - LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView לא ניתן לבדיקה ב - LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">לאפשר בקשות לכל המארחים</string>
     <string name="media_route_menu_title">קסט</string>
     <string name="cast_context_error">נכשל בקבלת הקשר Cast. נסו לעדכן את Google Play Services והפעילו מחדש את היישום.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS שגיאת אישור</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">תאריך האישור אינו חוקי..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">תוקפו של האישור פג..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">אי התאמה של Hostname.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">אירעה שגיאה גנרית.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">האישור עדיין אינו חוקי..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">רשות האישורים אינה מהימנה.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

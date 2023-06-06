@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">Ulkoinen</string>
     <string name="pref_videoplayer_title">Videopelaaja</string>
     <string name="pref_videoplayer_summary">Katsella videoita..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Peruuta</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Jatka.</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Kysy</string>
+    <string name="pref_badssl_pageloadbehavior_title">On HTTPS Todistuksen virhe</string>
+    <string name="pref_badssl_pageloadbehavior_summary">Valitse sivun lataustoiminto..</string>
     <string name="pref_enableremotedebugger_title">Ota yhteys Remote Debuggeriin</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView Voidaan tarkastaa LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView Ei voi tarkastaa LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Kaikkien koneiden pyyntöjen salliminen</string>
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">Cast-kontekstin nouto ei onnistunut. Yritä päivittää Google Play Services -sovellusta ja aloita sovellus uudelleen.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Todistuksen virhe</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Todistuksen päivämäärä ei kelpaa..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Todistus on vanhentunut..</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Pääkoneen nimi:.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">On ilmennyt yleinen virhe.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Todistus ei ole vielä voimassa.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Todistuksen myöntävä viranomainen ei ole luotettava.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

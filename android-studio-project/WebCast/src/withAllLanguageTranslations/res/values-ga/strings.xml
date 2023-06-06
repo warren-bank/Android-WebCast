@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">seachtrach</string>
     <string name="pref_videoplayer_title">Seinnteoir Físe</string>
     <string name="pref_videoplayer_summary">féachaint ar fhíseáin ag úsáid..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Cealaigh</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Ar Aghaidh</string>
+    <string name="pref_pageloadbehavior_array_name_ask">\@ info</string>
+    <string name="pref_badssl_pageloadbehavior_title">Ar HTTPS Earráid Teastais</string>
+    <string name="pref_badssl_pageloadbehavior_summary">Roghnaigh an t-ualach leathanaigh..</string>
     <string name="pref_enableremotedebugger_title">Cumasaigh an Dífhabhtóir Cianda</string>
     <string name="pref_enableremotedebugger_summary_on" >Is féidir WebView a iniúchadh ar LAN</string>
     <string name="pref_enableremotedebugger_summary_off">Ní féidir WebView a iniúchadh ar LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Ceadaigh iarratais ar gach óstáin</string>
     <string name="media_route_menu_title">Caitheadh</string>
     <string name="cast_context_error">Theip ar chomhthéacs Caitheadh a fháil. Bain triail as Google Play Services a nuashonrú agus an aip a atosú.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Earráid Teastais</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Tá dáta an deimhnithe neamhbhailí.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Tá an teastas imithe in éag.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Meaitseáil an t-óstainm.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Tharla earráid ghlúin.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Níl an teastas bailí fós.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Níl an t-údarás deimhniúcháin iontaofa.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

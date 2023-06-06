@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">බාහිර</string>
     <string name="pref_videoplayer_title">දෘශ්ය වාදකයක්</string>
     <string name="pref_videoplayer_summary">පාවිච්චි කරන වීඩියෝ බලන්න..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">අවලංගු කරන්න</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">සැකසීම</string>
+    <string name="pref_pageloadbehavior_array_name_ask">අහන්න</string>
+    <string name="pref_badssl_pageloadbehavior_title">මත HTTPS සහතික කිරීමේ දෝෂය</string>
+    <string name="pref_badssl_pageloadbehavior_summary">පිටු පූරණය හැසිරීම තෝරන්න..</string>
     <string name="pref_enableremotedebugger_title">දුරස්ථ ඩිබියුගර් සක්රීය කරන්න</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView මත පරීක්ෂා කළ හැක. LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView මත පරීක්ෂා කළ නොහැක. LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">සියලු ධාරාවන් වෙත ඉල්ලීම්</string>
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">කාස්ට් සංදර්භය ලබා ගැනීමට අසමත් විය. ගූගල් වාදන සේවා යාවත්කාලිනය කරන්න සහ ඇප් එක නැවත ආරම්භ කරන්න.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS සහතික කිරීමේ දෝෂය</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">සහතිකයේ දිනය වලංගු වේ.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">SSL error.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Hostname mismatch.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">සාමාන්ය දෝෂයක් ඇතිවෙලා.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">SSL error.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">SSL error.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

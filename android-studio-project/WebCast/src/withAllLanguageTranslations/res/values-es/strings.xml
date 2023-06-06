@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">externo</string>
     <string name="pref_videoplayer_title">Reproductor de vídeo</string>
     <string name="pref_videoplayer_summary">ver vídeos utilizando..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Cancelar</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Proceda</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Preguntar</string>
+    <string name="pref_badssl_pageloadbehavior_title">En HTTPS Error de certificado</string>
+    <string name="pref_badssl_pageloadbehavior_summary">elegir comportamiento de carga de página..</string>
     <string name="pref_enableremotedebugger_title">Habilitar el depurador remoto</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView puede ser inspeccionado en LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView no se puede inspeccionar LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Permitir solicitudes a todos los hosts</string>
     <string name="media_route_menu_title">Fundición</string>
     <string name="cast_context_error">Error al obtener el contexto de conversión. Intente actualizar los servicios de Google Play y reinicie la aplicación.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Error de certificado</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">La fecha del certificado no es válida.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">El certificado ha caducado.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Discrepancia de nombre.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Se ha producido un error genérico.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">El certificado aún no es válido.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">La entidad emisora de certificados no es de confianza.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

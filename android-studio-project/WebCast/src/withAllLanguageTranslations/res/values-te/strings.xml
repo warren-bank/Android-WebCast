@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">బాహ్య</string>
     <string name="pref_videoplayer_title">వీడియో ప్లేయర్</string>
     <string name="pref_videoplayer_summary">వీడియోలను ఉపయోగించి చూడండి..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">రద్దు</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">ప్రాసెస్</string>
+    <string name="pref_pageloadbehavior_array_name_ask">అడిగి</string>
+    <string name="pref_badssl_pageloadbehavior_title">ఆన్ HTTPS సర్టిఫికేట్ దోషము</string>
+    <string name="pref_badssl_pageloadbehavior_summary">పేజీ లోడ్ ప్రవర్తన యెంచుకొనుము..</string>
     <string name="pref_enableremotedebugger_title">రిమోట్ డీబగ్గర్ చేతనము చేయుము</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView పై విమర్యం చేయవచ్చు. LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView పై విమర్యం చేయలేము. LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">అన్ని సైన్సులకు అభ్యర్ధనలను అనుమతిస్తుంది</string>
     <string name="media_route_menu_title">కాస్ట్</string>
     <string name="cast_context_error">Cast సందర్భం పొందుటకు విఫలమైంది. గూగుల్ ప్లేస్ సేవలను అప్డేటింగ్ చేయండి మరియు ఆప్ను పునర్ప్రారంభించు.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS సర్టిఫికేట్ దోషము</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">సర్టిఫికేట్ యొక్క తేదీ చెల్లనిది.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">సర్టిఫికేట్ ముగించబడింది.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">హోస్టెం పేరు మ్యాచ్.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">A generic error occurred.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">సర్టిఫికేట్ ఇంకా చెల్లునది కాదు.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">SSL నమ్మకం.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

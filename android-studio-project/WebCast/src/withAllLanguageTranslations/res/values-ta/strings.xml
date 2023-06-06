@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">வெளி</string>
     <string name="pref_videoplayer_title">நிகழ்பட ஓட்டி</string>
     <string name="pref_videoplayer_summary">வீடியோக்கள் பயன்படுத்தி பார்க்கவும்..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">ரத்து செய்</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">மேற்கோள்</string>
+    <string name="pref_pageloadbehavior_array_name_ask">கேள்வி</string>
+    <string name="pref_badssl_pageloadbehavior_title">மேற்கோள் HTTPS சான்றிதழ் பிழை</string>
+    <string name="pref_badssl_pageloadbehavior_summary">பக்கப் பதிவு நடத்தை தேர்ந்தெடுக்கவும்..</string>
     <string name="pref_enableremotedebugger_title">தொலைதூர வழுநீக்கியை செயல்படுத்து</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView மேற்கொள்ளலாம். LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView தேவையிட முடியவில்லை. LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">அனைத்து புள்ளிகளையும் அனுமதிக்கிறது</string>
     <string name="media_route_menu_title">காஸ்ட்</string>
     <string name="cast_context_error">கேஸ்ட் சூழல் பெற முடியவில்லை. கூகிள் விளையாட்டு சேவைகளை மேம்படுத்தவும் மற்றும் பயன்பாடு மீண்டும் துவக்கவும்.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS சான்றிதழ் பிழை</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">சான்றிதழின் தேதி செல்லாது.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">SSL error.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Hostname பொருத்தம்.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">பொதுவான பிழை ஏற்பட்டது.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">SSL error.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">SSL error.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

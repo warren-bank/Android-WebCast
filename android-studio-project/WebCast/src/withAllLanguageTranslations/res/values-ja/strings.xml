@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">外部</string>
     <string name="pref_videoplayer_title">ビデオ・プレイヤー</string>
     <string name="pref_videoplayer_summary">ビデオを見る..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">キャンセル</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">プロシード</string>
+    <string name="pref_pageloadbehavior_array_name_ask">訊問</string>
+    <string name="pref_badssl_pageloadbehavior_title">オン HTTPS 証明書エラー</string>
+    <string name="pref_badssl_pageloadbehavior_summary">ページ・ロード動作の選択..</string>
     <string name="pref_enableremotedebugger_title">リモート・デバッガーを有効にする</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView 検査できる LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView について検査できない LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">すべてのホストへの要求の許可</string>
     <string name="media_route_menu_title">キャスト</string>
     <string name="cast_context_error">Cast コンテキストの取得に失敗しました。 Google Play サービスを更新して、アプリを再起動してください.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS 証明書エラー</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">証明書の日付が無効です.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">証明書は期限切れです.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">ホスト名不一致.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">一般エラーが発生しました.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">証明書はまだ有効ではありません.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">認証局は信頼されていません.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

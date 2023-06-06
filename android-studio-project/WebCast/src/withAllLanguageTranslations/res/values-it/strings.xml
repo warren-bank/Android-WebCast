@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">esterne</string>
     <string name="pref_videoplayer_title">Video Player</string>
     <string name="pref_videoplayer_summary">guardare i video utilizzando..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Annulla</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Procedi</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Chiedi</string>
+    <string name="pref_badssl_pageloadbehavior_title">Su HTTPS Errore certificato</string>
+    <string name="pref_badssl_pageloadbehavior_summary">scegliere il funzionamento del carico pagina..</string>
     <string name="pref_enableremotedebugger_title">Abilitare Debugger Remoto</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView può essere ispezionato su LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView non può essere ispezionato su LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Consentire richieste a tutti gli host</string>
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">Impossibile ottenere il contesto di Cast. Provare ad aggiornare Google Play Services e riavviare l\'app.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Errore certificato</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">La data del certificato non è valida.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Il certificato è scaduto.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Mismatch hostname.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Si è verificato un errore generico.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Il certificato non è ancora valido.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">L\'autorità del certificato non è attendibile.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">išorinis</string>
     <string name="pref_videoplayer_title">Vaizdo grotuvas</string>
     <string name="pref_videoplayer_summary">žiūrėti vaizdo įrašus naudojant..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Atšaukti</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Tęsti</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Klausti</string>
+    <string name="pref_badssl_pageloadbehavior_title">Dėl HTTPS Sertifikato klaida</string>
+    <string name="pref_badssl_pageloadbehavior_summary">pasirinkti puslapio apkrovos elgesį..</string>
     <string name="pref_enableremotedebugger_title">Įjungti nutolę derintuvę</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView gali būti patikrinta dėl LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView negali būti inspektuojami LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Leisti užklausas visiems šeimininkams</string>
     <string name="media_route_menu_title">Cast</string>
     <string name="cast_context_error">Nepavyko gauti Cast konteksto. Pabandykite atnaujinti \"Google Play Services\" ir paleisti programą iš naujo.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Sertifikato klaida</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Sertifikato išdavimo data yra negaliojanti.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Sertifikato galiojimo laikas pasibaigęs.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Mazgo pavadinimo nesutapimas.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Įvyko bendroji klaida.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Sertifikatas dar neišduotas.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Sertifikavimo institucija nėra patikima.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

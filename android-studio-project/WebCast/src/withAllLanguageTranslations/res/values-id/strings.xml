@@ -14,6 +14,11 @@
     <string name="pref_videoplayer_array_names_2">Eksternal</string>
     <string name="pref_videoplayer_title">Pemutar Video</string>
     <string name="pref_videoplayer_summary">menonton video dengan menggunakan..</string>
+    <string name="pref_pageloadbehavior_array_name_cancel">Batalkan</string>
+    <string name="pref_pageloadbehavior_array_name_proceed">Lanjutkan</string>
+    <string name="pref_pageloadbehavior_array_name_ask">Tanyakan pada</string>
+    <string name="pref_badssl_pageloadbehavior_title">Pada HTTPS Kesalahan Sertifikat</string>
+    <string name="pref_badssl_pageloadbehavior_summary">pilih perilaku beban halaman..</string>
     <string name="pref_enableremotedebugger_title">Aktifkan Debugger Jarak Jauh</string>
     <string name="pref_enableremotedebugger_summary_on" >WebView dapat diinspeksi pada LAN</string>
     <string name="pref_enableremotedebugger_summary_off">WebView tidak dapat diperiksa pada LAN</string>
@@ -22,4 +27,12 @@
     <string name="pref_enableadblock_summary_off">Memungkinkan permintaan untuk semua host</string>
     <string name="media_route_menu_title">Cor</string>
     <string name="cast_context_error">Gagal mendapatkan konteks Cast. Coba memutakhirkan Layanan Google Play dan restart aplikasi.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Kesalahan Sertifikat</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Tanggal sertifikat tidak valid.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Sertifikat telah kadaluarsa.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Nama host tidak cocok.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Terjadi galat generik.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Sertifikat belum valid.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Otoritas sertifikat tidak dipercaya.</string>
+    <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>
