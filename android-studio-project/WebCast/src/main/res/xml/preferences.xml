@@ -12,6 +12,14 @@
       android:entryValues="@array/pref_videoplayer_array_values"
       android:defaultValue="@string/pref_videoplayer_default" />
 
+    <ListPreference
+      android:key="@string/pref_badssl_pageloadbehavior_key"
+      android:title="@string/pref_badssl_pageloadbehavior_title"
+      android:summary="@string/pref_badssl_pageloadbehavior_summary"
+      android:entries="@array/pref_pageloadbehavior_array_names"
+      android:entryValues="@array/pref_pageloadbehavior_array_values"
+      android:defaultValue="@string/pref_badssl_pageloadbehavior_default" />
+
     <CheckBoxPreference
       android:key="@string/pref_enableremotedebugger_key"
       android:title="@string/pref_enableremotedebugger_title"

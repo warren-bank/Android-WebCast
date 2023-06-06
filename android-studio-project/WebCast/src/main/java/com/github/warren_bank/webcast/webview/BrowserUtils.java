@@ -47,6 +47,14 @@ public class BrowserUtils {
         return prefs.getString(pref_key, pref_default);
     }
 
+    public static String getBadSslPageloadBehavior(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        String pref_key         = context.getString(R.string.pref_badssl_pageloadbehavior_key);
+        String pref_default     = context.getString(R.string.pref_badssl_pageloadbehavior_default);
+
+        return prefs.getString(pref_key, pref_default);
+    }
+
     public static boolean getEnableRemoteDebuggerPreference(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         String pref_key         = context.getString(R.string.pref_enableremotedebugger_key);
