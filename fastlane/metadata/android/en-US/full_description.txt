@@ -1,0 +1,1 @@
+<p>WebCast combines a WebView with ExoPlayer. Left drawer contains persistent list of bookmarks. Right drawer contains list of all videos detected in current web page. Video(s) in right drawer can be loaded into ExoPlayer playlist. Video(s) in ExoPlayer playlist can be:</p><ul><li>played in fullscreen</li><li>cast to any Google Chromecast on LAN</li></ul>
